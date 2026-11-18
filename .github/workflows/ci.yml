@@ -81,7 +81,7 @@ jobs:
       - run: pnpm install --frozen-lockfile
       - run: pnpm build
       - name: Pack the rules library
-        run: pnpm --filter @carewish/form-rules pack --pack-destination ../../artifacts
+        run: pnpm --filter @carewish/form-rules pack --pack-destination "$PWD/artifacts"
       - name: Check the packed library
         run: |
           set -euo pipefail

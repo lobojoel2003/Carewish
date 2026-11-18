@@ -106,7 +106,7 @@ jobs:
         run: |
           set -euo pipefail
           mkdir -p release
-          pnpm --filter @carewish/form-rules pack --pack-destination ../../release
+          pnpm --filter @carewish/form-rules pack --pack-destination "$PWD/release"
           # Self-contained Next.js server: node carewish/apps/web/server.js
           STAGE=$(mktemp -d)/carewish
           cp -R apps/web/.next/standalone "$STAGE"
