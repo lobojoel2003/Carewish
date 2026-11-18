@@ -149,7 +149,7 @@ jobs:
     name: Docker image ${{ needs.prepare.outputs.tag }}
     needs: [prepare, github-release]
     runs-on: ubuntu-latest
-    timeout-minutes: 40
+    timeout-minutes: 90
     permissions:
       contents: read
       packages: write
