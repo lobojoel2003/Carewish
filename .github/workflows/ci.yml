@@ -175,6 +175,8 @@ jobs:
             -ig hl7.fhir.us.pacio-adi#1.0.0 \
             -tx n/a \
             -output fhir-validation.json | tee fhir-validation.txt
+      - name: Report validation results
+        run: node scripts/fhir-report.mjs fhir-validation.json
       - uses: actions/upload-artifact@v7
         if: always()
         with:
