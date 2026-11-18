@@ -1,0 +1,152 @@
+@import 'tailwindcss';
+
+/* Calm, high-contrast palette. Semantic tokens switch for dark mode. */
+:root {
+  --paper: #fbfaf7;
+  --surface: #ffffff;
+  --surface-muted: #f4f1ea;
+  --ink: #1d2730;
+  --muted: #55616d;
+  --line: #ddd7cb;
+  --brand: #1f5f5b;
+  --brand-strong: #164744;
+  --brand-soft: #e6f1ef;
+  --brand-ink: #ffffff;
+  --accent: #b5652f;
+  --ok: #1f6b45;
+  --ok-soft: #e4f2ea;
+  --warn: #8a5a00;
+  --warn-soft: #fbf1dc;
+  --bad: #a3342b;
+  --bad-soft: #fbe9e6;
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #121718;
+    --surface: #1a2123;
+    --surface-muted: #20292b;
+    --ink: #eef1ef;
+    --muted: #a9b4b6;
+    --line: #34403f;
+    --brand: #7cc4bb;
+    --brand-strong: #a3d9d1;
+    --brand-soft: #1d3331;
+    --brand-ink: #0d1a19;
+    --accent: #e3a274;
+    --ok: #8fd3ae;
+    --ok-soft: #173126;
+    --warn: #f0c36b;
+    --warn-soft: #342a14;
+    --bad: #f3a097;
+    --bad-soft: #3a1f1c;
+    color-scheme: dark;
+  }
+}
+
+@theme inline {
+  --font-sans:
+    var(--font-atkinson), ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --color-paper: var(--paper);
+  --color-surface: var(--surface);
+  --color-surface-muted: var(--surface-muted);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-brand: var(--brand);
+  --color-brand-strong: var(--brand-strong);
+  --color-brand-soft: var(--brand-soft);
+  --color-brand-ink: var(--brand-ink);
+  --color-accent: var(--accent);
+  --color-ok: var(--ok);
+  --color-ok-soft: var(--ok-soft);
+  --color-warn: var(--warn);
+  --color-warn-soft: var(--warn-soft);
+  --color-bad: var(--bad);
+  --color-bad-soft: var(--bad-soft);
+}
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+    text-rendering: optimizeLegibility;
+  }
+  body {
+    @apply bg-paper text-ink antialiased;
+    font-size: 1.0625rem;
+    line-height: 1.6;
+  }
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+    line-height: 1.25;
+  }
+  p {
+    text-wrap: pretty;
+  }
+  :focus-visible {
+    outline: 3px solid var(--brand);
+    outline-offset: 3px;
+    border-radius: 6px;
+  }
+  ::selection {
+    background: var(--brand-soft);
+  }
+}
+
+@utility btn {
+  @apply inline-flex min-h-12 items-center justify-center gap-2 rounded-full px-6 py-3 font-bold transition-colors disabled:cursor-not-allowed disabled:opacity-50;
+}
+@utility btn-primary {
+  @apply btn bg-brand text-brand-ink hover:bg-brand-strong;
+}
+@utility btn-secondary {
+  @apply btn border-2 border-line bg-surface text-ink hover:border-brand;
+}
+@utility btn-quiet {
+  @apply btn px-3 text-brand underline-offset-4 hover:underline;
+}
+@utility btn-danger {
+  @apply btn border-2 border-bad bg-surface text-bad hover:bg-bad-soft;
+}
+@utility card {
+  @apply rounded-3xl border border-line bg-surface p-6 shadow-[0_1px_2px_rgba(0,0,0,0.04)] sm:p-8;
+}
+@utility field-label {
+  @apply mb-1.5 block font-bold;
+}
+@utility input {
+  @apply block w-full rounded-xl border-2 border-line bg-surface px-4 py-3 text-ink placeholder:text-muted/70 focus:border-brand focus:outline-none;
+}
+@utility link {
+  @apply font-bold text-brand underline decoration-2 underline-offset-4 hover:text-brand-strong;
+}
+@utility option {
+  @apply flex cursor-pointer items-start gap-4 rounded-2xl border-2 border-line bg-surface p-4 transition-colors hover:border-brand has-[:checked]:border-brand has-[:checked]:bg-brand-soft has-[:focus-visible]:outline has-[:focus-visible]:outline-3 has-[:focus-visible]:outline-offset-2 has-[:focus-visible]:outline-brand;
+}
+@utility badge {
+  @apply inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-sm font-bold;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@media print {
+  header,
+  footer,
+  .no-print {
+    display: none !important;
+  }
+  body {
+    background: white;
+  }
+}

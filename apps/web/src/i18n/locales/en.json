@@ -1,0 +1,515 @@
+{
+  "meta": {
+    "title": "Carewish — say what care you want",
+    "description": "Write your advance directive in plain language. Carewish fills in your state's form, applies its witness and notary rules, and gives you a PDF and a copy hospitals can load."
+  },
+  "nav": {
+    "skip": "Skip to main content",
+    "home": "Carewish home",
+    "plan": "My plan",
+    "review": "Review",
+    "sign": "Sign",
+    "export": "Download",
+    "account": "Account",
+    "about": "About",
+    "privacy": "Privacy",
+    "menu": "Menu"
+  },
+  "lang": {
+    "label": "Language",
+    "en": "English",
+    "es": "Español"
+  },
+  "common": {
+    "continue": "Continue",
+    "back": "Back",
+    "next": "Next",
+    "skip": "Skip this question",
+    "edit": "Change",
+    "save": "Save",
+    "cancel": "Cancel",
+    "remove": "Remove",
+    "close": "Close",
+    "loading": "Loading…",
+    "optional": "optional",
+    "saved": "Saved on this device",
+    "saving": "Saving…",
+    "notAnswered": "Not answered",
+    "yes": "Yes",
+    "no": "No",
+    "copy": "Copy",
+    "copied": "Copied",
+    "download": "Download",
+    "print": "Print"
+  },
+  "landing": {
+    "eyebrow": "Free and open source",
+    "title": "Say what care you want, in words that feel like yours.",
+    "subtitle": "Carewish walks you through an advance directive one calm question at a time. It fills in your state's own form, tells you exactly who can witness it, and gives you a wallet card that opens your wishes.",
+    "start": "Start my directive",
+    "resume": "Continue where I left off",
+    "time": "Takes about 15 minutes. Your answers stay on this device.",
+    "whatTitle": "What is an advance directive?",
+    "whatBody": "It is a document that says what medical care you want and who should decide for you if you can't speak for yourself. Doctors and hospitals use it in an emergency, and it spares the people you love from guessing.",
+    "featuresTitle": "How Carewish helps",
+    "features": {
+      "plain": {
+        "title": "One question per screen",
+        "body": "Everyday words, with a short note under each question about why it matters."
+      },
+      "state": {
+        "title": "Your state's own form",
+        "body": "All 50 states and DC. Carewish uses your state's document, its section names, and what it calls the person who decides for you."
+      },
+      "rules": {
+        "title": "Signing rules, checked",
+        "body": "A checklist of who can and can't witness, whether you need a notary, and a checker that tells you if your witnesses qualify."
+      },
+      "fhir": {
+        "title": "A copy hospitals can load",
+        "body": "Along with a printable PDF, you get a FHIR file that follows the HL7 PACIO Advance Directive standard."
+      },
+      "card": {
+        "title": "Wallet card with a QR code",
+        "body": "Scan it to see your wishes and how to reach the person who speaks for you."
+      },
+      "private": {
+        "title": "Private by default",
+        "body": "No account needed. Your answers are stored in your browser. Optional accounts are end-to-end encrypted."
+      }
+    },
+    "statTitle": "Why this matters",
+    "stat": "Only about one in three U.S. adults has an advance directive.",
+    "statSource": "Yadav et al., Health Affairs, 2017 — 150 studies, 795,909 people",
+    "disclaimer": "Carewish gives legal information, not legal advice. If your situation is complicated, talk with a lawyer or your doctor."
+  },
+  "wizard": {
+    "progress": "Question {{current}} of {{total}}",
+    "why": "Why does this matter?",
+    "groups": {
+      "about": "About you",
+      "agent": "Who speaks for you",
+      "treatment": "Your treatment wishes",
+      "values": "What matters to you",
+      "after": "Last few things"
+    },
+    "reviewAnswers": "Review my answers",
+    "required": "Please answer this question to continue.",
+    "chooseState": "Choose your state",
+    "invalidDate": "Please enter a real date.",
+    "tooYoung": "You must be at least {{age}} to make an advance directive in {{state}}.",
+    "futureDate": "That date is in the future.",
+    "skipAgent": "I don't want to name anyone right now",
+    "noAgentNote": "That's okay. Without a {{agent}}, your doctors will follow your written wishes and, where state law allows, ask your family.",
+    "clear": "Clear my answer",
+    "stateTerm": "In {{state}}, this person is called your {{agent}}."
+  },
+  "fields": {
+    "name": "Full name",
+    "relationship": "Relationship to you",
+    "phone": "Phone",
+    "email": "Email",
+    "address": "Address",
+    "street": "Street address",
+    "city": "City",
+    "state": "State",
+    "postalCode": "ZIP code",
+    "yourPhone": "Your phone",
+    "doctorName": "Doctor's name",
+    "doctorPhone": "Doctor's phone",
+    "organDetail": "Which organs or tissues?",
+    "valuesNote": "Anything you'd like to add, in your own words",
+    "choose": "Choose…"
+  },
+  "relationship": {
+    "spouse": "Spouse",
+    "partner": "Partner",
+    "child": "Son or daughter",
+    "parent": "Parent",
+    "sibling": "Brother or sister",
+    "other-relative": "Other relative",
+    "friend": "Friend",
+    "other": "Someone else"
+  },
+  "steps": {
+    "state": {
+      "title": "Which state do you live in?",
+      "why": "Every state has its own form and its own rules for signing it. Carewish uses yours, so a hospital in your state will recognize it."
+    },
+    "name": {
+      "title": "What is your full legal name?",
+      "why": "Use the name on your ID. It helps a hospital match this document to you.",
+      "placeholder": "For example, Maria Elena Torres"
+    },
+    "birthdate": {
+      "title": "When were you born?",
+      "why": "Your date of birth confirms the document is yours, and your state sets a minimum age for making one."
+    },
+    "address": {
+      "title": "Where do you live?",
+      "why": "Most state forms ask for your address. It is another way to confirm who you are. You can skip this and write it in by hand."
+    },
+    "agent": {
+      "title": "Who should make medical decisions for you if you can't?",
+      "why": "This person talks with your doctors and makes choices for you only when you can't. Pick someone who knows you well, will honor your wishes even if they'd choose differently, and can stay calm under pressure."
+    },
+    "alternate": {
+      "title": "Who should be your backup?",
+      "why": "If your first choice can't be reached or isn't able to do it, your backup steps in. It's a good idea to name one."
+    },
+    "authority": {
+      "title": "Can your {{agent}} decide to stop treatments that keep you alive?",
+      "why": "Some states only let the person who speaks for you make this choice if you say so in writing. Saying it clearly helps everyone.",
+      "options": {
+        "yes": "Yes. I trust them to decide, guided by my wishes.",
+        "no": "No. They can make other decisions, but not that one."
+      }
+    },
+    "terminal": {
+      "title": "If you had an illness that can't be cured and will soon end your life, what would you want?",
+      "why": "Doctors call this a terminal condition. Telling them what you'd want spares your family from guessing at a hard time.",
+      "options": {
+        "comfort": "Focus on comfort. Don't use machines or treatments just to keep me alive longer.",
+        "prolong": "Try every treatment that might keep me alive.",
+        "agent-decides": "Let my {{agent}} decide with my doctors."
+      }
+    },
+    "unconscious": {
+      "title": "If you were unconscious and doctors were sure you would never wake up, what would you want?",
+      "why": "This is sometimes called a permanent coma or a persistent vegetative state. People feel very differently about it, and there is no wrong answer.",
+      "options": {
+        "comfort": "Focus on comfort. Don't use machines or treatments just to keep me alive longer.",
+        "prolong": "Try every treatment that might keep me alive.",
+        "agent-decides": "Let my {{agent}} decide with my doctors."
+      }
+    },
+    "advanced-illness": {
+      "title": "If you had a severe illness that can't be reversed — like late-stage dementia — and could no longer recognize your loved ones or care for yourself, what would you want?",
+      "why": "Doctors call this an end-stage or irreversible condition. It can last a long time, so your answer guides many decisions.",
+      "options": {
+        "comfort": "Focus on comfort. Don't use machines or treatments just to keep me alive longer.",
+        "prolong": "Try every treatment that might keep me alive.",
+        "agent-decides": "Let my {{agent}} decide with my doctors."
+      }
+    },
+    "nutrition": {
+      "title": "If you couldn't eat or drink on your own, would you want to be fed through a tube?",
+      "why": "Feeding through a tube or an IV is called artificial nutrition and hydration. Some states require you to mention it directly, or your wishes about it may not count.",
+      "options": {
+        "want": "Yes, I would want tube feeding.",
+        "trial": "Try it for a while, then stop if it isn't helping me get better.",
+        "decline": "No, not if I'm in one of the situations above.",
+        "agent-decides": "Let my {{agent}} decide."
+      }
+    },
+    "cpr": {
+      "title": "If your heart stopped, would you want doctors to try to restart it?",
+      "why": "This is called CPR. It saves lives, but it works far less often for people who are already very sick. This tells people your wishes; for an actual do-not-resuscitate order, ask your doctor about a POLST form.",
+      "options": {
+        "want": "Yes, try CPR.",
+        "decline": "No, not if I'm in one of the situations above.",
+        "agent-decides": "Let my {{agent}} decide."
+      }
+    },
+    "pain": {
+      "title": "Should doctors keep you comfortable even if pain medicine might shorten your life?",
+      "why": "Good pain care rarely shortens life, but some people want to say how they feel about it ahead of time.",
+      "options": {
+        "comfort": "Yes. Keep me comfortable and free of pain.",
+        "not-if-shortens": "Only if it won't shorten my life.",
+        "agent-decides": "Let my {{agent}} decide."
+      }
+    },
+    "values": {
+      "title": "What matters most to you near the end of life?",
+      "why": "No form can predict every situation. Knowing what matters to you helps your {{agent}} and doctors make choices you would agree with.",
+      "hint": "Choose as many as you like.",
+      "options": {
+        "comfort": "Being comfortable and free of pain",
+        "recognize-family": "Being able to recognize and talk with my family",
+        "independence": "Being able to take care of myself",
+        "not-burden": "Not being a burden on others",
+        "live-longer": "Living as long as possible",
+        "at-home": "Being at home",
+        "loved-ones-near": "Having the people I love nearby",
+        "faith": "My faith or spiritual practices"
+      }
+    },
+    "place": {
+      "title": "If you can choose, where would you like to spend your final days?",
+      "why": "Many people want to be at home. Saying so early helps your family arrange hospice or home care in time.",
+      "options": {
+        "home": "At home",
+        "hospice": "In a hospice facility",
+        "hospital": "In a hospital",
+        "no-preference": "I don't have a preference"
+      }
+    },
+    "spiritual": {
+      "title": "Is there anything about your faith, culture, or traditions your care team should know?",
+      "why": "Rituals, food rules, or someone to call — like a faith leader — can matter a great deal at the end of life.",
+      "placeholder": "For example: Please call Rev. Kim at First Baptist. I'd like prayers in Korean."
+    },
+    "organ": {
+      "title": "Would you like to donate your organs and tissues after you die?",
+      "why": "One donor can help many people. Your family will be asked, and knowing your wishes makes that moment easier.",
+      "options": {
+        "any": "Yes, any organs or tissues that can help others.",
+        "specific": "Yes, but only the ones I list.",
+        "none": "No, I don't want to donate.",
+        "agent-decides": "Let my {{agent}} decide."
+      }
+    },
+    "physician": {
+      "title": "Who is your main doctor?",
+      "why": "Your form has a place for this, and it tells a hospital whom to call. You can skip it if you don't have one."
+    },
+    "other": {
+      "title": "Is there anything else you want people to know?",
+      "why": "Use your own words. Anything from the music you'd like to hear to the people you want with you.",
+      "placeholder": "For example: I'd like my dog to visit me. Please play jazz."
+    }
+  },
+  "review": {
+    "title": "Review your answers",
+    "intro": "Here is what your {{state}} document will say. Change anything you like.",
+    "documents": "Your {{state}} documents",
+    "missingTitle": "A few required answers are missing",
+    "missingBody": "Please answer these before you continue:",
+    "toSign": "See how to sign",
+    "noState": "Choose your state first.",
+    "start": "Start",
+    "noAgent": "You haven't named anyone to speak for you."
+  },
+  "sign": {
+    "title": "How to sign in {{state}}",
+    "intro": "A directive only counts if it is signed the way your state requires. Follow these steps for each document.",
+    "document": "Document {{n}} of {{total}}",
+    "same": "Both documents are signed the same way, so you can do them at one sitting.",
+    "checkerTitle": "Check your witnesses",
+    "checkerIntro": "Tell us a little about each person you're thinking of asking. We'll check them against {{state}}'s rules.",
+    "checkerPrivacy": "This stays on your device. Witness names are printed under the signature lines.",
+    "witnessN": "Witness {{n}}",
+    "witnessName": "Witness's name",
+    "relationship": "How is this person related to you?",
+    "checkAll": "Check anything that's true about this person:",
+    "addWitness": "Add a witness",
+    "noWitnessNeeded": "This document doesn't need witnesses.",
+    "status": {
+      "ok": "Can be a witness",
+      "problem": "Can't be a witness"
+    },
+    "afterTitle": "After you sign",
+    "after": {
+      "copies": "Give copies to your {{agent}}, your backup, your doctor, and anyone close to you.",
+      "original": "Keep the original somewhere easy to find. Not in a safe-deposit box — no one can get to it in an emergency.",
+      "record": "Ask your doctor or hospital to add it to your medical record. You can give them the FHIR file from the download page.",
+      "card": "Carry your wallet card.",
+      "review": "Look at it again every few years, or after a big change like a new diagnosis, a marriage, or a divorce."
+    },
+    "toExport": "Download my documents",
+    "rulesChecked": "Rules last checked {{date}}. Sources: {{sources}}.",
+    "rulesDraft": "These rules were compiled from state law and are still being reviewed. If a lawyer, your hospital, or your state's official instructions say something different, follow them.",
+    "lawTitle": "Where these rules come from",
+    "notesTitle": "Good to know"
+  },
+  "export": {
+    "title": "Your documents",
+    "intro": "Print the PDF and sign it as your state requires. Keep the FHIR file to share with hospitals.",
+    "pdfTitle": "Your {{state}} directive (PDF)",
+    "pdfBody": "Ready to print. It starts with a page of signing instructions you can remove after you sign.",
+    "pdfButton": "Download PDF",
+    "preview": "Preview",
+    "fhirTitle": "Hospital copy (FHIR)",
+    "fhirBody": "A machine-readable copy in the HL7 FHIR format, following the PACIO Advance Directive Interoperability guide. Many patient portals and health systems can load it.",
+    "fhirButton": "Download FHIR file",
+    "cardTitle": "Wallet card",
+    "cardBody": "Print, cut out, and fold. The QR code opens a summary of your wishes and how to reach your {{agent}}.",
+    "cardButton": "Download wallet card",
+    "cardNotice": "Anyone who scans this code can read what's on the card. That's the point in an emergency, but keep it in mind.",
+    "cardShareLink": "Your card's code opens an encrypted copy of your full document.",
+    "cardLocal": "Your card's code holds a summary of your wishes. With an account, it can open your full document instead.",
+    "generating": "Preparing…",
+    "error": "Something went wrong while preparing your file. Please try again.",
+    "incomplete": "Answer the required questions first.",
+    "toReview": "Go to review",
+    "jsonTitle": "Your answers (backup)",
+    "jsonBody": "A backup of your answers you can load into Carewish on another device.",
+    "jsonButton": "Download backup",
+    "importButton": "Load a backup",
+    "importDone": "Your answers were loaded.",
+    "importError": "That file isn't a Carewish backup.",
+    "deleteTitle": "Delete everything on this device",
+    "deleteBody": "Removes your answers from this browser. Files you downloaded are not affected.",
+    "deleteButton": "Delete my answers",
+    "deleteConfirm": "Delete all your answers from this device? This can't be undone.",
+    "deleted": "Your answers were deleted from this device."
+  },
+  "card": {
+    "front": "I have an advance directive",
+    "agentLabel": "Call my {{agent}}",
+    "scan": "Scan to see my wishes",
+    "madeWith": "Made with Carewish",
+    "title": "Emergency summary",
+    "subtitle": "Advance directive wishes for {{name}}",
+    "born": "Born {{date}}",
+    "stateLine": "{{state}} advance directive, prepared {{date}}",
+    "call": "Call {{name}}",
+    "wishes": "Treatment wishes",
+    "notOriginal": "This is a summary, not the signed document. Ask the person or their {{agent}} for the signed original.",
+    "invalid": "This card link is incomplete or damaged.",
+    "backup": "Backup"
+  },
+  "share": {
+    "title": "Shared advance directive",
+    "loading": "Opening the encrypted document…",
+    "missingKey": "This link is missing its key. Scan the QR code again or ask for a new link.",
+    "notFound": "This document was removed or never existed.",
+    "error": "This document couldn't be opened. The link may be damaged.",
+    "download": "Download the PDF",
+    "downloadFhir": "Download the FHIR file",
+    "privacy": "This document was decrypted on your device. The server only stores an encrypted copy."
+  },
+  "account": {
+    "title": "Account",
+    "disabled": "This Carewish server doesn't offer accounts. Your answers stay in this browser.",
+    "intro": "An account keeps an encrypted copy of your answers so you can use them on another device, and lets your wallet card open your full document.",
+    "e2ee": "Your answers are encrypted on your device with your password before they are sent. The server can't read them, and we can't reset your password. If you forget it, your saved copy can't be recovered.",
+    "signIn": "Sign in",
+    "signUp": "Create account",
+    "signOut": "Sign out",
+    "email": "Email",
+    "password": "Password",
+    "passwordHint": "At least 12 characters. A few unrelated words work well.",
+    "confirm": "I understand my password can't be reset.",
+    "haveAccount": "Already have an account? Sign in",
+    "needAccount": "New here? Create an account",
+    "signedInAs": "Signed in as {{email}}",
+    "syncNow": "Save to my account now",
+    "restore": "Load answers from my account",
+    "lastSync": "Last saved to your account {{time}}",
+    "neverSynced": "Not saved to your account yet",
+    "synced": "Saved to your account",
+    "restored": "Loaded your answers from your account",
+    "noVault": "There's nothing saved in your account yet.",
+    "working": "Working…",
+    "errors": {
+      "invalid": "That email and password don't match.",
+      "exists": "An account with that email already exists.",
+      "weak": "Please use at least 12 characters.",
+      "email": "Please enter a valid email address.",
+      "rate": "Too many attempts. Please wait a minute and try again.",
+      "generic": "Something went wrong. Please try again.",
+      "confirm": "Please confirm that you understand."
+    },
+    "shareTitle": "Card link",
+    "shareBody": "Create an encrypted link for your wallet card. Anyone with the card can open your full document; no one else can.",
+    "shareCreate": "Create card link",
+    "shareUpdate": "Update linked document",
+    "shareDelete": "Turn off card link",
+    "shareActive": "Your card link is on.",
+    "deleteTitle": "Delete account",
+    "deleteBody": "Deletes your account, your encrypted answers, and your card link from the server. Your answers on this device stay.",
+    "deleteButton": "Delete my account",
+    "deleteConfirm": "Delete your account and everything saved in it? This can't be undone."
+  },
+  "about": {
+    "title": "About Carewish",
+    "body": "Carewish is free, open-source software. The app is licensed under the GNU AGPL 3.0, and the state rules library is MIT-licensed so anyone can reuse it.",
+    "version": "Version {{version}} · build {{build}} · {{commit}}",
+    "source": "Source code on GitHub",
+    "rules": "State rules library",
+    "standards": "The FHIR export follows the HL7 PACIO Advance Directive Interoperability Implementation Guide, STU 1.",
+    "fonts": "Text is set in Atkinson Hyperlegible, a typeface designed by the Braille Institute for readers with low vision.",
+    "notAdvice": "Carewish gives legal information, not legal advice, and is not a substitute for a lawyer or a conversation with your doctor."
+  },
+  "privacy": {
+    "title": "Privacy",
+    "local": "Your answers are stored in your browser's own database (IndexedDB) on this device. They are not sent anywhere unless you create an account.",
+    "account": "If you create an account, your answers are encrypted in your browser with a key made from your password. The server stores only the encrypted data, your email address, and a hash used to check your sign-in.",
+    "card": "If you print a wallet card without an account, its QR code contains a summary of your wishes. The summary is in the part of the link after the # sign, which browsers never send to a server.",
+    "share": "If you create a card link, an encrypted copy of your document is stored on the server. The key to open it is only in the QR code.",
+    "noTracking": "Carewish has no ads, no analytics, and no trackers.",
+    "delete": "You can delete your answers from this device, and your account from the server, at any time."
+  },
+  "footer": {
+    "disclaimer": "Legal information, not legal advice.",
+    "license": "AGPL-3.0 · rules library MIT",
+    "version": "v{{version}} (build {{build}})"
+  },
+  "notFound": {
+    "title": "We couldn't find that page",
+    "home": "Go to the home page"
+  },
+  "statements": {
+    "principal": "I, {{name}}, born {{birthDate}}, of {{address}}, make this document of my own free will.",
+    "principalNoAddress": "I, {{name}}, born {{birthDate}}, make this document of my own free will.",
+    "agentIntro": "I choose the following person as my {{agent}} to make health care decisions for me:",
+    "alternateIntro": "If my {{agent}} is not willing, able, or reasonably available to act, I choose:",
+    "noAgent": "I have not named a {{agent}} in this document.",
+    "noAlternate": "I have not named an alternate {{agent}}.",
+    "authorityGeneral": "My {{agent}} may make all health care decisions for me that I could make myself, guided by the instructions in this document and my other known wishes. This includes choosing, refusing, or stopping any care, treatment, service, or procedure.",
+    "authorityYes": "My {{agent}} may also decide to withhold or withdraw life-sustaining treatment, including artificial nutrition and hydration, even if doing so may allow me to die.",
+    "authorityNo": "My {{agent}} may NOT decide to withhold or withdraw life-sustaining treatment that would allow me to die.",
+    "authorityStart": "My {{agent}}'s authority begins when my doctor determines that I am unable to make my own health care decisions.",
+    "terminalIntro": "If I have an incurable and irreversible condition that will result in my death within a relatively short time:",
+    "unconsciousIntro": "If I become unconscious and, to a reasonable degree of medical certainty, I will not regain consciousness:",
+    "advancedIllnessIntro": "If I have an end-stage or irreversible condition, such as advanced dementia, and can no longer recognize my loved ones or care for myself:",
+    "treatment": {
+      "comfort": "I do not want my life to be prolonged by life-sustaining treatment. I want care that keeps me comfortable.",
+      "prolong": "I want my life to be prolonged as long as possible, within the limits of generally accepted health care standards.",
+      "agent-decides": "I want my {{agent}} to decide, with my doctors, based on my values and wishes."
+    },
+    "nutritionIntro": "Artificial nutrition and hydration (food and fluids through a tube or IV):",
+    "nutrition": {
+      "want": "I want artificial nutrition and hydration.",
+      "trial": "I want a trial period of artificial nutrition and hydration, to be stopped if it is not helping me recover.",
+      "decline": "I do not want artificial nutrition and hydration if I am in any of the conditions described above.",
+      "agent-decides": "My {{agent}} may decide about artificial nutrition and hydration."
+    },
+    "cprIntro": "Cardiopulmonary resuscitation (CPR):",
+    "cpr": {
+      "want": "I want CPR to be attempted if my heart or breathing stops.",
+      "decline": "I do not want CPR if I am in any of the conditions described above.",
+      "agent-decides": "My {{agent}} may decide about CPR."
+    },
+    "painIntro": "Relief from pain:",
+    "pain": {
+      "comfort": "I want treatment for pain and discomfort at all times, even if it may hasten my death.",
+      "not-if-shortens": "I want relief from pain, but not if it would hasten my death.",
+      "agent-decides": "My {{agent}} may decide about pain relief that could hasten my death."
+    },
+    "valuesIntro": "What matters most to me:",
+    "values": {
+      "comfort": "Being comfortable and free of pain",
+      "recognize-family": "Being able to recognize and talk with my family",
+      "independence": "Being able to take care of myself",
+      "not-burden": "Not being a burden on others",
+      "live-longer": "Living as long as possible",
+      "at-home": "Being at home",
+      "loved-ones-near": "Having the people I love nearby",
+      "faith": "My faith or spiritual practices"
+    },
+    "placeIntro": "If I can choose, I would like to spend my final days:",
+    "place": {
+      "home": "At home.",
+      "hospice": "In a hospice facility.",
+      "hospital": "In a hospital.",
+      "no-preference": "I have no preference."
+    },
+    "spiritualIntro": "About my faith, culture, and traditions:",
+    "organIntro": "Donation of organs, tissues, and body parts at my death:",
+    "organ": {
+      "any": "I give any needed organs, tissues, or parts.",
+      "specific": "I give only the following organs, tissues, or parts: {{detail}}",
+      "none": "I do not want to donate my organs, tissues, or parts.",
+      "agent-decides": "My {{agent}} may decide whether to donate my organs, tissues, or parts."
+    },
+    "physicianIntro": "My primary physician:",
+    "noPhysician": "I have not named a primary physician.",
+    "otherIntro": "Other instructions:",
+    "none": "I have not given instructions on this topic.",
+    "appendixTitle": "Statement of My Other Wishes",
+    "appendixIntro": "These wishes are part of my advance directive. They are not part of my state's statutory form, and I want my {{agent}} and doctors to follow them as an expression of my wishes."
+  }
+}

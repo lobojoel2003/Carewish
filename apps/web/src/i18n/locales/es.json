@@ -1,0 +1,515 @@
+{
+  "meta": {
+    "title": "Carewish — diga qué atención desea",
+    "description": "Escriba su directiva anticipada en palabras sencillas. Carewish llena el formulario de su estado, aplica sus reglas de testigos y notario, y le da un PDF y una copia que los hospitales pueden cargar."
+  },
+  "nav": {
+    "skip": "Ir al contenido principal",
+    "home": "Inicio de Carewish",
+    "plan": "Mi plan",
+    "review": "Revisar",
+    "sign": "Firmar",
+    "export": "Descargar",
+    "account": "Cuenta",
+    "about": "Acerca de",
+    "privacy": "Privacidad",
+    "menu": "Menú"
+  },
+  "lang": {
+    "label": "Idioma",
+    "en": "English",
+    "es": "Español"
+  },
+  "common": {
+    "continue": "Continuar",
+    "back": "Atrás",
+    "next": "Siguiente",
+    "skip": "Saltar esta pregunta",
+    "edit": "Cambiar",
+    "save": "Guardar",
+    "cancel": "Cancelar",
+    "remove": "Quitar",
+    "close": "Cerrar",
+    "loading": "Cargando…",
+    "optional": "opcional",
+    "saved": "Guardado en este dispositivo",
+    "saving": "Guardando…",
+    "notAnswered": "Sin respuesta",
+    "yes": "Sí",
+    "no": "No",
+    "copy": "Copiar",
+    "copied": "Copiado",
+    "download": "Descargar",
+    "print": "Imprimir"
+  },
+  "landing": {
+    "eyebrow": "Gratis y de código abierto",
+    "title": "Diga qué atención médica desea, con palabras que sienta suyas.",
+    "subtitle": "Carewish le guía en su directiva anticipada con una pregunta tranquila a la vez. Llena el formulario propio de su estado, le dice exactamente quién puede ser testigo y le da una tarjeta para la cartera que muestra sus deseos.",
+    "start": "Comenzar mi directiva",
+    "resume": "Continuar donde lo dejé",
+    "time": "Toma unos 15 minutos. Sus respuestas se quedan en este dispositivo.",
+    "whatTitle": "¿Qué es una directiva anticipada?",
+    "whatBody": "Es un documento que dice qué atención médica desea y quién debe decidir por usted si usted no puede hablar. Los médicos y hospitales lo usan en una emergencia, y evita que sus seres queridos tengan que adivinar.",
+    "featuresTitle": "Cómo le ayuda Carewish",
+    "features": {
+      "plain": {
+        "title": "Una pregunta por pantalla",
+        "body": "Palabras de todos los días, con una nota breve debajo de cada pregunta sobre por qué importa."
+      },
+      "state": {
+        "title": "El formulario de su estado",
+        "body": "Los 50 estados y DC. Carewish usa el documento de su estado, los nombres de sus secciones y cómo se llama a la persona que decide por usted."
+      },
+      "rules": {
+        "title": "Reglas de firma, verificadas",
+        "body": "Una lista de quién puede y quién no puede ser testigo, si necesita notario, y un verificador que le dice si sus testigos califican."
+      },
+      "fhir": {
+        "title": "Una copia que los hospitales pueden cargar",
+        "body": "Además de un PDF para imprimir, recibe un archivo FHIR que sigue el estándar HL7 PACIO de directivas anticipadas."
+      },
+      "card": {
+        "title": "Tarjeta con código QR",
+        "body": "Al escanearla se ven sus deseos y cómo comunicarse con la persona que habla por usted."
+      },
+      "private": {
+        "title": "Privado desde el inicio",
+        "body": "No necesita cuenta. Sus respuestas se guardan en su navegador. Las cuentas opcionales tienen cifrado de extremo a extremo."
+      }
+    },
+    "statTitle": "Por qué importa",
+    "stat": "Solo uno de cada tres adultos en EE. UU. tiene una directiva anticipada.",
+    "statSource": "Yadav et al., Health Affairs, 2017 — 150 estudios, 795,909 personas",
+    "disclaimer": "Carewish ofrece información legal, no asesoría legal. Si su situación es complicada, hable con un abogado o con su médico."
+  },
+  "wizard": {
+    "progress": "Pregunta {{current}} de {{total}}",
+    "why": "¿Por qué importa?",
+    "groups": {
+      "about": "Sobre usted",
+      "agent": "Quién habla por usted",
+      "treatment": "Sus deseos de tratamiento",
+      "values": "Lo que le importa",
+      "after": "Unas últimas cosas"
+    },
+    "reviewAnswers": "Revisar mis respuestas",
+    "required": "Responda esta pregunta para continuar.",
+    "chooseState": "Elija su estado",
+    "invalidDate": "Escriba una fecha real.",
+    "tooYoung": "Debe tener al menos {{age}} años para hacer una directiva anticipada en {{state}}.",
+    "futureDate": "Esa fecha está en el futuro.",
+    "skipAgent": "Por ahora no quiero nombrar a nadie",
+    "noAgentNote": "Está bien. Sin un {{agent}}, sus médicos seguirán sus deseos por escrito y, donde la ley lo permita, consultarán a su familia.",
+    "clear": "Borrar mi respuesta",
+    "stateTerm": "En {{state}}, a esta persona se le llama su {{agent}}."
+  },
+  "fields": {
+    "name": "Nombre completo",
+    "relationship": "Relación con usted",
+    "phone": "Teléfono",
+    "email": "Correo electrónico",
+    "address": "Dirección",
+    "street": "Calle y número",
+    "city": "Ciudad",
+    "state": "Estado",
+    "postalCode": "Código postal",
+    "yourPhone": "Su teléfono",
+    "doctorName": "Nombre del médico",
+    "doctorPhone": "Teléfono del médico",
+    "organDetail": "¿Qué órganos o tejidos?",
+    "valuesNote": "Algo que quiera agregar, en sus propias palabras",
+    "choose": "Elija…"
+  },
+  "relationship": {
+    "spouse": "Cónyuge",
+    "partner": "Pareja",
+    "child": "Hijo o hija",
+    "parent": "Padre o madre",
+    "sibling": "Hermano o hermana",
+    "other-relative": "Otro pariente",
+    "friend": "Amigo o amiga",
+    "other": "Otra persona"
+  },
+  "steps": {
+    "state": {
+      "title": "¿En qué estado vive?",
+      "why": "Cada estado tiene su propio formulario y sus propias reglas para firmarlo. Carewish usa el suyo, para que un hospital de su estado lo reconozca."
+    },
+    "name": {
+      "title": "¿Cuál es su nombre legal completo?",
+      "why": "Use el nombre que aparece en su identificación. Así un hospital puede saber que este documento es suyo.",
+      "placeholder": "Por ejemplo, María Elena Torres"
+    },
+    "birthdate": {
+      "title": "¿Cuándo nació?",
+      "why": "Su fecha de nacimiento confirma que el documento es suyo, y su estado fija una edad mínima para hacerlo."
+    },
+    "address": {
+      "title": "¿Dónde vive?",
+      "why": "La mayoría de los formularios estatales piden su dirección. Es otra forma de confirmar quién es usted. Puede saltar esto y escribirla a mano."
+    },
+    "agent": {
+      "title": "¿Quién debe tomar decisiones médicas por usted si usted no puede?",
+      "why": "Esta persona habla con sus médicos y decide por usted solo cuando usted no puede. Elija a alguien que le conozca bien, que respete sus deseos aunque piense diferente y que pueda mantener la calma."
+    },
+    "alternate": {
+      "title": "¿Quién debe ser su suplente?",
+      "why": "Si su primera opción no está disponible o no puede hacerlo, su suplente toma su lugar. Es buena idea nombrar a alguien."
+    },
+    "authority": {
+      "title": "¿Puede su {{agent}} decidir suspender tratamientos que le mantienen con vida?",
+      "why": "En algunos estados, la persona que habla por usted solo puede tomar esta decisión si usted lo dice por escrito. Decirlo con claridad ayuda a todos.",
+      "options": {
+        "yes": "Sí. Confío en que decida guiándose por mis deseos.",
+        "no": "No. Puede tomar otras decisiones, pero no esa."
+      }
+    },
+    "terminal": {
+      "title": "Si tuviera una enfermedad que no tiene cura y que pronto terminará con su vida, ¿qué desearía?",
+      "why": "Los médicos lo llaman una condición terminal. Decirles lo que desea evita que su familia tenga que adivinar en un momento difícil.",
+      "options": {
+        "comfort": "Enfocarse en mi comodidad. No usar máquinas ni tratamientos solo para mantenerme vivo más tiempo.",
+        "prolong": "Probar todo tratamiento que pueda mantenerme con vida.",
+        "agent-decides": "Que mi {{agent}} decida junto con mis médicos."
+      }
+    },
+    "unconscious": {
+      "title": "Si estuviera inconsciente y los médicos estuvieran seguros de que nunca despertaría, ¿qué desearía?",
+      "why": "A veces se llama coma permanente o estado vegetativo persistente. Cada persona lo ve de forma distinta, y no hay respuesta equivocada.",
+      "options": {
+        "comfort": "Enfocarse en mi comodidad. No usar máquinas ni tratamientos solo para mantenerme vivo más tiempo.",
+        "prolong": "Probar todo tratamiento que pueda mantenerme con vida.",
+        "agent-decides": "Que mi {{agent}} decida junto con mis médicos."
+      }
+    },
+    "advanced-illness": {
+      "title": "Si tuviera una enfermedad grave que no se puede revertir —como demencia avanzada— y ya no pudiera reconocer a sus seres queridos ni cuidarse, ¿qué desearía?",
+      "why": "Los médicos lo llaman una condición en etapa final o irreversible. Puede durar mucho tiempo, así que su respuesta guía muchas decisiones.",
+      "options": {
+        "comfort": "Enfocarse en mi comodidad. No usar máquinas ni tratamientos solo para mantenerme vivo más tiempo.",
+        "prolong": "Probar todo tratamiento que pueda mantenerme con vida.",
+        "agent-decides": "Que mi {{agent}} decida junto con mis médicos."
+      }
+    },
+    "nutrition": {
+      "title": "Si no pudiera comer ni beber por sí mismo, ¿desearía que le alimentaran por un tubo?",
+      "why": "Alimentar por un tubo o por vía intravenosa se llama nutrición e hidratación artificial. Algunos estados exigen que lo mencione directamente; si no, sus deseos sobre esto podrían no contar.",
+      "options": {
+        "want": "Sí, desearía alimentación por tubo.",
+        "trial": "Probarla por un tiempo y suspenderla si no me ayuda a mejorar.",
+        "decline": "No, si estoy en una de las situaciones anteriores.",
+        "agent-decides": "Que mi {{agent}} decida."
+      }
+    },
+    "cpr": {
+      "title": "Si su corazón se detuviera, ¿desearía que los médicos intentaran reanimarle?",
+      "why": "Esto se llama RCP (reanimación cardiopulmonar). Salva vidas, pero funciona mucho menos en personas que ya están muy enfermas. Esto expresa sus deseos; para una orden real de no reanimar, pregunte a su médico por un formulario POLST.",
+      "options": {
+        "want": "Sí, intentar la RCP.",
+        "decline": "No, si estoy en una de las situaciones anteriores.",
+        "agent-decides": "Que mi {{agent}} decida."
+      }
+    },
+    "pain": {
+      "title": "¿Deben los médicos mantenerle cómodo aunque los medicamentos para el dolor pudieran acortar su vida?",
+      "why": "Un buen control del dolor rara vez acorta la vida, pero algunas personas quieren decir lo que piensan de antemano.",
+      "options": {
+        "comfort": "Sí. Mantenerme cómodo y sin dolor.",
+        "not-if-shortens": "Solo si no acorta mi vida.",
+        "agent-decides": "Que mi {{agent}} decida."
+      }
+    },
+    "values": {
+      "title": "¿Qué es lo más importante para usted al final de la vida?",
+      "why": "Ningún formulario puede prever cada situación. Saber lo que le importa ayuda a su {{agent}} y a sus médicos a tomar decisiones con las que usted estaría de acuerdo.",
+      "hint": "Elija todas las que quiera.",
+      "options": {
+        "comfort": "Estar cómodo y sin dolor",
+        "recognize-family": "Poder reconocer a mi familia y hablar con ella",
+        "independence": "Poder cuidarme solo",
+        "not-burden": "No ser una carga para los demás",
+        "live-longer": "Vivir el mayor tiempo posible",
+        "at-home": "Estar en casa",
+        "loved-ones-near": "Tener cerca a las personas que amo",
+        "faith": "Mi fe o mis prácticas espirituales"
+      }
+    },
+    "place": {
+      "title": "Si puede elegir, ¿dónde le gustaría pasar sus últimos días?",
+      "why": "Muchas personas quieren estar en casa. Decirlo con tiempo ayuda a su familia a organizar cuidados paliativos (hospicio) o atención en el hogar.",
+      "options": {
+        "home": "En casa",
+        "hospice": "En un centro de cuidados paliativos (hospicio)",
+        "hospital": "En un hospital",
+        "no-preference": "No tengo preferencia"
+      }
+    },
+    "spiritual": {
+      "title": "¿Hay algo sobre su fe, su cultura o sus tradiciones que su equipo médico deba saber?",
+      "why": "Los rituales, las reglas sobre la comida o alguien a quien llamar —como un líder religioso— pueden importar mucho al final de la vida.",
+      "placeholder": "Por ejemplo: Por favor llamen al padre José de la parroquia San Juan. Me gustaría que recen el rosario."
+    },
+    "organ": {
+      "title": "¿Le gustaría donar sus órganos y tejidos después de morir?",
+      "why": "Un donante puede ayudar a muchas personas. Le preguntarán a su familia, y conocer sus deseos hace ese momento más fácil.",
+      "options": {
+        "any": "Sí, cualquier órgano o tejido que pueda ayudar a otros.",
+        "specific": "Sí, pero solo los que yo indique.",
+        "none": "No, no quiero donar.",
+        "agent-decides": "Que mi {{agent}} decida."
+      }
+    },
+    "physician": {
+      "title": "¿Quién es su médico principal?",
+      "why": "Su formulario tiene un espacio para esto, y le dice al hospital a quién llamar. Puede saltarlo si no tiene uno."
+    },
+    "other": {
+      "title": "¿Hay algo más que quiera que la gente sepa?",
+      "why": "Use sus propias palabras. Desde la música que le gustaría escuchar hasta las personas que quiere tener a su lado.",
+      "placeholder": "Por ejemplo: Me gustaría que mi perro me visite. Pongan música de mariachi."
+    }
+  },
+  "review": {
+    "title": "Revise sus respuestas",
+    "intro": "Esto es lo que dirá su documento de {{state}}. Cambie lo que quiera.",
+    "documents": "Sus documentos de {{state}}",
+    "missingTitle": "Faltan algunas respuestas obligatorias",
+    "missingBody": "Responda esto antes de continuar:",
+    "toSign": "Ver cómo firmar",
+    "noState": "Primero elija su estado.",
+    "start": "Comenzar",
+    "noAgent": "No ha nombrado a nadie para que hable por usted."
+  },
+  "sign": {
+    "title": "Cómo firmar en {{state}}",
+    "intro": "Una directiva solo cuenta si se firma como lo exige su estado. Siga estos pasos para cada documento.",
+    "document": "Documento {{n}} de {{total}}",
+    "same": "Ambos documentos se firman de la misma manera, así que puede hacerlos en una sola vez.",
+    "checkerTitle": "Verifique a sus testigos",
+    "checkerIntro": "Cuéntenos un poco sobre cada persona a quien piensa pedírselo. Las compararemos con las reglas de {{state}}.",
+    "checkerPrivacy": "Esto se queda en su dispositivo. Los nombres de los testigos se imprimen debajo de las líneas de firma.",
+    "witnessN": "Testigo {{n}}",
+    "witnessName": "Nombre del testigo",
+    "relationship": "¿Qué relación tiene esta persona con usted?",
+    "checkAll": "Marque lo que sea cierto sobre esta persona:",
+    "addWitness": "Agregar un testigo",
+    "noWitnessNeeded": "Este documento no necesita testigos.",
+    "status": {
+      "ok": "Puede ser testigo",
+      "problem": "No puede ser testigo"
+    },
+    "afterTitle": "Después de firmar",
+    "after": {
+      "copies": "Dé copias a su {{agent}}, a su suplente, a su médico y a las personas cercanas.",
+      "original": "Guarde el original en un lugar fácil de encontrar. No en una caja de seguridad del banco: nadie podría sacarlo en una emergencia.",
+      "record": "Pida a su médico u hospital que lo agregue a su expediente médico. Puede darles el archivo FHIR de la página de descarga.",
+      "card": "Lleve consigo su tarjeta.",
+      "review": "Revíselo cada pocos años, o después de un cambio importante como un nuevo diagnóstico, un matrimonio o un divorcio."
+    },
+    "toExport": "Descargar mis documentos",
+    "rulesChecked": "Reglas revisadas por última vez el {{date}}. Fuentes: {{sources}}.",
+    "rulesDraft": "Estas reglas se tomaron de la ley estatal y todavía se están revisando. Si un abogado, su hospital o las instrucciones oficiales de su estado dicen algo distinto, sígalos a ellos.",
+    "lawTitle": "De dónde vienen estas reglas",
+    "notesTitle": "Bueno saber"
+  },
+  "export": {
+    "title": "Sus documentos",
+    "intro": "Imprima el PDF y fírmelo como lo exige su estado. Guarde el archivo FHIR para compartirlo con hospitales.",
+    "pdfTitle": "Su directiva de {{state}} (PDF)",
+    "pdfBody": "Lista para imprimir. Empieza con una página de instrucciones de firma que puede quitar después de firmar. El documento está en inglés, como los formularios oficiales.",
+    "pdfButton": "Descargar PDF",
+    "preview": "Vista previa",
+    "fhirTitle": "Copia para el hospital (FHIR)",
+    "fhirBody": "Una copia legible por computadora en formato HL7 FHIR, según la guía PACIO de interoperabilidad de directivas anticipadas. Muchos portales de pacientes y sistemas de salud pueden cargarla.",
+    "fhirButton": "Descargar archivo FHIR",
+    "cardTitle": "Tarjeta para la cartera",
+    "cardBody": "Imprímala, recórtela y dóblela. El código QR abre un resumen de sus deseos y cómo comunicarse con su {{agent}}.",
+    "cardButton": "Descargar tarjeta",
+    "cardNotice": "Cualquiera que escanee este código puede leer lo que contiene la tarjeta. Ese es el propósito en una emergencia, pero téngalo en cuenta.",
+    "cardShareLink": "El código de su tarjeta abre una copia cifrada de su documento completo.",
+    "cardLocal": "El código de su tarjeta contiene un resumen de sus deseos. Con una cuenta, puede abrir su documento completo.",
+    "generating": "Preparando…",
+    "error": "Algo salió mal al preparar su archivo. Inténtelo de nuevo.",
+    "incomplete": "Primero responda las preguntas obligatorias.",
+    "toReview": "Ir a revisar",
+    "jsonTitle": "Sus respuestas (copia de seguridad)",
+    "jsonBody": "Una copia de seguridad de sus respuestas que puede cargar en Carewish en otro dispositivo.",
+    "jsonButton": "Descargar copia de seguridad",
+    "importButton": "Cargar una copia de seguridad",
+    "importDone": "Se cargaron sus respuestas.",
+    "importError": "Ese archivo no es una copia de seguridad de Carewish.",
+    "deleteTitle": "Borrar todo en este dispositivo",
+    "deleteBody": "Elimina sus respuestas de este navegador. Los archivos que descargó no se ven afectados.",
+    "deleteButton": "Borrar mis respuestas",
+    "deleteConfirm": "¿Borrar todas sus respuestas de este dispositivo? No se puede deshacer.",
+    "deleted": "Se borraron sus respuestas de este dispositivo."
+  },
+  "card": {
+    "front": "Tengo una directiva anticipada",
+    "agentLabel": "Llame a mi {{agent}}",
+    "scan": "Escanee para ver mis deseos",
+    "madeWith": "Hecho con Carewish",
+    "title": "Resumen de emergencia",
+    "subtitle": "Deseos de directiva anticipada de {{name}}",
+    "born": "Nació el {{date}}",
+    "stateLine": "Directiva anticipada de {{state}}, preparada el {{date}}",
+    "call": "Llamar a {{name}}",
+    "wishes": "Deseos de tratamiento",
+    "notOriginal": "Esto es un resumen, no el documento firmado. Pida el original firmado a la persona o a su {{agent}}.",
+    "invalid": "El enlace de esta tarjeta está incompleto o dañado.",
+    "backup": "Suplente"
+  },
+  "share": {
+    "title": "Directiva anticipada compartida",
+    "loading": "Abriendo el documento cifrado…",
+    "missingKey": "A este enlace le falta su clave. Escanee el código QR de nuevo o pida un enlace nuevo.",
+    "notFound": "Este documento fue eliminado o nunca existió.",
+    "error": "No se pudo abrir este documento. Puede que el enlace esté dañado.",
+    "download": "Descargar el PDF",
+    "downloadFhir": "Descargar el archivo FHIR",
+    "privacy": "Este documento se descifró en su dispositivo. El servidor solo guarda una copia cifrada."
+  },
+  "account": {
+    "title": "Cuenta",
+    "disabled": "Este servidor de Carewish no ofrece cuentas. Sus respuestas se quedan en este navegador.",
+    "intro": "Una cuenta guarda una copia cifrada de sus respuestas para que pueda usarlas en otro dispositivo, y permite que su tarjeta abra su documento completo.",
+    "e2ee": "Sus respuestas se cifran en su dispositivo con su contraseña antes de enviarse. El servidor no puede leerlas y no podemos restablecer su contraseña. Si la olvida, su copia guardada no se puede recuperar.",
+    "signIn": "Iniciar sesión",
+    "signUp": "Crear cuenta",
+    "signOut": "Cerrar sesión",
+    "email": "Correo electrónico",
+    "password": "Contraseña",
+    "passwordHint": "Al menos 12 caracteres. Unas cuantas palabras sin relación funcionan bien.",
+    "confirm": "Entiendo que mi contraseña no se puede restablecer.",
+    "haveAccount": "¿Ya tiene una cuenta? Inicie sesión",
+    "needAccount": "¿Es nuevo? Cree una cuenta",
+    "signedInAs": "Sesión iniciada como {{email}}",
+    "syncNow": "Guardar en mi cuenta ahora",
+    "restore": "Cargar respuestas desde mi cuenta",
+    "lastSync": "Guardado en su cuenta {{time}}",
+    "neverSynced": "Todavía no se ha guardado en su cuenta",
+    "synced": "Guardado en su cuenta",
+    "restored": "Se cargaron sus respuestas desde su cuenta",
+    "noVault": "Todavía no hay nada guardado en su cuenta.",
+    "working": "Procesando…",
+    "errors": {
+      "invalid": "El correo y la contraseña no coinciden.",
+      "exists": "Ya existe una cuenta con ese correo.",
+      "weak": "Use al menos 12 caracteres.",
+      "email": "Escriba un correo electrónico válido.",
+      "rate": "Demasiados intentos. Espere un minuto e inténtelo de nuevo.",
+      "generic": "Algo salió mal. Inténtelo de nuevo.",
+      "confirm": "Confirme que lo entiende."
+    },
+    "shareTitle": "Enlace de la tarjeta",
+    "shareBody": "Cree un enlace cifrado para su tarjeta. Cualquiera que tenga la tarjeta puede abrir su documento completo; nadie más puede.",
+    "shareCreate": "Crear enlace de la tarjeta",
+    "shareUpdate": "Actualizar el documento enlazado",
+    "shareDelete": "Desactivar enlace de la tarjeta",
+    "shareActive": "El enlace de su tarjeta está activo.",
+    "deleteTitle": "Eliminar cuenta",
+    "deleteBody": "Elimina del servidor su cuenta, sus respuestas cifradas y el enlace de su tarjeta. Sus respuestas en este dispositivo se mantienen.",
+    "deleteButton": "Eliminar mi cuenta",
+    "deleteConfirm": "¿Eliminar su cuenta y todo lo guardado en ella? No se puede deshacer."
+  },
+  "about": {
+    "title": "Acerca de Carewish",
+    "body": "Carewish es software libre y de código abierto. La aplicación tiene licencia GNU AGPL 3.0, y la biblioteca de reglas estatales tiene licencia MIT para que cualquiera pueda reutilizarla.",
+    "version": "Versión {{version}} · compilación {{build}} · {{commit}}",
+    "source": "Código fuente en GitHub",
+    "rules": "Biblioteca de reglas estatales",
+    "standards": "La exportación FHIR sigue la Guía de Implementación HL7 PACIO de Interoperabilidad de Directivas Anticipadas, STU 1.",
+    "fonts": "El texto usa Atkinson Hyperlegible, una tipografía diseñada por el Braille Institute para lectores con baja visión.",
+    "notAdvice": "Carewish ofrece información legal, no asesoría legal, y no sustituye a un abogado ni una conversación con su médico."
+  },
+  "privacy": {
+    "title": "Privacidad",
+    "local": "Sus respuestas se guardan en la base de datos de su navegador (IndexedDB) en este dispositivo. No se envían a ningún lugar a menos que cree una cuenta.",
+    "account": "Si crea una cuenta, sus respuestas se cifran en su navegador con una clave hecha a partir de su contraseña. El servidor solo guarda los datos cifrados, su correo y un hash para verificar su inicio de sesión.",
+    "card": "Si imprime una tarjeta sin cuenta, su código QR contiene un resumen de sus deseos. El resumen está en la parte del enlace después del signo #, que los navegadores nunca envían a un servidor.",
+    "share": "Si crea un enlace para la tarjeta, se guarda en el servidor una copia cifrada de su documento. La clave para abrirla solo está en el código QR.",
+    "noTracking": "Carewish no tiene anuncios, ni analítica, ni rastreadores.",
+    "delete": "Puede borrar sus respuestas de este dispositivo, y su cuenta del servidor, en cualquier momento."
+  },
+  "footer": {
+    "disclaimer": "Información legal, no asesoría legal.",
+    "license": "AGPL-3.0 · biblioteca de reglas MIT",
+    "version": "v{{version}} (compilación {{build}})"
+  },
+  "notFound": {
+    "title": "No encontramos esa página",
+    "home": "Ir a la página de inicio"
+  },
+  "statements": {
+    "principal": "Yo, {{name}}, nacido(a) el {{birthDate}}, con domicilio en {{address}}, hago este documento por mi propia voluntad.",
+    "principalNoAddress": "Yo, {{name}}, nacido(a) el {{birthDate}}, hago este documento por mi propia voluntad.",
+    "agentIntro": "Elijo a la siguiente persona como mi {{agent}} para tomar decisiones de atención médica por mí:",
+    "alternateIntro": "Si mi {{agent}} no quiere, no puede o no está razonablemente disponible para actuar, elijo a:",
+    "noAgent": "No he nombrado a un {{agent}} en este documento.",
+    "noAlternate": "No he nombrado a un {{agent}} suplente.",
+    "authorityGeneral": "Mi {{agent}} puede tomar todas las decisiones de atención médica que yo podría tomar, guiándose por las instrucciones de este documento y mis demás deseos conocidos. Esto incluye elegir, rechazar o suspender cualquier atención, tratamiento, servicio o procedimiento.",
+    "authorityYes": "Mi {{agent}} también puede decidir no iniciar o suspender tratamientos de soporte vital, incluida la nutrición e hidratación artificial, aunque eso pueda permitir que yo muera.",
+    "authorityNo": "Mi {{agent}} NO puede decidir no iniciar o suspender tratamientos de soporte vital que permitirían que yo muera.",
+    "authorityStart": "La autoridad de mi {{agent}} comienza cuando mi médico determine que no puedo tomar mis propias decisiones de atención médica.",
+    "terminalIntro": "Si tengo una condición incurable e irreversible que causará mi muerte en un tiempo relativamente corto:",
+    "unconsciousIntro": "Si quedo inconsciente y, con un grado razonable de certeza médica, no recuperaré la conciencia:",
+    "advancedIllnessIntro": "Si tengo una condición en etapa final o irreversible, como demencia avanzada, y ya no puedo reconocer a mis seres queridos ni cuidarme:",
+    "treatment": {
+      "comfort": "No quiero que mi vida se prolongue con tratamientos de soporte vital. Quiero atención que me mantenga cómodo.",
+      "prolong": "Quiero que mi vida se prolongue lo más posible, dentro de los límites de las normas de atención médica generalmente aceptadas.",
+      "agent-decides": "Quiero que mi {{agent}} decida, con mis médicos, según mis valores y deseos."
+    },
+    "nutritionIntro": "Nutrición e hidratación artificial (alimentos y líquidos por un tubo o vía intravenosa):",
+    "nutrition": {
+      "want": "Quiero nutrición e hidratación artificial.",
+      "trial": "Quiero un período de prueba de nutrición e hidratación artificial, que se suspenda si no me ayuda a recuperarme.",
+      "decline": "No quiero nutrición e hidratación artificial si estoy en alguna de las condiciones descritas arriba.",
+      "agent-decides": "Mi {{agent}} puede decidir sobre la nutrición e hidratación artificial."
+    },
+    "cprIntro": "Reanimación cardiopulmonar (RCP):",
+    "cpr": {
+      "want": "Quiero que se intente la RCP si mi corazón o mi respiración se detienen.",
+      "decline": "No quiero RCP si estoy en alguna de las condiciones descritas arriba.",
+      "agent-decides": "Mi {{agent}} puede decidir sobre la RCP."
+    },
+    "painIntro": "Alivio del dolor:",
+    "pain": {
+      "comfort": "Quiero tratamiento para el dolor y las molestias en todo momento, aunque pueda adelantar mi muerte.",
+      "not-if-shortens": "Quiero alivio del dolor, pero no si adelantaría mi muerte.",
+      "agent-decides": "Mi {{agent}} puede decidir sobre el alivio del dolor que podría adelantar mi muerte."
+    },
+    "valuesIntro": "Lo más importante para mí:",
+    "values": {
+      "comfort": "Estar cómodo y sin dolor",
+      "recognize-family": "Poder reconocer a mi familia y hablar con ella",
+      "independence": "Poder cuidarme solo",
+      "not-burden": "No ser una carga para los demás",
+      "live-longer": "Vivir el mayor tiempo posible",
+      "at-home": "Estar en casa",
+      "loved-ones-near": "Tener cerca a las personas que amo",
+      "faith": "Mi fe o mis prácticas espirituales"
+    },
+    "placeIntro": "Si puedo elegir, me gustaría pasar mis últimos días:",
+    "place": {
+      "home": "En casa.",
+      "hospice": "En un centro de cuidados paliativos (hospicio).",
+      "hospital": "En un hospital.",
+      "no-preference": "No tengo preferencia."
+    },
+    "spiritualIntro": "Sobre mi fe, mi cultura y mis tradiciones:",
+    "organIntro": "Donación de órganos, tejidos y partes del cuerpo al morir:",
+    "organ": {
+      "any": "Dono cualquier órgano, tejido o parte que se necesite.",
+      "specific": "Dono solo los siguientes órganos, tejidos o partes: {{detail}}",
+      "none": "No quiero donar mis órganos, tejidos ni partes.",
+      "agent-decides": "Mi {{agent}} puede decidir si se donan mis órganos, tejidos o partes."
+    },
+    "physicianIntro": "Mi médico principal:",
+    "noPhysician": "No he nombrado a un médico principal.",
+    "otherIntro": "Otras instrucciones:",
+    "none": "No he dado instrucciones sobre este tema.",
+    "appendixTitle": "Declaración de mis otros deseos",
+    "appendixIntro": "Estos deseos son parte de mi directiva anticipada. No forman parte del formulario oficial de mi estado, y quiero que mi {{agent}} y mis médicos los sigan como expresión de mis deseos."
+  }
+}
