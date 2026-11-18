@@ -1,0 +1,41 @@
+# West Virginia — advance directive rules for Carewish.
+# Licensed MIT. Edit this file to correct the rules; run `pnpm --filter @carewish/form-rules test` afterwards.
+# This is legal information, not legal advice. Cite a source for every change.
+$schema: ../schema/state.schema.json
+code: WV
+name: West Virginia
+adultAge: 18
+terminology:
+  agent: representative
+documents:
+  - id: combined-medical-power-of-attorney-and-living-will
+    title: Combined Medical Power of Attorney and Living Will
+    kind: combined
+    citation: W. Va. Code § 16-30-4
+    parts:
+      - title: Living Will
+        sections:
+          [principal, life-sustaining, nutrition, cpr, pain-relief, values, additional-wishes]
+      - title: Medical Power of Attorney
+        sections: [agent, alternate-agent, agent-authority]
+    execution:
+      method: witnesses-and-notary
+      witnesses:
+        count: 2
+        minAge: 18
+        rules:
+          - type: none-may-be
+            attributes:
+              [
+                signed-for-principal,
+                agent,
+                relative,
+                heir,
+                financially-responsible,
+                attending-physician,
+              ]
+sources:
+  - citation: W. Va. Code ch. 16, art. 30 (Health Care Decisions Act)
+review:
+  status: needs-review
+  lastChecked: 2026-11-18

@@ -1,0 +1,70 @@
+# Wisconsin — advance directive rules for Carewish.
+# Licensed MIT. Edit this file to correct the rules; run `pnpm --filter @carewish/form-rules test` afterwards.
+# This is legal information, not legal advice. Cite a source for every change.
+$schema: ../schema/state.schema.json
+code: WI
+name: Wisconsin
+adultAge: 18
+terminology:
+  agent: health-care-agent
+documents:
+  - id: power-of-attorney-for-health-care
+    title: Power of Attorney for Health Care
+    kind: power-of-attorney
+    citation: Wis. Stat. §§ 155.10, 155.30
+    parts:
+      - title: Power of Attorney for Health Care
+        sections: [principal, agent, alternate-agent, agent-authority]
+    execution:
+      method: witnesses
+      witnesses:
+        count: 2
+        minAge: 18
+        rules:
+          - type: none-may-be
+            attributes:
+              [
+                agent,
+                relative,
+                heir,
+                financially-responsible,
+                healthcare-provider,
+                provider-employee,
+                facility-employee,
+              ]
+            note:
+              en: A chaplain or social worker who works for your health care provider or facility may be a witness.
+              es: Un capellán o trabajador social que trabaje para su proveedor o centro de salud sí puede ser testigo.
+  - id: declaration-to-physicians
+    title: Declaration to Physicians (Wisconsin Living Will)
+    kind: living-will
+    citation: Wis. Stat. § 154.03
+    parts:
+      - title: Declaration to Physicians
+        sections:
+          [principal, life-sustaining, nutrition, cpr, pain-relief, values, additional-wishes]
+    execution:
+      method: witnesses
+      witnesses:
+        count: 2
+        minAge: 18
+        rules:
+          - type: none-may-be
+            attributes:
+              [
+                relative,
+                heir,
+                financially-responsible,
+                healthcare-provider,
+                provider-employee,
+                facility-employee,
+              ]
+            note:
+              en: A chaplain or social worker who works for your health care provider or facility may be a witness.
+              es: Un capellán o trabajador social que trabaje para su proveedor o centro de salud sí puede ser testigo.
+sources:
+  - citation: Wis. Stat. ch. 154 (Advance Directives)
+  - citation: Wis. Stat. ch. 155 (Power of Attorney for Health Care)
+review:
+  status: needs-review
+  lastChecked: 2026-11-18

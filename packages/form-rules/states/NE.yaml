@@ -1,0 +1,49 @@
+# Nebraska — advance directive rules for Carewish.
+# Licensed MIT. Edit this file to correct the rules; run `pnpm --filter @carewish/form-rules test` afterwards.
+# This is legal information, not legal advice. Cite a source for every change.
+$schema: ../schema/state.schema.json
+code: NE
+name: Nebraska
+adultAge: 19
+terminology:
+  agent: health-care-agent
+documents:
+  - id: power-of-attorney-for-health-care
+    title: Power of Attorney for Health Care
+    kind: power-of-attorney
+    citation: Neb. Rev. Stat. §§ 30-3404, 30-3408
+    parts:
+      - title: Power of Attorney for Health Care
+        sections: [principal, agent, alternate-agent, agent-authority]
+    execution:
+      method: witnesses-or-notary
+      witnesses:
+        count: 2
+        minAge: 19
+        rules:
+          - type: none-may-be
+            attributes: [agent, immediate-family, heir, attending-physician]
+          - type: at-most-one
+            attributes: [provider-employee, facility-employee, insurer-employee]
+  - id: declaration
+    title: Declaration (Rights of the Terminally Ill Act)
+    kind: living-will
+    citation: Neb. Rev. Stat. § 20-404
+    parts:
+      - title: Declaration
+        sections:
+          [principal, life-sustaining, nutrition, cpr, pain-relief, values, additional-wishes]
+    execution:
+      method: witnesses-or-notary
+      witnesses:
+        count: 2
+        minAge: 19
+        rules:
+          - type: at-least-one-not
+            attributes: [provider-employee, facility-employee]
+sources:
+  - citation: Neb. Rev. Stat. §§ 30-3401 to 30-3432
+  - citation: Neb. Rev. Stat. §§ 20-401 to 20-416
+review:
+  status: needs-review
+  lastChecked: 2026-11-18

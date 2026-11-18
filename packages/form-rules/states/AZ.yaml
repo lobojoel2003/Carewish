@@ -1,0 +1,59 @@
+# Arizona — advance directive rules for Carewish.
+# Licensed MIT. Edit this file to correct the rules; run `pnpm --filter @carewish/form-rules test` afterwards.
+# This is legal information, not legal advice. Cite a source for every change.
+$schema: ../schema/state.schema.json
+code: AZ
+name: Arizona
+adultAge: 18
+terminology:
+  agent: agent
+documents:
+  - id: health-care-power-of-attorney
+    title: Health Care Power of Attorney
+    kind: power-of-attorney
+    citation: Ariz. Rev. Stat. §§ 36-3221, 36-3224
+    parts:
+      - title: Health Care Power of Attorney
+        sections: [principal, agent, alternate-agent, agent-authority]
+    execution:
+      method: witnesses-or-notary
+      witnesses:
+        count: 1
+        minAge: 18
+        rules:
+          - type: none-may-be
+            attributes: [relative, heir, agent, healthcare-provider]
+      notary:
+        disqualified: [relative, heir, agent, healthcare-provider]
+  - id: living-will
+    title: Living Will
+    kind: living-will
+    citation: Ariz. Rev. Stat. §§ 36-3261, 36-3262
+    parts:
+      - title: Living Will
+        sections:
+          [
+            principal,
+            life-sustaining,
+            nutrition,
+            cpr,
+            pain-relief,
+            values,
+            additional-wishes,
+            organ-donation,
+          ]
+    execution:
+      method: witnesses-or-notary
+      witnesses:
+        count: 1
+        minAge: 18
+        rules:
+          - type: none-may-be
+            attributes: [relative, heir, agent, healthcare-provider]
+      notary:
+        disqualified: [relative, heir, agent, healthcare-provider]
+sources:
+  - citation: Ariz. Rev. Stat. §§ 36-3201 to 36-3297
+review:
+  status: needs-review
+  lastChecked: 2026-11-18

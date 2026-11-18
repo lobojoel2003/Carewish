@@ -1,0 +1,58 @@
+# South Dakota — advance directive rules for Carewish.
+# Licensed MIT. Edit this file to correct the rules; run `pnpm --filter @carewish/form-rules test` afterwards.
+# This is legal information, not legal advice. Cite a source for every change.
+$schema: ../schema/state.schema.json
+code: SD
+name: South Dakota
+adultAge: 18
+terminology:
+  agent: agent
+documents:
+  - id: durable-power-of-attorney-for-health-care
+    title: Durable Power of Attorney for Health Care
+    kind: power-of-attorney
+    citation: S.D. Codified Laws §§ 59-7-2.1 to 59-7-2.8
+    parts:
+      - title: Durable Power of Attorney for Health Care
+        sections: [principal, agent, alternate-agent, agent-authority]
+    execution:
+      method: witnesses-and-notary
+      witnesses:
+        count: 2
+        minAge: 18
+        rules:
+          - type: none-may-be
+            attributes: [agent]
+      notary:
+        note:
+          en: The form has places for both witnesses and a notary. Signing in front of both is the safest way to make sure it is accepted.
+          es: El formulario tiene espacio para testigos y para un notario. Firmar ante ambos es la forma más segura de que lo acepten.
+  - id: living-will-declaration
+    title: Living Will Declaration
+    kind: living-will
+    citation: S.D. Codified Laws §§ 34-12D-2, 34-12D-3
+    parts:
+      - title: Living Will Declaration
+        sections:
+          [principal, life-sustaining, nutrition, cpr, pain-relief, values, additional-wishes]
+    execution:
+      method: witnesses
+      witnesses:
+        count: 2
+        minAge: 18
+        rules: []
+      notary:
+        recommended: true
+        note:
+          en: A notary is not required, but notarizing the document can help it be accepted, especially in another state.
+          es: No se requiere notario, pero notarizar el documento puede ayudar a que lo acepten, sobre todo en otro estado.
+sources:
+  - citation: S.D. Codified Laws ch. 34-12D (Living Wills)
+  - citation: S.D. Codified Laws ch. 59-7 (Durable Powers of Attorney)
+review:
+  status: needs-review
+  lastChecked: 2026-11-18
+  openQuestions:
+    [
+      Confirm the execution formalities for a South Dakota durable power of attorney for health care.,
+    ]

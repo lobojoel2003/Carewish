@@ -1,0 +1,56 @@
+# Rhode Island — advance directive rules for Carewish.
+# Licensed MIT. Edit this file to correct the rules; run `pnpm --filter @carewish/form-rules test` afterwards.
+# This is legal information, not legal advice. Cite a source for every change.
+$schema: ../schema/state.schema.json
+code: RI
+name: Rhode Island
+adultAge: 18
+terminology:
+  agent: agent
+documents:
+  - id: durable-power-of-attorney-for-health-care
+    title: Durable Power of Attorney for Health Care
+    kind: power-of-attorney
+    citation: R.I. Gen. Laws § 23-4.10-2
+    parts:
+      - title: Durable Power of Attorney for Health Care
+        sections: [principal, agent, alternate-agent, agent-authority]
+    execution:
+      method: witnesses-and-notary
+      witnesses:
+        count: 2
+        minAge: 18
+        rules:
+          - type: none-may-be
+            attributes:
+              [agent, healthcare-provider, provider-employee, facility-operator, facility-employee]
+          - type: at-least-one-not
+            attributes: [relative, heir]
+      notary:
+        note:
+          en: The form has places for both witnesses and a notary. Signing in front of both is the safest way to make sure it is accepted.
+          es: El formulario tiene espacio para testigos y para un notario. Firmar ante ambos es la forma más segura de que lo acepten.
+  - id: declaration
+    title: Declaration (Rights of the Terminally Ill Act)
+    kind: living-will
+    citation: R.I. Gen. Laws § 23-4.11-3
+    parts:
+      - title: Declaration
+        sections:
+          [principal, life-sustaining, nutrition, cpr, pain-relief, values, additional-wishes]
+    execution:
+      method: witnesses
+      witnesses:
+        count: 2
+        minAge: 18
+        rules:
+          - type: none-may-be
+            attributes: [relative]
+sources:
+  - citation: R.I. Gen. Laws ch. 23-4.10 (Health Care Power of Attorney)
+  - citation: R.I. Gen. Laws ch. 23-4.11 (Rights of the Terminally Ill Act)
+review:
+  status: needs-review
+  lastChecked: 2026-11-18
+  openQuestions:
+    [Confirm whether § 23-4.10-2 requires both witnesses and notarization or accepts either.]

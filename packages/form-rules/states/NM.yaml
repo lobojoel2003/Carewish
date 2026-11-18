@@ -1,0 +1,35 @@
+# New Mexico — advance directive rules for Carewish.
+# Licensed MIT. Edit this file to correct the rules; run `pnpm --filter @carewish/form-rules test` afterwards.
+# This is legal information, not legal advice. Cite a source for every change.
+$schema: ../schema/state.schema.json
+code: NM
+name: New Mexico
+adultAge: 18
+terminology:
+  agent: agent
+documents:
+  - id: optional-advance-health-care-directive
+    title: Optional Advance Health-Care Directive
+    kind: combined
+    citation: N.M. Stat. Ann. § 24-7A-4
+    parts:
+      - title: 'Part 1: Power of Attorney for Health Care'
+        sections: [principal, agent, alternate-agent, agent-authority]
+      - title: 'Part 2: Instructions for Health Care'
+        sections: [life-sustaining, nutrition, cpr, pain-relief, values, additional-wishes]
+      - title: 'Part 3: Donation of Organs at Death'
+        sections: [organ-donation]
+      - title: 'Part 4: Primary Physician'
+        sections: [physician]
+    execution:
+      method: signature-only
+      notary:
+        recommended: true
+        note:
+          en: Witnesses and a notary are optional in New Mexico. The form has optional witness lines; using two adult witnesses can help it be accepted.
+          es: En Nuevo México los testigos y el notario son opcionales. El formulario tiene líneas opcionales para testigos; usar dos testigos adultos puede ayudar a que lo acepten.
+sources:
+  - citation: N.M. Stat. Ann. §§ 24-7A-1 to 24-7A-18 (Uniform Health-Care Decisions Act)
+review:
+  status: needs-review
+  lastChecked: 2026-11-18

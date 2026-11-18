@@ -1,0 +1,57 @@
+# Florida — advance directive rules for Carewish.
+# Licensed MIT. Edit this file to correct the rules; run `pnpm --filter @carewish/form-rules test` afterwards.
+# This is legal information, not legal advice. Cite a source for every change.
+$schema: ../schema/state.schema.json
+code: FL
+name: Florida
+adultAge: 18
+terminology:
+  agent: health-care-surrogate
+documents:
+  - id: designation-of-health-care-surrogate
+    title: Designation of Health Care Surrogate
+    kind: power-of-attorney
+    citation: Fla. Stat. §§ 765.202, 765.203
+    parts:
+      - title: Designation of Health Care Surrogate
+        sections: [principal, agent, alternate-agent, agent-authority]
+    execution:
+      method: witnesses
+      witnesses:
+        count: 2
+        minAge: 18
+        rules:
+          - type: none-may-be
+            attributes: [agent]
+          - type: at-least-one-not
+            attributes: [spouse, blood-relative]
+  - id: living-will
+    title: Living Will
+    kind: living-will
+    citation: Fla. Stat. §§ 765.302, 765.303
+    parts:
+      - title: Living Will
+        sections:
+          [
+            principal,
+            life-sustaining,
+            nutrition,
+            cpr,
+            pain-relief,
+            values,
+            additional-wishes,
+            organ-donation,
+          ]
+    execution:
+      method: witnesses
+      witnesses:
+        count: 2
+        minAge: 18
+        rules:
+          - type: at-least-one-not
+            attributes: [spouse, blood-relative]
+sources:
+  - citation: Fla. Stat. ch. 765 (Health Care Advance Directives)
+review:
+  status: needs-review
+  lastChecked: 2026-11-18

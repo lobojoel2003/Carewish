@@ -1,0 +1,39 @@
+# Mississippi — advance directive rules for Carewish.
+# Licensed MIT. Edit this file to correct the rules; run `pnpm --filter @carewish/form-rules test` afterwards.
+# This is legal information, not legal advice. Cite a source for every change.
+$schema: ../schema/state.schema.json
+code: MS
+name: Mississippi
+adultAge: 18
+terminology:
+  agent: agent
+documents:
+  - id: advance-health-care-directive
+    title: Advance Health-Care Directive
+    kind: combined
+    citation: Miss. Code Ann. §§ 41-41-205, 41-41-209
+    parts:
+      - title: 'Part 1: Power of Attorney for Health Care'
+        sections: [principal, agent, alternate-agent, agent-authority]
+      - title: 'Part 2: Instructions for Health Care'
+        sections: [life-sustaining, nutrition, cpr, pain-relief, values, additional-wishes]
+      - title: 'Part 3: Donation of Organs at Death'
+        sections: [organ-donation]
+      - title: 'Part 4: Primary Physician'
+        sections: [physician]
+    execution:
+      method: witnesses-or-notary
+      witnesses:
+        count: 2
+        minAge: 18
+        rules:
+          - type: none-may-be
+            attributes:
+              [agent, healthcare-provider, provider-employee, facility-operator, facility-employee]
+          - type: at-least-one-not
+            attributes: [relative, heir]
+sources:
+  - citation: Miss. Code Ann. §§ 41-41-201 to 41-41-229 (Uniform Health-Care Decisions Act)
+review:
+  status: needs-review
+  lastChecked: 2026-11-18

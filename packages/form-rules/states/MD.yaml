@@ -1,0 +1,36 @@
+# Maryland — advance directive rules for Carewish.
+# Licensed MIT. Edit this file to correct the rules; run `pnpm --filter @carewish/form-rules test` afterwards.
+# This is legal information, not legal advice. Cite a source for every change.
+$schema: ../schema/state.schema.json
+code: MD
+name: Maryland
+adultAge: 18
+terminology:
+  agent: health-care-agent
+documents:
+  - id: maryland-advance-directive
+    title: 'Maryland Advance Directive: Planning for Future Health Care Decisions'
+    kind: combined
+    citation: Md. Code Ann., Health–Gen. §§ 5-602, 5-603
+    parts:
+      - title: 'Part I: Selection of Health Care Agent'
+        sections: [principal, agent, alternate-agent, agent-authority]
+      - title: 'Part II: Treatment Preferences ("Living Will")'
+        sections: [life-sustaining, nutrition, cpr, pain-relief, values, additional-wishes]
+      - title: 'Part III: After My Death'
+        sections: [organ-donation]
+    execution:
+      method: witnesses
+      witnesses:
+        count: 2
+        minAge: 18
+        rules:
+          - type: none-may-be
+            attributes: [agent]
+          - type: at-least-one-not
+            attributes: [heir, beneficiary]
+sources:
+  - citation: Md. Code Ann., Health–Gen. §§ 5-601 to 5-626 (Health Care Decisions Act)
+review:
+  status: needs-review
+  lastChecked: 2026-11-18

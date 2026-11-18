@@ -1,0 +1,83 @@
+{
+  "name": "@carewish/form-rules",
+  "version": "1.0.0",
+  "description": "Machine-readable advance directive forms, witness rules and notary rules for all 50 U.S. states and DC, with a small engine that checks who may witness.",
+  "keywords": [
+    "advance-directive",
+    "living-will",
+    "health-care-proxy",
+    "power-of-attorney",
+    "witness",
+    "notary",
+    "fhir",
+    "pacio"
+  ],
+  "license": "MIT",
+  "author": "Joel Stain Lobo",
+  "homepage": "https://github.com/lobojoel2003/Carewish/tree/main/packages/form-rules#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lobojoel2003/Carewish.git",
+    "directory": "packages/form-rules"
+  },
+  "bugs": {
+    "url": "https://github.com/lobojoel2003/Carewish/issues"
+  },
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    },
+    "./locales/en.json": "./locales/en.json",
+    "./locales/es.json": "./locales/es.json",
+    "./schema/state.schema.json": "./schema/state.schema.json",
+    "./states/*": "./states/*",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "states",
+    "schema",
+    "locales",
+    "README.md",
+    "STATES.md",
+    "LICENSE"
+  ],
+  "sideEffects": false,
+  "engines": {
+    "node": ">=18"
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  },
+  "scripts": {
+    "build:data": "node scripts/build-data.mjs",
+    "build": "node scripts/build-data.mjs && tsup",
+    "typecheck": "node scripts/build-data.mjs && tsc --noEmit",
+    "test": "node scripts/build-data.mjs && vitest run",
+    "test:coverage": "node scripts/build-data.mjs && vitest run --coverage",
+    "validate": "node scripts/build-data.mjs --check",
+    "docs:states": "node scripts/build-data.mjs && node scripts/states-table.mjs --write"
+  },
+  "devDependencies": {
+    "@types/node": "^22.18.0",
+    "@vitest/coverage-v8": "^5.1.1",
+    "ajv": "^8.17.1",
+    "ajv-formats": "^3.0.1",
+    "tsup": "^8.5.0",
+    "typescript": "^5.9.3",
+    "vitest": "^5.1.1",
+    "yaml": "^2.8.1"
+  }
+}

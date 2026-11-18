@@ -1,0 +1,40 @@
+# Connecticut — advance directive rules for Carewish.
+# Licensed MIT. Edit this file to correct the rules; run `pnpm --filter @carewish/form-rules test` afterwards.
+# This is legal information, not legal advice. Cite a source for every change.
+$schema: ../schema/state.schema.json
+code: CT
+name: Connecticut
+adultAge: 18
+terminology:
+  agent: health-care-representative
+documents:
+  - id: health-care-instructions-and-appointment
+    title: Health Care Instructions and Appointment of Health Care Representative
+    kind: combined
+    citation: Conn. Gen. Stat. §§ 19a-575a, 19a-577
+    parts:
+      - title: Health Care Instructions (Living Will)
+        sections:
+          [principal, life-sustaining, nutrition, cpr, pain-relief, values, additional-wishes]
+      - title: Appointment of Health Care Representative
+        sections: [agent, alternate-agent, agent-authority]
+      - title: Anatomical Gifts
+        sections: [organ-donation]
+    execution:
+      method: witnesses
+      witnesses:
+        count: 2
+        minAge: 18
+        rules:
+          - type: none-may-be
+            attributes: [agent]
+      special:
+        - id: mental-health-or-dds-facility
+          text:
+            en: 'If you live in a facility operated or licensed by the Department of Mental Health and Addiction Services or the Department of Developmental Services, extra witness rules apply: one witness must be a physician or licensed clinical psychologist with specialized training, and one must not be connected with the facility.'
+            es: 'Si vive en un centro operado o autorizado por el Departamento de Salud Mental y Servicios de Adicción o el Departamento de Servicios de Desarrollo, hay reglas adicionales: un testigo debe ser médico o psicólogo clínico autorizado con formación especializada, y otro no debe tener relación con el centro.'
+sources:
+  - citation: Conn. Gen. Stat. §§ 19a-570 to 19a-580h
+review:
+  status: needs-review
+  lastChecked: 2026-11-18

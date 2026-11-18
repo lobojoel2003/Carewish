@@ -1,0 +1,33 @@
+# Pennsylvania — advance directive rules for Carewish.
+# Licensed MIT. Edit this file to correct the rules; run `pnpm --filter @carewish/form-rules test` afterwards.
+# This is legal information, not legal advice. Cite a source for every change.
+$schema: ../schema/state.schema.json
+code: PA
+name: Pennsylvania
+adultAge: 18
+terminology:
+  agent: health-care-agent
+documents:
+  - id: durable-health-care-power-of-attorney-and-living-will
+    title: Durable Health Care Power of Attorney and Health Care Treatment Instructions (Living Will)
+    kind: combined
+    citation: 20 Pa. Cons. Stat. §§ 5442, 5452, 5471
+    parts:
+      - title: 'Part II: Durable Health Care Power of Attorney'
+        sections: [principal, agent, alternate-agent, agent-authority]
+      - title: 'Part III: Health Care Treatment Instructions in the Event of End-Stage Medical Condition or Permanent Unconsciousness (Living Will)'
+        sections:
+          [life-sustaining, nutrition, cpr, pain-relief, values, additional-wishes, organ-donation]
+    execution:
+      method: witnesses
+      witnesses:
+        count: 2
+        minAge: 18
+        rules:
+          - type: none-may-be
+            attributes: [signed-for-principal]
+sources:
+  - citation: 20 Pa. Cons. Stat. ch. 54 (Health Care)
+review:
+  status: needs-review
+  lastChecked: 2026-11-18

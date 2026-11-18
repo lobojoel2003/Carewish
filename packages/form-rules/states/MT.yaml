@@ -1,0 +1,34 @@
+# Montana — advance directive rules for Carewish.
+# Licensed MIT. Edit this file to correct the rules; run `pnpm --filter @carewish/form-rules test` afterwards.
+# This is legal information, not legal advice. Cite a source for every change.
+$schema: ../schema/state.schema.json
+code: MT
+name: Montana
+adultAge: 18
+terminology:
+  agent: health-care-agent
+documents:
+  - id: declaration
+    title: Declaration (Montana Rights of the Terminally Ill Act)
+    kind: combined
+    citation: Mont. Code Ann. §§ 50-9-103, 50-9-104
+    parts:
+      - title: Declaration
+        sections:
+          [principal, life-sustaining, nutrition, cpr, pain-relief, values, additional-wishes]
+      - title: Designation of Health Care Agent
+        sections: [agent, alternate-agent, agent-authority]
+    execution:
+      method: witnesses
+      witnesses:
+        count: 2
+        minAge: 18
+        rules: []
+notes:
+  - en: Montana law does not list who may not be a witness. To avoid questions later, choose adults who are not your agent and would not inherit from you.
+    es: La ley de Montana no dice quién no puede ser testigo. Para evitar dudas, elija adultos que no sean su agente y que no vayan a heredar de usted.
+sources:
+  - citation: Mont. Code Ann. §§ 50-9-101 to 50-9-206 (Rights of the Terminally Ill Act)
+review:
+  status: needs-review
+  lastChecked: 2026-11-18

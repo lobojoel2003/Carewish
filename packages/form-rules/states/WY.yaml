@@ -1,0 +1,38 @@
+# Wyoming — advance directive rules for Carewish.
+# Licensed MIT. Edit this file to correct the rules; run `pnpm --filter @carewish/form-rules test` afterwards.
+# This is legal information, not legal advice. Cite a source for every change.
+$schema: ../schema/state.schema.json
+code: WY
+name: Wyoming
+adultAge: 18
+terminology:
+  agent: agent
+documents:
+  - id: advance-health-care-directive
+    title: Advance Health Care Directive
+    kind: combined
+    citation: Wyo. Stat. Ann. §§ 35-22-403, 35-22-405
+    parts:
+      - title: 'Part 1: Power of Attorney for Health Care'
+        sections: [principal, agent, alternate-agent, agent-authority]
+      - title: 'Part 2: Instructions for Health Care'
+        sections: [life-sustaining, nutrition, cpr, pain-relief, values, additional-wishes]
+      - title: 'Part 3: Donation of Organs at Death'
+        sections: [organ-donation]
+      - title: 'Part 4: Primary Physician'
+        sections: [physician]
+    execution:
+      method: witnesses-or-notary
+      witnesses:
+        count: 2
+        minAge: 18
+        rules:
+          - type: none-may-be
+            attributes: [agent, healthcare-provider, facility-operator, facility-employee]
+          - type: at-least-one-not
+            attributes: [relative, heir]
+sources:
+  - citation: Wyo. Stat. Ann. §§ 35-22-401 to 35-22-416 (Wyoming Health Care Decisions Act)
+review:
+  status: needs-review
+  lastChecked: 2026-11-18

@@ -1,0 +1,33 @@
+# Massachusetts — advance directive rules for Carewish.
+# Licensed MIT. Edit this file to correct the rules; run `pnpm --filter @carewish/form-rules test` afterwards.
+# This is legal information, not legal advice. Cite a source for every change.
+$schema: ../schema/state.schema.json
+code: MA
+name: Massachusetts
+adultAge: 18
+terminology:
+  agent: health-care-agent
+documents:
+  - id: health-care-proxy
+    title: Massachusetts Health Care Proxy
+    kind: power-of-attorney
+    citation: Mass. Gen. Laws ch. 201D, § 2
+    parts:
+      - title: Health Care Proxy
+        sections: [principal, agent, alternate-agent, agent-authority, additional-wishes]
+    execution:
+      method: witnesses
+      witnesses:
+        count: 2
+        minAge: 18
+        rules:
+          - type: none-may-be
+            attributes: [agent]
+notes:
+  - en: Massachusetts has no official living will form. Carewish adds your treatment wishes as a signed statement for your agent and doctors.
+    es: Massachusetts no tiene un formulario oficial de testamento vital. Carewish agrega sus deseos de tratamiento como una declaración firmada para su agente y sus médicos.
+sources:
+  - citation: Mass. Gen. Laws ch. 201D (Health Care Proxies)
+review:
+  status: needs-review
+  lastChecked: 2026-11-18

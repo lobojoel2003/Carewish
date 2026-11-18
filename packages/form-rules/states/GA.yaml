@@ -1,0 +1,34 @@
+# Georgia — advance directive rules for Carewish.
+# Licensed MIT. Edit this file to correct the rules; run `pnpm --filter @carewish/form-rules test` afterwards.
+# This is legal information, not legal advice. Cite a source for every change.
+$schema: ../schema/state.schema.json
+code: GA
+name: Georgia
+adultAge: 18
+terminology:
+  agent: health-care-agent
+documents:
+  - id: advance-directive-for-health-care
+    title: Georgia Advance Directive for Health Care
+    kind: combined
+    citation: O.C.G.A. §§ 31-32-4, 31-32-5
+    parts:
+      - title: 'Part One: Health Care Agent'
+        sections: [principal, agent, alternate-agent, agent-authority, organ-donation]
+      - title: 'Part Two: Treatment Preferences'
+        sections: [life-sustaining, nutrition, cpr, pain-relief, values, additional-wishes]
+    execution:
+      method: witnesses
+      witnesses:
+        count: 2
+        minAge: 18
+        rules:
+          - type: none-may-be
+            attributes: [agent, heir, beneficiary, healthcare-provider]
+          - type: at-most-one
+            attributes: [facility-employee]
+sources:
+  - citation: O.C.G.A. §§ 31-32-1 to 31-32-14
+review:
+  status: needs-review
+  lastChecked: 2026-11-18

@@ -1,0 +1,37 @@
+# New Jersey — advance directive rules for Carewish.
+# Licensed MIT. Edit this file to correct the rules; run `pnpm --filter @carewish/form-rules test` afterwards.
+# This is legal information, not legal advice. Cite a source for every change.
+$schema: ../schema/state.schema.json
+code: NJ
+name: New Jersey
+adultAge: 18
+terminology:
+  agent: health-care-representative
+documents:
+  - id: advance-directive-for-health-care
+    title: Advance Directive for Health Care
+    kind: combined
+    citation: N.J. Stat. Ann. § 26:2H-56
+    parts:
+      - title: Proxy Directive
+        sections: [principal, agent, alternate-agent, agent-authority]
+      - title: Instruction Directive
+        sections:
+          [life-sustaining, nutrition, cpr, pain-relief, values, additional-wishes, organ-donation]
+    execution:
+      method: witnesses-or-notary
+      witnesses:
+        count: 2
+        minAge: 18
+        rules:
+          - type: none-may-be
+            attributes: [agent]
+      notary:
+        note:
+          en: An attorney at law or another person authorized to administer oaths may sign instead of a notary.
+          es: Un abogado u otra persona autorizada para tomar juramentos puede firmar en lugar de un notario.
+sources:
+  - citation: N.J. Stat. Ann. §§ 26:2H-53 to 26:2H-78 (Advance Directives for Health Care Act)
+review:
+  status: needs-review
+  lastChecked: 2026-11-18

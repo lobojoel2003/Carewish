@@ -1,0 +1,59 @@
+# District of Columbia — advance directive rules for Carewish.
+# Licensed MIT. Edit this file to correct the rules; run `pnpm --filter @carewish/form-rules test` afterwards.
+# This is legal information, not legal advice. Cite a source for every change.
+$schema: ../schema/state.schema.json
+code: DC
+name: District of Columbia
+adultAge: 18
+terminology:
+  agent: health-care-agent
+documents:
+  - id: durable-power-of-attorney-for-health-care
+    title: Durable Power of Attorney for Health Care
+    kind: power-of-attorney
+    citation: D.C. Code §§ 21-2205, 21-2207
+    parts:
+      - title: Durable Power of Attorney for Health Care
+        sections: [principal, agent, alternate-agent, agent-authority, organ-donation]
+    execution:
+      method: witnesses
+      witnesses:
+        count: 2
+        minAge: 18
+        rules:
+          - type: none-may-be
+            attributes:
+              [agent, healthcare-provider, provider-employee, facility-operator, facility-employee]
+          - type: at-least-one-not
+            attributes: [relative, heir]
+  - id: declaration
+    title: Declaration (Natural Death Act)
+    kind: living-will
+    citation: D.C. Code § 7-622
+    parts:
+      - title: Declaration
+        sections:
+          [principal, life-sustaining, nutrition, cpr, pain-relief, values, additional-wishes]
+    execution:
+      method: witnesses
+      witnesses:
+        count: 2
+        minAge: 18
+        rules:
+          - type: none-may-be
+            attributes:
+              [
+                signed-for-principal,
+                relative,
+                heir,
+                financially-responsible,
+                attending-physician,
+                provider-employee,
+                facility-employee,
+              ]
+sources:
+  - citation: D.C. Code §§ 21-2201 to 21-2213
+  - citation: D.C. Code §§ 7-621 to 7-630
+review:
+  status: needs-review
+  lastChecked: 2026-11-18

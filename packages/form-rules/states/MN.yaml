@@ -1,0 +1,46 @@
+# Minnesota — advance directive rules for Carewish.
+# Licensed MIT. Edit this file to correct the rules; run `pnpm --filter @carewish/form-rules test` afterwards.
+# This is legal information, not legal advice. Cite a source for every change.
+$schema: ../schema/state.schema.json
+code: MN
+name: Minnesota
+adultAge: 18
+terminology:
+  agent: health-care-agent
+documents:
+  - id: health-care-directive
+    title: Health Care Directive
+    kind: combined
+    citation: Minn. Stat. §§ 145C.03, 145C.16
+    parts:
+      - title: 'Part I: Appointment of Health Care Agent'
+        sections: [principal, agent, alternate-agent, agent-authority]
+      - title: 'Part II: Health Care Instructions'
+        sections:
+          [
+            life-sustaining,
+            nutrition,
+            cpr,
+            pain-relief,
+            values,
+            additional-wishes,
+            organ-donation,
+            physician,
+          ]
+    execution:
+      method: witnesses-or-notary
+      witnesses:
+        count: 2
+        minAge: 18
+        rules:
+          - type: none-may-be
+            attributes: [agent]
+          - type: at-least-one-not
+            attributes: [healthcare-provider, provider-employee]
+      notary:
+        disqualified: [agent]
+sources:
+  - citation: Minn. Stat. ch. 145C (Health Care Directives)
+review:
+  status: needs-review
+  lastChecked: 2026-11-18

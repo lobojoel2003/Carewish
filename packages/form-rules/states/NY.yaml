@@ -1,0 +1,54 @@
+# New York — advance directive rules for Carewish.
+# Licensed MIT. Edit this file to correct the rules; run `pnpm --filter @carewish/form-rules test` afterwards.
+# This is legal information, not legal advice. Cite a source for every change.
+$schema: ../schema/state.schema.json
+code: NY
+name: New York
+adultAge: 18
+terminology:
+  agent: health-care-agent
+documents:
+  - id: health-care-proxy
+    title: New York Health Care Proxy
+    kind: power-of-attorney
+    citation: N.Y. Pub. Health Law § 2981
+    parts:
+      - title: Health Care Proxy
+        sections: [principal, agent, alternate-agent, agent-authority, organ-donation]
+    execution:
+      method: witnesses
+      witnesses:
+        count: 2
+        minAge: 18
+        rules:
+          - type: none-may-be
+            attributes: [agent]
+      special:
+        - id: mental-hygiene-facility
+          text:
+            en: If you live in a mental health or developmental disabilities facility licensed or run by New York State, special witness rules apply. Ask the facility before you sign.
+            es: Si vive en un centro de salud mental o de discapacidades del desarrollo autorizado u operado por el estado de Nueva York, hay reglas especiales para los testigos. Pregunte en el centro antes de firmar.
+  - id: living-will
+    title: Living Will
+    kind: living-will
+    citation: New York common law (no statutory form)
+    parts:
+      - title: Living Will
+        sections:
+          [principal, life-sustaining, nutrition, cpr, pain-relief, values, additional-wishes]
+    execution:
+      method: witnesses
+      witnesses:
+        count: 2
+        minAge: 18
+        rules:
+          - type: none-may-be
+            attributes: [agent]
+notes:
+  - en: New York has no statutory living will. Courts accept a written living will as clear evidence of your wishes; Carewish uses the same signing rules as the health care proxy.
+    es: Nueva York no tiene un testamento vital establecido por ley. Los tribunales aceptan un testamento vital escrito como prueba clara de sus deseos; Carewish usa las mismas reglas de firma que el poder de atención médica.
+sources:
+  - citation: N.Y. Pub. Health Law art. 29-C (Health Care Agents and Proxies)
+review:
+  status: needs-review
+  lastChecked: 2026-11-18

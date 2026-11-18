@@ -1,0 +1,37 @@
+# Indiana — advance directive rules for Carewish.
+# Licensed MIT. Edit this file to correct the rules; run `pnpm --filter @carewish/form-rules test` afterwards.
+# This is legal information, not legal advice. Cite a source for every change.
+$schema: ../schema/state.schema.json
+code: IN
+name: Indiana
+adultAge: 18
+terminology:
+  agent: health-care-representative
+documents:
+  - id: advance-directive-for-health-care
+    title: Indiana Advance Directive for Health Care Decisions
+    kind: combined
+    citation: Ind. Code § 16-36-7-28
+    parts:
+      - title: Appointment of Health Care Representative
+        sections: [principal, agent, alternate-agent, agent-authority]
+      - title: Health Care Instructions
+        sections:
+          [life-sustaining, nutrition, cpr, pain-relief, values, additional-wishes, organ-donation]
+    execution:
+      method: witnesses-or-notary
+      witnesses:
+        count: 2
+        minAge: 18
+        rules:
+          - type: none-may-be
+            attributes: [agent]
+          - type: at-least-one-not
+            attributes: [spouse, relative]
+sources:
+  - citation: Ind. Code ch. 16-36-7 (Advance Directives)
+review:
+  status: needs-review
+  lastChecked: 2026-11-18
+  openQuestions:
+    [Confirm the witness restrictions in Ind. Code § 16-36-7-28 after the 2021 and 2023 amendments.]

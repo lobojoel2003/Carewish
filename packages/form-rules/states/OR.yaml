@@ -1,0 +1,38 @@
+# Oregon — advance directive rules for Carewish.
+# Licensed MIT. Edit this file to correct the rules; run `pnpm --filter @carewish/form-rules test` afterwards.
+# This is legal information, not legal advice. Cite a source for every change.
+$schema: ../schema/state.schema.json
+code: OR
+name: Oregon
+adultAge: 18
+terminology:
+  agent: health-care-representative
+documents:
+  - id: advance-directive-for-health-care
+    title: Advance Directive for Health Care
+    kind: combined
+    citation: Or. Rev. Stat. §§ 127.515, 127.531
+    parts:
+      - title: Appointment of Health Care Representative
+        sections: [principal, agent, alternate-agent, agent-authority]
+      - title: Health Care Instructions
+        sections: [life-sustaining, nutrition, cpr, pain-relief, values, additional-wishes]
+    execution:
+      method: witnesses
+      witnesses:
+        count: 2
+        minAge: 18
+        rules:
+          - type: none-may-be
+            attributes: [agent, attending-physician]
+          - type: at-least-one-not
+            attributes: [relative, heir, facility-operator, facility-employee]
+      agentAcceptance: true
+notes:
+  - en: Your health care representative must sign to accept the appointment before it takes effect.
+    es: Su representante de atención médica debe firmar para aceptar el nombramiento antes de que tenga efecto.
+sources:
+  - citation: Or. Rev. Stat. §§ 127.505–127.660 (Health Care Decisions)
+review:
+  status: needs-review
+  lastChecked: 2026-11-18

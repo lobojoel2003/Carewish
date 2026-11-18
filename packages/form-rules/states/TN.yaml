@@ -1,0 +1,36 @@
+# Tennessee — advance directive rules for Carewish.
+# Licensed MIT. Edit this file to correct the rules; run `pnpm --filter @carewish/form-rules test` afterwards.
+# This is legal information, not legal advice. Cite a source for every change.
+$schema: ../schema/state.schema.json
+code: TN
+name: Tennessee
+adultAge: 18
+terminology:
+  agent: agent
+documents:
+  - id: advance-directive-for-health-care
+    title: Advance Directive for Health Care
+    kind: combined
+    citation: Tenn. Code Ann. §§ 68-11-1803, 68-11-1805
+    parts:
+      - title: Agent
+        sections: [principal, agent, alternate-agent, agent-authority]
+      - title: Indicate Your Wishes for Quality of Life and Treatment
+        sections: [life-sustaining, nutrition, cpr, pain-relief, values, additional-wishes]
+      - title: Organ Donation
+        sections: [organ-donation]
+    execution:
+      method: witnesses-or-notary
+      witnesses:
+        count: 2
+        minAge: 18
+        rules:
+          - type: none-may-be
+            attributes: [agent]
+          - type: at-least-one-not
+            attributes: [relative, heir]
+sources:
+  - citation: Tenn. Code Ann. §§ 68-11-1801 to 68-11-1815 (Tennessee Health Care Decisions Act)
+review:
+  status: needs-review
+  lastChecked: 2026-11-18

@@ -1,0 +1,38 @@
+# Arkansas — advance directive rules for Carewish.
+# Licensed MIT. Edit this file to correct the rules; run `pnpm --filter @carewish/form-rules test` afterwards.
+# This is legal information, not legal advice. Cite a source for every change.
+$schema: ../schema/state.schema.json
+code: AR
+name: Arkansas
+adultAge: 18
+terminology:
+  agent: health-care-proxy
+documents:
+  - id: declaration
+    title: Declaration (Rights of the Terminally Ill or Permanently Unconscious Act)
+    kind: combined
+    citation: Ark. Code Ann. § 20-17-202
+    parts:
+      - title: Declaration
+        sections:
+          [principal, life-sustaining, nutrition, cpr, pain-relief, values, additional-wishes]
+      - title: Designation of Health Care Proxy
+        sections: [agent, alternate-agent, agent-authority]
+    execution:
+      method: witnesses
+      witnesses:
+        count: 2
+        minAge: 18
+        rules: []
+notes:
+  - en: Arkansas law does not list who may not be a witness. To avoid questions later, choose adults who are not your health care proxy and would not inherit from you.
+    es: La ley de Arkansas no dice quién no puede ser testigo. Para evitar dudas, elija adultos que no sean su apoderado de atención médica y que no vayan a heredar de usted.
+sources:
+  - citation: Ark. Code Ann. §§ 20-17-201 to 20-17-218
+review:
+  status: needs-review
+  lastChecked: 2026-11-18
+  openQuestions:
+    [
+      Confirm whether a durable power of attorney for health care under § 20-13-104 should be offered as a separate document.,
+    ]

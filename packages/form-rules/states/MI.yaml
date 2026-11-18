@@ -1,0 +1,51 @@
+# Michigan — advance directive rules for Carewish.
+# Licensed MIT. Edit this file to correct the rules; run `pnpm --filter @carewish/form-rules test` afterwards.
+# This is legal information, not legal advice. Cite a source for every change.
+$schema: ../schema/state.schema.json
+code: MI
+name: Michigan
+adultAge: 18
+terminology:
+  agent: patient-advocate
+documents:
+  - id: patient-advocate-designation
+    title: Patient Advocate Designation
+    kind: combined
+    citation: Mich. Comp. Laws §§ 700.5506, 700.5507
+    parts:
+      - title: Designation of Patient Advocate
+        sections: [principal, agent, alternate-agent, agent-authority]
+      - title: Statement of My Wishes
+        sections: [life-sustaining, nutrition, cpr, pain-relief, values, additional-wishes]
+      - title: Anatomical Gifts
+        sections: [organ-donation]
+    execution:
+      method: witnesses
+      witnesses:
+        count: 2
+        minAge: 18
+        rules:
+          - type: none-may-be
+            attributes:
+              [
+                agent,
+                immediate-family,
+                heir,
+                attending-physician,
+                insurer-employee,
+                facility-employee,
+              ]
+      agentAcceptance: true
+      special:
+        - id: mental-health-program
+          text:
+            en: An employee of a community mental health services program, or of a home for the aged, also cannot be your witness.
+            es: Un empleado de un programa comunitario de salud mental o de un hogar para ancianos tampoco puede ser su testigo.
+notes:
+  - en: Your patient advocate must sign an acceptance statement before they can act for you. Michigan law sets out the statement's wording.
+    es: Su defensor del paciente debe firmar una declaración de aceptación antes de poder actuar por usted. La ley de Michigan establece el texto de esa declaración.
+sources:
+  - citation: Mich. Comp. Laws §§ 700.5506–700.5515
+review:
+  status: needs-review
+  lastChecked: 2026-11-18

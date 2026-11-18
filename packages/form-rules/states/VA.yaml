@@ -1,0 +1,35 @@
+# Virginia — advance directive rules for Carewish.
+# Licensed MIT. Edit this file to correct the rules; run `pnpm --filter @carewish/form-rules test` afterwards.
+# This is legal information, not legal advice. Cite a source for every change.
+$schema: ../schema/state.schema.json
+code: VA
+name: Virginia
+adultAge: 18
+terminology:
+  agent: agent
+documents:
+  - id: advance-medical-directive
+    title: Advance Medical Directive
+    kind: combined
+    citation: Va. Code Ann. §§ 54.1-2983, 54.1-2984
+    parts:
+      - title: 'Part I: Appointment of Agent'
+        sections: [principal, agent, alternate-agent, agent-authority]
+      - title: 'Part II: Health Care Instructions'
+        sections: [life-sustaining, nutrition, cpr, pain-relief, values, additional-wishes]
+      - title: 'Part III: Anatomical Gifts'
+        sections: [organ-donation]
+    execution:
+      method: witnesses
+      witnesses:
+        count: 2
+        minAge: 18
+        rules: []
+notes:
+  - en: In Virginia, your spouse or a blood relative may be one of your witnesses.
+    es: En Virginia, su cónyuge o un pariente consanguíneo puede ser uno de sus testigos.
+sources:
+  - citation: Va. Code Ann. §§ 54.1-2981 to 54.1-2993 (Health Care Decisions Act)
+review:
+  status: needs-review
+  lastChecked: 2026-11-18

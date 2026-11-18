@@ -1,0 +1,41 @@
+# New Hampshire — advance directive rules for Carewish.
+# Licensed MIT. Edit this file to correct the rules; run `pnpm --filter @carewish/form-rules test` afterwards.
+# This is legal information, not legal advice. Cite a source for every change.
+$schema: ../schema/state.schema.json
+code: NH
+name: New Hampshire
+adultAge: 18
+terminology:
+  agent: agent
+documents:
+  - id: advance-directive
+    title: Advance Directive
+    kind: combined
+    citation: N.H. Rev. Stat. Ann. §§ 137-J:14, 137-J:20
+    parts:
+      - title: 'Part I: Durable Power of Attorney for Health Care'
+        sections: [principal, agent, alternate-agent, agent-authority]
+      - title: 'Part II: Living Will'
+        sections: [life-sustaining, nutrition, cpr, pain-relief, values, additional-wishes]
+    execution:
+      method: witnesses-or-notary
+      witnesses:
+        count: 2
+        minAge: 18
+        rules:
+          - type: none-may-be
+            attributes: [agent]
+          - type: at-least-one-not
+            attributes: [spouse, heir]
+          - type: at-most-one
+            attributes:
+              [healthcare-provider, provider-employee, facility-operator, facility-employee]
+      notary:
+        note:
+          en: A justice of the peace may sign instead of a notary public.
+          es: Un juez de paz puede firmar en lugar de un notario público.
+sources:
+  - citation: N.H. Rev. Stat. Ann. ch. 137-J
+review:
+  status: needs-review
+  lastChecked: 2026-11-18

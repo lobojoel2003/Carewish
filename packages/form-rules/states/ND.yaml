@@ -1,0 +1,40 @@
+# North Dakota — advance directive rules for Carewish.
+# Licensed MIT. Edit this file to correct the rules; run `pnpm --filter @carewish/form-rules test` afterwards.
+# This is legal information, not legal advice. Cite a source for every change.
+$schema: ../schema/state.schema.json
+code: ND
+name: North Dakota
+adultAge: 18
+terminology:
+  agent: health-care-agent
+documents:
+  - id: health-care-directive
+    title: Health Care Directive
+    kind: combined
+    citation: N.D. Cent. Code §§ 23-06.5-05, 23-06.5-17
+    parts:
+      - title: 'Part I: Appointment of Health Care Agent'
+        sections: [principal, agent, alternate-agent, agent-authority]
+      - title: 'Part II: Health Care Instructions'
+        sections: [life-sustaining, nutrition, cpr, pain-relief, values, additional-wishes]
+      - title: 'Part III: Organ Donation'
+        sections: [organ-donation]
+    execution:
+      method: witnesses-or-notary
+      witnesses:
+        count: 2
+        minAge: 18
+        rules:
+          - type: none-may-be
+            attributes: [agent]
+          - type: at-least-one-not
+            attributes: [healthcare-provider, provider-employee, facility-employee]
+      notary:
+        disqualified: [agent]
+sources:
+  - citation: N.D. Cent. Code ch. 23-06.5 (Health Care Directives)
+review:
+  status: needs-review
+  lastChecked: 2026-11-18
+  openQuestions:
+    [Confirm whether relatives or heirs are disqualified as witnesses under § 23-06.5-05.]

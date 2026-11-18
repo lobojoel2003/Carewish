@@ -1,0 +1,67 @@
+# North Carolina — advance directive rules for Carewish.
+# Licensed MIT. Edit this file to correct the rules; run `pnpm --filter @carewish/form-rules test` afterwards.
+# This is legal information, not legal advice. Cite a source for every change.
+$schema: ../schema/state.schema.json
+code: NC
+name: North Carolina
+adultAge: 18
+terminology:
+  agent: health-care-agent
+documents:
+  - id: health-care-power-of-attorney
+    title: Health Care Power of Attorney
+    kind: power-of-attorney
+    citation: N.C. Gen. Stat. §§ 32A-16, 32A-25.1
+    parts:
+      - title: Health Care Power of Attorney
+        sections: [principal, agent, alternate-agent, agent-authority, organ-donation]
+    execution:
+      method: witnesses-and-notary
+      witnesses:
+        count: 2
+        minAge: 18
+        rules:
+          - type: none-may-be
+            attributes:
+              [
+                agent,
+                relative-within-third-degree,
+                heir,
+                attending-physician,
+                provider-employee,
+                facility-employee,
+                creditor,
+              ]
+  - id: advance-directive-for-a-natural-death
+    title: Advance Directive for a Natural Death ("Living Will")
+    kind: living-will
+    citation: N.C. Gen. Stat. § 90-321
+    parts:
+      - title: Advance Directive for a Natural Death
+        sections:
+          [principal, life-sustaining, nutrition, cpr, pain-relief, values, additional-wishes]
+    execution:
+      method: witnesses-and-notary
+      witnesses:
+        count: 2
+        minAge: 18
+        rules:
+          - type: none-may-be
+            attributes:
+              [
+                relative-within-third-degree,
+                heir,
+                attending-physician,
+                provider-employee,
+                facility-employee,
+                creditor,
+              ]
+notes:
+  - en: North Carolina requires two qualified witnesses and a notary, all at the same signing.
+    es: Carolina del Norte exige dos testigos calificados y un notario, todos en la misma firma.
+sources:
+  - citation: N.C. Gen. Stat. ch. 32A, art. 3 (Health Care Powers of Attorney)
+  - citation: N.C. Gen. Stat. §§ 90-320 to 90-323 (Right to Natural Death)
+review:
+  status: needs-review
+  lastChecked: 2026-11-18

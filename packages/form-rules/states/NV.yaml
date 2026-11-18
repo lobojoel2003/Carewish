@@ -1,0 +1,48 @@
+# Nevada — advance directive rules for Carewish.
+# Licensed MIT. Edit this file to correct the rules; run `pnpm --filter @carewish/form-rules test` afterwards.
+# This is legal information, not legal advice. Cite a source for every change.
+$schema: ../schema/state.schema.json
+code: NV
+name: Nevada
+adultAge: 18
+terminology:
+  agent: agent
+documents:
+  - id: durable-power-of-attorney-for-health-care-decisions
+    title: Durable Power of Attorney for Health Care Decisions
+    kind: power-of-attorney
+    citation: Nev. Rev. Stat. §§ 162A.790, 162A.860
+    parts:
+      - title: Durable Power of Attorney for Health Care Decisions
+        sections: [principal, agent, alternate-agent, agent-authority]
+    execution:
+      method: witnesses-or-notary
+      witnesses:
+        count: 2
+        minAge: 18
+        rules:
+          - type: none-may-be
+            attributes:
+              [agent, healthcare-provider, provider-employee, facility-operator, facility-employee]
+          - type: at-least-one-not
+            attributes: [relative, heir]
+  - id: declaration
+    title: Declaration (Living Will)
+    kind: living-will
+    citation: Nev. Rev. Stat. §§ 449A.433, 449A.438
+    parts:
+      - title: Declaration
+        sections:
+          [principal, life-sustaining, nutrition, cpr, pain-relief, values, additional-wishes]
+    execution:
+      method: witnesses
+      witnesses:
+        count: 2
+        minAge: 18
+        rules: []
+sources:
+  - citation: Nev. Rev. Stat. §§ 162A.700–162A.870
+  - citation: Nev. Rev. Stat. ch. 449A (Uniform Act on Rights of the Terminally Ill)
+review:
+  status: needs-review
+  lastChecked: 2026-11-18

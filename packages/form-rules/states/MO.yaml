@@ -1,0 +1,41 @@
+# Missouri — advance directive rules for Carewish.
+# Licensed MIT. Edit this file to correct the rules; run `pnpm --filter @carewish/form-rules test` afterwards.
+# This is legal information, not legal advice. Cite a source for every change.
+$schema: ../schema/state.schema.json
+code: MO
+name: Missouri
+adultAge: 18
+terminology:
+  agent: health-care-agent
+documents:
+  - id: durable-power-of-attorney-for-health-care
+    title: Durable Power of Attorney for Health Care
+    kind: power-of-attorney
+    citation: Mo. Rev. Stat. §§ 404.705, 404.800–404.872
+    parts:
+      - title: Durable Power of Attorney for Health Care
+        sections: [principal, agent, alternate-agent, agent-authority]
+    execution:
+      method: notary
+  - id: health-care-declaration
+    title: Health Care Declaration
+    kind: living-will
+    citation: Mo. Rev. Stat. § 459.015
+    parts:
+      - title: Declaration
+        sections:
+          [principal, life-sustaining, nutrition, cpr, pain-relief, values, additional-wishes]
+    execution:
+      method: witnesses
+      witnesses:
+        count: 2
+        minAge: 18
+        rules:
+          - type: none-may-be
+            attributes: [signed-for-principal]
+sources:
+  - citation: Mo. Rev. Stat. §§ 404.800–404.872 (Durable Power of Attorney for Health Care Act)
+  - citation: Mo. Rev. Stat. §§ 459.010–459.055
+review:
+  status: needs-review
+  lastChecked: 2026-11-18

@@ -1,0 +1,47 @@
+# Utah — advance directive rules for Carewish.
+# Licensed MIT. Edit this file to correct the rules; run `pnpm --filter @carewish/form-rules test` afterwards.
+# This is legal information, not legal advice. Cite a source for every change.
+$schema: ../schema/state.schema.json
+code: UT
+name: Utah
+adultAge: 18
+terminology:
+  agent: agent
+documents:
+  - id: advance-health-care-directive
+    title: Utah Advance Health Care Directive
+    kind: combined
+    citation: Utah Code Ann. §§ 75-2a-107, 75-2a-117
+    parts:
+      - title: 'Part I: Allow Another Person to Make Health Care Decisions'
+        sections: [principal, agent, alternate-agent, agent-authority]
+      - title: 'Part II: Make My Own Health Care Decisions'
+        sections:
+          [life-sustaining, nutrition, cpr, pain-relief, values, additional-wishes, organ-donation]
+    execution:
+      method: witnesses
+      witnesses:
+        count: 1
+        minAge: 18
+        rules:
+          - type: none-may-be
+            attributes:
+              [
+                signed-for-principal,
+                agent,
+                relative,
+                heir,
+                beneficiary,
+                financially-responsible,
+                healthcare-provider,
+                facility-employee,
+              ]
+sources:
+  - citation: Utah Code Ann. tit. 75, ch. 2a (Advance Health Care Directive Act)
+review:
+  status: needs-review
+  lastChecked: 2026-11-18
+  openQuestions:
+    [
+      Confirm whether facility administrators and employees are disqualified witnesses under § 75-2a-107.,
+    ]

@@ -1,0 +1,41 @@
+# Vermont — advance directive rules for Carewish.
+# Licensed MIT. Edit this file to correct the rules; run `pnpm --filter @carewish/form-rules test` afterwards.
+# This is legal information, not legal advice. Cite a source for every change.
+$schema: ../schema/state.schema.json
+code: VT
+name: Vermont
+adultAge: 18
+terminology:
+  agent: agent
+documents:
+  - id: advance-directive
+    title: Advance Directive
+    kind: combined
+    citation: Vt. Stat. Ann. tit. 18, § 9703
+    parts:
+      - title: 'Part 1: Appointment of Agent'
+        sections: [principal, agent, alternate-agent, agent-authority]
+      - title: 'Part 2: Instructions for Health Care'
+        sections: [life-sustaining, nutrition, cpr, pain-relief, values, additional-wishes]
+      - title: 'Part 3: Donation of Organs at Death'
+        sections: [organ-donation]
+      - title: 'Part 4: Primary Physician'
+        sections: [physician]
+    execution:
+      method: witnesses
+      witnesses:
+        count: 2
+        minAge: 18
+        rules:
+          - type: none-may-be
+            attributes: [agent, immediate-family]
+      special:
+        - id: facility-explanation
+          text:
+            en: If you are being admitted to, or live in, a hospital, nursing home, or residential care facility, a person the law designates (such as an ombudsman, clergy member, lawyer, or designated hospital employee) must explain the document to you and sign a statement that they did.
+            es: Si está ingresando o vive en un hospital, hogar de ancianos o centro de cuidado residencial, una persona designada por la ley (como un ombudsman, un miembro del clero, un abogado o un empleado designado del hospital) debe explicarle el documento y firmar una declaración de que lo hizo.
+sources:
+  - citation: Vt. Stat. Ann. tit. 18, ch. 231 (Advance Directives)
+review:
+  status: needs-review
+  lastChecked: 2026-11-18

@@ -1,0 +1,46 @@
+# California — advance directive rules for Carewish.
+# Licensed MIT. Edit this file to correct the rules; run `pnpm --filter @carewish/form-rules test` afterwards.
+# This is legal information, not legal advice. Cite a source for every change.
+$schema: ../schema/state.schema.json
+code: CA
+name: California
+adultAge: 18
+terminology:
+  agent: agent
+documents:
+  - id: advance-health-care-directive
+    title: Advance Health Care Directive
+    kind: combined
+    citation: Cal. Prob. Code § 4701
+    parts:
+      - title: 'Part 1: Power of Attorney for Health Care'
+        sections: [principal, agent, alternate-agent, agent-authority]
+      - title: 'Part 2: Instructions for Health Care'
+        sections: [life-sustaining, nutrition, cpr, pain-relief, values, additional-wishes]
+      - title: 'Part 3: Donation of Organs at Death'
+        sections: [organ-donation]
+      - title: 'Part 4: Primary Physician'
+        sections: [physician]
+    execution:
+      method: witnesses-or-notary
+      witnesses:
+        count: 2
+        minAge: 18
+        rules:
+          - type: none-may-be
+            attributes:
+              [agent, healthcare-provider, provider-employee, facility-operator, facility-employee]
+          - type: at-least-one-not
+            attributes: [relative, heir]
+      special:
+        - id: skilled-nursing-facility
+          text:
+            en: If you live in a skilled nursing facility, a patient advocate or ombudsman must also sign as a witness, even if you use a notary.
+            es: Si vive en un centro de enfermería especializada, un defensor del paciente u ombudsman también debe firmar como testigo, aunque use un notario.
+sources:
+  - citation: Cal. Prob. Code §§ 4670–4743
+  - citation: Cal. Prob. Code § 4674 (witnesses)
+  - citation: Cal. Prob. Code § 4675 (skilled nursing facilities)
+review:
+  status: needs-review
+  lastChecked: 2026-11-18

@@ -1,0 +1,61 @@
+# Texas — advance directive rules for Carewish.
+# Licensed MIT. Edit this file to correct the rules; run `pnpm --filter @carewish/form-rules test` afterwards.
+# This is legal information, not legal advice. Cite a source for every change.
+$schema: ../schema/state.schema.json
+code: TX
+name: Texas
+adultAge: 18
+terminology:
+  agent: agent
+documents:
+  - id: medical-power-of-attorney
+    title: Medical Power of Attorney
+    kind: power-of-attorney
+    citation: Tex. Health & Safety Code §§ 166.154, 166.164
+    parts:
+      - title: Medical Power of Attorney Designation of Health Care Agent
+        sections: [principal, agent, alternate-agent, agent-authority]
+    execution:
+      method: witnesses-or-notary
+      witnesses:
+        count: 2
+        minAge: 18
+        rules:
+          - type: none-may-be
+            attributes: [agent]
+          - type: at-least-one-not
+            attributes:
+              [relative, heir, attending-physician, provider-employee, facility-employee, creditor]
+  - id: directive-to-physicians
+    title: Directive to Physicians and Family or Surrogates
+    kind: living-will
+    citation: Tex. Health & Safety Code §§ 166.003, 166.033
+    parts:
+      - title: Directive to Physicians and Family or Surrogates
+        sections:
+          [principal, life-sustaining, nutrition, cpr, pain-relief, values, additional-wishes]
+    execution:
+      method: witnesses-or-notary
+      witnesses:
+        count: 2
+        minAge: 18
+        rules:
+          - type: at-least-one-not
+            attributes:
+              [
+                agent,
+                relative,
+                heir,
+                attending-physician,
+                provider-employee,
+                facility-employee,
+                creditor,
+              ]
+notes:
+  - en: In Texas, a facility employee only counts against the witness rule if they give you direct patient care or are an officer, director, partner, or business office employee of the facility.
+    es: En Texas, un empleado del centro solo cuenta para esta regla si le da atención directa o es directivo, socio o empleado de la oficina administrativa del centro.
+sources:
+  - citation: Tex. Health & Safety Code ch. 166 (Advance Directives Act)
+review:
+  status: needs-review
+  lastChecked: 2026-11-18

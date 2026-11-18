@@ -1,0 +1,35 @@
+# Oklahoma — advance directive rules for Carewish.
+# Licensed MIT. Edit this file to correct the rules; run `pnpm --filter @carewish/form-rules test` afterwards.
+# This is legal information, not legal advice. Cite a source for every change.
+$schema: ../schema/state.schema.json
+code: OK
+name: Oklahoma
+adultAge: 18
+terminology:
+  agent: health-care-proxy
+documents:
+  - id: advance-directive-for-health-care
+    title: Advance Directive for Health Care
+    kind: combined
+    citation: Okla. Stat. tit. 63, § 3101.4
+    parts:
+      - title: 'Part I: Living Will'
+        sections:
+          [principal, life-sustaining, nutrition, cpr, pain-relief, values, additional-wishes]
+      - title: 'Part II: Appointment of Health Care Proxy'
+        sections: [agent, alternate-agent, agent-authority]
+      - title: 'Part III: Anatomical Gifts'
+        sections: [organ-donation]
+    execution:
+      method: witnesses
+      witnesses:
+        count: 2
+        minAge: 18
+        rules:
+          - type: none-may-be
+            attributes: [heir]
+sources:
+  - citation: Okla. Stat. tit. 63, §§ 3101.1–3101.16 (Oklahoma Advance Directive Act)
+review:
+  status: needs-review
+  lastChecked: 2026-11-18

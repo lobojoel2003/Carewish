@@ -1,0 +1,46 @@
+# Illinois — advance directive rules for Carewish.
+# Licensed MIT. Edit this file to correct the rules; run `pnpm --filter @carewish/form-rules test` afterwards.
+# This is legal information, not legal advice. Cite a source for every change.
+$schema: ../schema/state.schema.json
+code: IL
+name: Illinois
+adultAge: 18
+terminology:
+  agent: agent
+documents:
+  - id: power-of-attorney-for-health-care
+    title: Illinois Statutory Short Form Power of Attorney for Health Care
+    kind: combined
+    citation: 755 ILCS 45/4-10
+    parts:
+      - title: Power of Attorney for Health Care
+        sections: [principal, agent, alternate-agent, agent-authority]
+      - title: My Health Care Wishes
+        sections:
+          [life-sustaining, nutrition, cpr, pain-relief, values, additional-wishes, organ-donation]
+    execution:
+      method: witnesses
+      witnesses:
+        count: 1
+        minAge: 18
+        rules:
+          - type: none-may-be
+            attributes:
+              [
+                agent,
+                attending-physician,
+                facility-operator,
+                immediate-family,
+                relative-by-marriage,
+              ]
+notes:
+  - en: In Illinois, relatives of your agent, and relatives of your doctor or of the owner of your care facility, also can't be your witness.
+    es: En Illinois, los parientes de su agente, de su médico o del dueño de su centro de cuidado tampoco pueden ser su testigo.
+  - en: Your treatment wishes are included in the power of attorney, so a separate Illinois living will is not needed.
+    es: Sus deseos de tratamiento están incluidos en el poder notarial, así que no necesita un testamento vital de Illinois por separado.
+sources:
+  - citation: 755 ILCS 45/Art. IV (Powers of Attorney for Health Care Law)
+  - citation: 755 ILCS 35 (Illinois Living Will Act)
+review:
+  status: needs-review
+  lastChecked: 2026-11-18

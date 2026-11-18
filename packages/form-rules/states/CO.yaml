@@ -1,0 +1,53 @@
+# Colorado — advance directive rules for Carewish.
+# Licensed MIT. Edit this file to correct the rules; run `pnpm --filter @carewish/form-rules test` afterwards.
+# This is legal information, not legal advice. Cite a source for every change.
+$schema: ../schema/state.schema.json
+code: CO
+name: Colorado
+adultAge: 18
+terminology:
+  agent: agent
+documents:
+  - id: medical-durable-power-of-attorney
+    title: Medical Durable Power of Attorney
+    kind: power-of-attorney
+    citation: Colo. Rev. Stat. § 15-14-506
+    parts:
+      - title: Medical Durable Power of Attorney
+        sections: [principal, agent, alternate-agent, agent-authority]
+    execution:
+      method: signature-only
+      notary:
+        recommended: true
+        note:
+          en: A notary is not required, but notarizing the document can help it be accepted, especially in another state.
+          es: No se requiere notario, pero notarizar el documento puede ayudar a que lo acepten, sobre todo en otro estado.
+  - id: declaration-as-to-medical-or-surgical-treatment
+    title: Declaration as to Medical or Surgical Treatment
+    kind: living-will
+    citation: Colo. Rev. Stat. §§ 15-18-104, 15-18-106
+    parts:
+      - title: Declaration as to Medical or Surgical Treatment
+        sections:
+          [principal, life-sustaining, nutrition, cpr, pain-relief, values, additional-wishes]
+    execution:
+      method: witnesses
+      witnesses:
+        count: 2
+        minAge: 18
+        rules:
+          - type: none-may-be
+            attributes: [physician, provider-employee, facility-employee, creditor, heir]
+      notary:
+        recommended: true
+        note:
+          en: The statutory form includes a notary section. Having the declaration notarized is recommended.
+          es: El formulario oficial incluye una sección para notario. Se recomienda notarizar la declaración.
+sources:
+  - citation: Colo. Rev. Stat. §§ 15-14-501 to 15-14-509
+  - citation: Colo. Rev. Stat. §§ 15-18-101 to 15-18-113
+review:
+  status: needs-review
+  lastChecked: 2026-11-18
+  openQuestions:
+    [Confirm whether notarization of the § 15-18-104 declaration is required or optional.]

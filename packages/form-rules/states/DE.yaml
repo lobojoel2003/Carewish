@@ -1,0 +1,49 @@
+# Delaware — advance directive rules for Carewish.
+# Licensed MIT. Edit this file to correct the rules; run `pnpm --filter @carewish/form-rules test` afterwards.
+# This is legal information, not legal advice. Cite a source for every change.
+$schema: ../schema/state.schema.json
+code: DE
+name: Delaware
+adultAge: 18
+terminology:
+  agent: agent
+documents:
+  - id: advance-health-care-directive
+    title: Advance Health-Care Directive
+    kind: combined
+    citation: Del. Code Ann. tit. 16, §§ 2503, 2505
+    parts:
+      - title: 'Part 1: Power of Attorney for Health Care'
+        sections: [principal, agent, alternate-agent, agent-authority]
+      - title: 'Part 2: Instructions for Health Care'
+        sections: [life-sustaining, nutrition, cpr, pain-relief, values, additional-wishes]
+      - title: 'Part 3: Donation of Organs at Death'
+        sections: [organ-donation]
+      - title: 'Part 4: Primary Physician'
+        sections: [physician]
+    execution:
+      method: witnesses
+      witnesses:
+        count: 2
+        minAge: 18
+        rules:
+          - type: none-may-be
+            attributes:
+              [
+                relative,
+                heir,
+                creditor,
+                financially-responsible,
+                facility-operator,
+                facility-employee,
+              ]
+      special:
+        - id: nursing-facility
+          text:
+            en: If you live in a nursing home or similar long-term care facility, one witness must be a patient advocate or ombudsman.
+            es: Si vive en un hogar de ancianos o un centro similar de cuidado a largo plazo, uno de los testigos debe ser un defensor del paciente u ombudsman.
+sources:
+  - citation: Del. Code Ann. tit. 16, §§ 2501–2518
+review:
+  status: needs-review
+  lastChecked: 2026-11-18

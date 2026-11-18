@@ -1,0 +1,60 @@
+# South Carolina — advance directive rules for Carewish.
+# Licensed MIT. Edit this file to correct the rules; run `pnpm --filter @carewish/form-rules test` afterwards.
+# This is legal information, not legal advice. Cite a source for every change.
+$schema: ../schema/state.schema.json
+code: SC
+name: South Carolina
+adultAge: 18
+terminology:
+  agent: health-care-agent
+documents:
+  - id: health-care-power-of-attorney
+    title: Health Care Power of Attorney
+    kind: power-of-attorney
+    citation: S.C. Code Ann. § 62-5-504
+    parts:
+      - title: Health Care Power of Attorney
+        sections: [principal, agent, alternate-agent, agent-authority, organ-donation]
+    execution:
+      method: witnesses
+      witnesses:
+        count: 2
+        minAge: 18
+        rules:
+          - type: none-may-be
+            attributes: [agent, relative, financially-responsible, heir, beneficiary, creditor]
+          - type: at-most-one
+            attributes: [facility-employee]
+  - id: declaration-of-a-desire-for-a-natural-death
+    title: Declaration of a Desire for a Natural Death
+    kind: living-will
+    citation: S.C. Code Ann. §§ 44-77-40, 44-77-50
+    parts:
+      - title: Declaration of a Desire for a Natural Death
+        sections:
+          [principal, life-sustaining, nutrition, cpr, pain-relief, values, additional-wishes]
+    execution:
+      method: witnesses-and-notary
+      witnesses:
+        count: 2
+        minAge: 18
+        rules:
+          - type: none-may-be
+            attributes:
+              [
+                relative,
+                financially-responsible,
+                heir,
+                beneficiary,
+                attending-physician,
+                provider-employee,
+                creditor,
+              ]
+          - type: at-most-one
+            attributes: [facility-employee]
+sources:
+  - citation: S.C. Code Ann. § 62-5-504
+  - citation: S.C. Code Ann. §§ 44-77-10 to 44-77-160 (Death with Dignity Act)
+review:
+  status: needs-review
+  lastChecked: 2026-11-18

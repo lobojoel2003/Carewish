@@ -1,0 +1,114 @@
+{
+  "agentTerm": {
+    "agent": "agent",
+    "health-care-agent": "health care agent",
+    "health-care-proxy": "health care proxy",
+    "health-care-surrogate": "health care surrogate",
+    "health-care-representative": "health care representative",
+    "patient-advocate": "patient advocate",
+    "representative": "representative"
+  },
+  "documentKind": {
+    "power-of-attorney": "Names the person who decides for you",
+    "living-will": "Says what treatment you want",
+    "combined": "Names who decides for you and says what treatment you want"
+  },
+  "attribute": {
+    "agent": "Your {{agent}} or alternate {{agent}}",
+    "spouse": "Your spouse or registered domestic partner",
+    "immediate-family": "Your spouse, parent, child, grandchild, brother, or sister",
+    "relative-within-third-degree": "A close relative of you or your spouse (parent, child, brother, sister, grandparent, grandchild, aunt, uncle, niece, nephew, or in-law)",
+    "blood-relative": "Related to you by blood or adoption",
+    "relative-by-marriage": "Related to you by marriage, such as an in-law or step-relative",
+    "relative": "Related to you by blood, marriage, or adoption",
+    "heir": "Someone who would inherit from you, under your will or by law",
+    "beneficiary": "Someone who would gain money from your death, such as a life insurance beneficiary",
+    "creditor": "Someone with a claim against your estate, such as a person you owe money",
+    "financially-responsible": "Someone responsible for paying for your health care",
+    "physician": "A doctor (any physician)",
+    "attending-physician": "Your doctor — the physician treating you",
+    "healthcare-provider": "A health care provider who is treating you",
+    "provider-employee": "An employee of your doctor or health care provider",
+    "facility-operator": "An owner or operator of a hospital, nursing home, or care home where you are a patient or resident",
+    "facility-employee": "An employee of a hospital, nursing home, or care home where you are a patient or resident",
+    "insurer-employee": "An employee of your life or health insurance company",
+    "signed-for-principal": "The person who signs the form for you, if you can't sign yourself"
+  },
+  "attributeQuestion": {
+    "agent": "Named as your {{agent}} or alternate",
+    "heir": "Would inherit from me (in my will, or as close family by law)",
+    "beneficiary": "Would gain money from my death (for example, life insurance)",
+    "creditor": "Has a claim against my estate (for example, I owe them money)",
+    "financially-responsible": "Pays for or is responsible for my health care",
+    "physician": "Is a doctor",
+    "attending-physician": "Is my doctor",
+    "healthcare-provider": "Is a health care provider treating me",
+    "provider-employee": "Works for my doctor or health care provider",
+    "facility-operator": "Owns or runs the hospital, nursing home, or care home where I am",
+    "facility-employee": "Works at the hospital, nursing home, or care home where I am",
+    "insurer-employee": "Works for my life or health insurance company",
+    "signed-for-principal": "Will sign the form for me",
+    "spouse": "Is my spouse or partner",
+    "immediate-family": "Is close family",
+    "relative-within-third-degree": "Is a close relative",
+    "blood-relative": "Is a blood relative",
+    "relative-by-marriage": "Is a relative by marriage",
+    "relative": "Is a relative"
+  },
+  "relationship": {
+    "none": "Not related to me",
+    "spouse": "Spouse or registered domestic partner",
+    "parent": "Parent",
+    "child": "Child",
+    "sibling": "Brother or sister",
+    "grandparent": "Grandparent",
+    "grandchild": "Grandchild",
+    "aunt-uncle-niece-nephew": "Aunt, uncle, niece, or nephew",
+    "cousin-or-distant": "Cousin or more distant blood relative",
+    "in-law-or-step": "In-law or step-relative"
+  },
+  "rule": {
+    "none-may-be": "None of your witnesses can be:",
+    "at-least-one-not": "At least one of your witnesses must not be:",
+    "at-most-one": "Only one of your witnesses can be:"
+  },
+  "method": {
+    "witnesses_one": "Sign in front of {{count}} adult witness (age {{minAge}} or older). A notary is not needed.",
+    "witnesses_other": "Sign in front of {{count}} adult witnesses (age {{minAge}} or older). A notary is not needed.",
+    "notary": "Sign in front of a notary public. Witnesses are not needed.",
+    "witnesses-or-notary_one": "Sign in front of {{count}} adult witness (age {{minAge}} or older) or a notary public. Either one works.",
+    "witnesses-or-notary_other": "Sign in front of {{count}} adult witnesses (age {{minAge}} or older) or a notary public. Either one works.",
+    "witnesses-and-notary_one": "Sign in front of {{count}} adult witness (age {{minAge}} or older) and a notary public, at the same time.",
+    "witnesses-and-notary_other": "Sign in front of {{count}} adult witnesses (age {{minAge}} or older) and a notary public, at the same time.",
+    "signature-only": "Sign and date it yourself. Witnesses and a notary are not required."
+  },
+  "methodShort": {
+    "witnesses_one": "{{count}} witness",
+    "witnesses_other": "{{count}} witnesses",
+    "notary": "Notary",
+    "witnesses-or-notary_one": "{{count}} witness or a notary",
+    "witnesses-or-notary_other": "{{count}} witnesses or a notary",
+    "witnesses-and-notary_one": "{{count}} witness and a notary",
+    "witnesses-and-notary_other": "{{count}} witnesses and a notary",
+    "signature-only": "Your signature only"
+  },
+  "step": {
+    "print": "Print {{title}}. Don't sign it yet.",
+    "bring-id": "Bring a photo ID. The notary needs to see it.",
+    "witness-rules": "Choose witnesses who meet {{state}}'s rules.",
+    "notary-disqualified": "Your notary also can't be:",
+    "notary-recommended": "A notary is optional, but notarizing can help the document be accepted.",
+    "agent-acceptance": "Ask your {{agent}} to sign the acceptance section. They must do this before they can act for you.",
+    "witnesses-sign": "Your witnesses sign right after you, in front of you and each other."
+  },
+  "evaluation": {
+    "ok": "These witnesses meet {{state}}'s rules.",
+    "missing_one": "You need {{count}} more witness.",
+    "missing_other": "You need {{count}} more witnesses.",
+    "tooYoung": "Must be at least {{minAge}} years old.",
+    "cannotBe": "Can't be a witness because they are:",
+    "needOneWho": "At least one witness must not be:",
+    "onlyOne": "Only one witness can be:",
+    "hintOther": "Your other witness must not be:"
+  }
+}

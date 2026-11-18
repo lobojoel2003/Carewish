@@ -1,0 +1,51 @@
+# Washington — advance directive rules for Carewish.
+# Licensed MIT. Edit this file to correct the rules; run `pnpm --filter @carewish/form-rules test` afterwards.
+# This is legal information, not legal advice. Cite a source for every change.
+$schema: ../schema/state.schema.json
+code: WA
+name: Washington
+adultAge: 18
+terminology:
+  agent: agent
+documents:
+  - id: durable-power-of-attorney-for-health-care
+    title: Durable Power of Attorney for Health Care
+    kind: power-of-attorney
+    citation: Wash. Rev. Code §§ 11.125.050, 11.125.400
+    parts:
+      - title: Durable Power of Attorney for Health Care
+        sections: [principal, agent, alternate-agent, agent-authority]
+    execution:
+      method: witnesses-or-notary
+      witnesses:
+        count: 2
+        minAge: 18
+        rules:
+          - type: none-may-be
+            attributes: [relative, healthcare-provider, facility-employee]
+  - id: health-care-directive
+    title: Health Care Directive
+    kind: living-will
+    citation: Wash. Rev. Code § 70.122.030
+    parts:
+      - title: Health Care Directive
+        sections:
+          [principal, life-sustaining, nutrition, cpr, pain-relief, values, additional-wishes]
+    execution:
+      method: witnesses
+      witnesses:
+        count: 2
+        minAge: 18
+        rules:
+          - type: none-may-be
+            attributes:
+              [relative, heir, attending-physician, provider-employee, facility-employee, creditor]
+notes:
+  - en: In Washington, people related to your agent by blood, marriage, or state-registered domestic partnership also can't witness your durable power of attorney.
+    es: En Washington, las personas emparentadas con su agente por sangre, matrimonio o pareja de hecho registrada tampoco pueden ser testigos de su poder notarial.
+sources:
+  - citation: Wash. Rev. Code ch. 11.125 (Uniform Power of Attorney Act)
+  - citation: Wash. Rev. Code ch. 70.122 (Natural Death Act)
+review:
+  status: needs-review
+  lastChecked: 2026-11-18

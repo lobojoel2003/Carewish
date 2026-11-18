@@ -1,0 +1,36 @@
+# Louisiana — advance directive rules for Carewish.
+# Licensed MIT. Edit this file to correct the rules; run `pnpm --filter @carewish/form-rules test` afterwards.
+# This is legal information, not legal advice. Cite a source for every change.
+$schema: ../schema/state.schema.json
+code: LA
+name: Louisiana
+adultAge: 18
+terminology:
+  agent: representative
+documents:
+  - id: declaration-concerning-life-sustaining-procedures
+    title: Declaration Concerning Life-Sustaining Procedures
+    kind: combined
+    citation: La. Rev. Stat. §§ 40:1151.2, 40:1151.4
+    parts:
+      - title: Declaration
+        sections:
+          [principal, life-sustaining, nutrition, cpr, pain-relief, values, additional-wishes]
+      - title: Designation of Representative
+        sections: [agent, alternate-agent, agent-authority]
+    execution:
+      method: witnesses
+      witnesses:
+        count: 2
+        minAge: 18
+        rules:
+          - type: none-may-be
+            attributes: [relative, heir]
+notes:
+  - en: Louisiana's Secretary of State keeps a living will registry. Registering is optional.
+    es: La Secretaría de Estado de Luisiana tiene un registro de testamentos vitales. Registrarlo es opcional.
+sources:
+  - citation: La. Rev. Stat. §§ 40:1151–40:1151.9 (Natural Death Act)
+review:
+  status: needs-review
+  lastChecked: 2026-11-18

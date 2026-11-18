@@ -1,0 +1,49 @@
+# Kansas — advance directive rules for Carewish.
+# Licensed MIT. Edit this file to correct the rules; run `pnpm --filter @carewish/form-rules test` afterwards.
+# This is legal information, not legal advice. Cite a source for every change.
+$schema: ../schema/state.schema.json
+code: KS
+name: Kansas
+adultAge: 18
+terminology:
+  agent: agent
+documents:
+  - id: durable-power-of-attorney-for-health-care-decisions
+    title: Durable Power of Attorney for Health Care Decisions
+    kind: power-of-attorney
+    citation: Kan. Stat. Ann. §§ 58-629, 58-632
+    parts:
+      - title: Durable Power of Attorney for Health Care Decisions
+        sections: [principal, agent, alternate-agent, agent-authority]
+    execution:
+      method: witnesses-or-notary
+      witnesses:
+        count: 2
+        minAge: 18
+        rules:
+          - type: none-may-be
+            attributes: [agent, relative, heir, financially-responsible]
+  - id: declaration
+    title: Declaration (Living Will)
+    kind: living-will
+    citation: Kan. Stat. Ann. § 65-28,103
+    parts:
+      - title: Declaration
+        sections:
+          [principal, life-sustaining, nutrition, cpr, pain-relief, values, additional-wishes]
+    execution:
+      method: witnesses
+      witnesses:
+        count: 2
+        minAge: 18
+        rules:
+          - type: none-may-be
+            attributes: [signed-for-principal, relative, heir, financially-responsible]
+sources:
+  - citation: Kan. Stat. Ann. §§ 58-625 to 58-632
+  - citation: Kan. Stat. Ann. §§ 65-28,101 to 65-28,109 (Natural Death Act)
+review:
+  status: needs-review
+  lastChecked: 2026-11-18
+  openQuestions:
+    ['Confirm whether the § 65-28,103 declaration may be notarized instead of witnessed.']

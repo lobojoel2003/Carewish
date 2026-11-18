@@ -1,0 +1,40 @@
+# Maine — advance directive rules for Carewish.
+# Licensed MIT. Edit this file to correct the rules; run `pnpm --filter @carewish/form-rules test` afterwards.
+# This is legal information, not legal advice. Cite a source for every change.
+$schema: ../schema/state.schema.json
+code: ME
+name: Maine
+adultAge: 18
+terminology:
+  agent: agent
+documents:
+  - id: advance-health-care-directive
+    title: Advance Health-Care Directive
+    kind: combined
+    citation: Me. Rev. Stat. tit. 18-C, §§ 5-802, 5-804
+    parts:
+      - title: 'Part 1: Power of Attorney for Health Care'
+        sections: [principal, agent, alternate-agent, agent-authority]
+      - title: 'Part 2: Instructions for Health Care'
+        sections: [life-sustaining, nutrition, cpr, pain-relief, values, additional-wishes]
+      - title: 'Part 3: Donation of Organs at Death'
+        sections: [organ-donation]
+      - title: 'Part 4: Primary Physician'
+        sections: [physician]
+    execution:
+      method: witnesses
+      witnesses:
+        count: 2
+        minAge: 18
+        rules:
+          - type: none-may-be
+            attributes: [agent]
+sources:
+  - citation: Me. Rev. Stat. tit. 18-C, Art. 5, Part 8 (Uniform Health-Care Decisions Act)
+review:
+  status: needs-review
+  lastChecked: 2026-11-18
+  openQuestions:
+    [
+      Confirm whether Maine accepts a notary instead of two witnesses and lists any other disqualified witnesses.,
+    ]

@@ -1,0 +1,34 @@
+# Idaho — advance directive rules for Carewish.
+# Licensed MIT. Edit this file to correct the rules; run `pnpm --filter @carewish/form-rules test` afterwards.
+# This is legal information, not legal advice. Cite a source for every change.
+$schema: ../schema/state.schema.json
+code: ID
+name: Idaho
+adultAge: 18
+terminology:
+  agent: agent
+documents:
+  - id: living-will-and-durable-power-of-attorney
+    title: Living Will and Durable Power of Attorney for Health Care
+    kind: combined
+    citation: Idaho Code § 39-4510
+    parts:
+      - title: Living Will
+        sections:
+          [principal, life-sustaining, nutrition, cpr, pain-relief, values, additional-wishes]
+      - title: Durable Power of Attorney for Health Care
+        sections: [agent, alternate-agent, agent-authority]
+    execution:
+      method: signature-only
+      notary:
+        recommended: true
+        note:
+          en: A notary is not required, but notarizing the document can help it be accepted, especially in another state.
+          es: No se requiere notario, pero notarizar el documento puede ayudar a que lo acepten, sobre todo en otro estado.
+sources:
+  - citation: Idaho Code §§ 39-4501 to 39-4515 (Medical Consent and Natural Death Act)
+review:
+  status: needs-review
+  lastChecked: 2026-11-18
+  openQuestions:
+    [Confirm that the 2012 amendments removed the witness requirement for the § 39-4510 form.]

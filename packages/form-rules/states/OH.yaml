@@ -1,0 +1,50 @@
+# Ohio — advance directive rules for Carewish.
+# Licensed MIT. Edit this file to correct the rules; run `pnpm --filter @carewish/form-rules test` afterwards.
+# This is legal information, not legal advice. Cite a source for every change.
+$schema: ../schema/state.schema.json
+code: OH
+name: Ohio
+adultAge: 18
+terminology:
+  agent: health-care-agent
+documents:
+  - id: health-care-power-of-attorney
+    title: Health Care Power of Attorney
+    kind: power-of-attorney
+    citation: Ohio Rev. Code § 1337.12
+    parts:
+      - title: Health Care Power of Attorney
+        sections: [principal, agent, alternate-agent, agent-authority]
+    execution:
+      method: witnesses-or-notary
+      witnesses:
+        count: 2
+        minAge: 18
+        rules:
+          - type: none-may-be
+            attributes: [agent, relative, attending-physician, facility-operator]
+  - id: living-will-declaration
+    title: Living Will Declaration
+    kind: living-will
+    citation: Ohio Rev. Code § 2133.02
+    parts:
+      - title: Living Will Declaration
+        sections:
+          [principal, life-sustaining, nutrition, cpr, pain-relief, values, additional-wishes]
+    execution:
+      method: witnesses-or-notary
+      witnesses:
+        count: 2
+        minAge: 18
+        rules:
+          - type: none-may-be
+            attributes: [relative, attending-physician, facility-operator]
+notes:
+  - en: In Ohio, the administrator of a nursing home where you receive care cannot be your witness.
+    es: En Ohio, el administrador del hogar de ancianos donde recibe atención no puede ser su testigo.
+sources:
+  - citation: Ohio Rev. Code §§ 1337.11–1337.17
+  - citation: Ohio Rev. Code ch. 2133 (Modified Uniform Rights of the Terminally Ill Act)
+review:
+  status: needs-review
+  lastChecked: 2026-11-18

@@ -1,0 +1,114 @@
+{
+  "agentTerm": {
+    "agent": "agente",
+    "health-care-agent": "agente de atención médica",
+    "health-care-proxy": "apoderado de atención médica",
+    "health-care-surrogate": "sustituto de atención médica",
+    "health-care-representative": "representante de atención médica",
+    "patient-advocate": "defensor del paciente",
+    "representative": "representante"
+  },
+  "documentKind": {
+    "power-of-attorney": "Nombra a la persona que decide por usted",
+    "living-will": "Dice qué tratamiento desea",
+    "combined": "Nombra quién decide por usted y dice qué tratamiento desea"
+  },
+  "attribute": {
+    "agent": "Su {{agent}} o {{agent}} suplente",
+    "spouse": "Su cónyuge o pareja de hecho registrada",
+    "immediate-family": "Su cónyuge, padre o madre, hijo o hija, nieto o nieta, hermano o hermana",
+    "relative-within-third-degree": "Un pariente cercano suyo o de su cónyuge (padre, madre, hijo, hermano, abuelo, nieto, tío, sobrino o pariente político)",
+    "blood-relative": "Un pariente suyo por sangre o adopción",
+    "relative-by-marriage": "Un pariente por matrimonio, como un suegro, cuñado o hijastro",
+    "relative": "Un pariente suyo por sangre, matrimonio o adopción",
+    "heir": "Alguien que heredaría de usted, por testamento o por ley",
+    "beneficiary": "Alguien que recibiría dinero por su muerte, como el beneficiario de un seguro de vida",
+    "creditor": "Alguien con un reclamo contra su patrimonio, como una persona a quien usted le debe dinero",
+    "financially-responsible": "Alguien responsable de pagar su atención médica",
+    "physician": "Un médico (cualquier médico)",
+    "attending-physician": "Su médico, es decir, quien le está tratando",
+    "healthcare-provider": "Un proveedor de atención médica que le está tratando",
+    "provider-employee": "Un empleado de su médico o proveedor de atención médica",
+    "facility-operator": "Un dueño o administrador del hospital, hogar de ancianos o centro de cuidado donde usted es paciente o residente",
+    "facility-employee": "Un empleado del hospital, hogar de ancianos o centro de cuidado donde usted es paciente o residente",
+    "insurer-employee": "Un empleado de su compañía de seguro de vida o de salud",
+    "signed-for-principal": "La persona que firma el formulario por usted, si usted no puede firmar"
+  },
+  "attributeQuestion": {
+    "agent": "Es mi {{agent}} o suplente",
+    "heir": "Heredaría de mí (en mi testamento, o como familia cercana por ley)",
+    "beneficiary": "Recibiría dinero por mi muerte (por ejemplo, un seguro de vida)",
+    "creditor": "Tiene un reclamo contra mi patrimonio (por ejemplo, le debo dinero)",
+    "financially-responsible": "Paga o es responsable de mi atención médica",
+    "physician": "Es médico",
+    "attending-physician": "Es mi médico",
+    "healthcare-provider": "Es un proveedor de atención médica que me trata",
+    "provider-employee": "Trabaja para mi médico o proveedor de atención médica",
+    "facility-operator": "Es dueño o administra el hospital, hogar de ancianos o centro de cuidado donde estoy",
+    "facility-employee": "Trabaja en el hospital, hogar de ancianos o centro de cuidado donde estoy",
+    "insurer-employee": "Trabaja para mi compañía de seguro de vida o de salud",
+    "signed-for-principal": "Firmará el formulario por mí",
+    "spouse": "Es mi cónyuge o pareja",
+    "immediate-family": "Es familia cercana",
+    "relative-within-third-degree": "Es un pariente cercano",
+    "blood-relative": "Es un pariente consanguíneo",
+    "relative-by-marriage": "Es un pariente político",
+    "relative": "Es un pariente"
+  },
+  "relationship": {
+    "none": "No es mi pariente",
+    "spouse": "Cónyuge o pareja de hecho registrada",
+    "parent": "Padre o madre",
+    "child": "Hijo o hija",
+    "sibling": "Hermano o hermana",
+    "grandparent": "Abuelo o abuela",
+    "grandchild": "Nieto o nieta",
+    "aunt-uncle-niece-nephew": "Tío, tía, sobrino o sobrina",
+    "cousin-or-distant": "Primo u otro pariente consanguíneo más lejano",
+    "in-law-or-step": "Pariente político o pariente por segundas nupcias"
+  },
+  "rule": {
+    "none-may-be": "Ninguno de sus testigos puede ser:",
+    "at-least-one-not": "Al menos uno de sus testigos no debe ser:",
+    "at-most-one": "Solo uno de sus testigos puede ser:"
+  },
+  "method": {
+    "witnesses_one": "Firme ante {{count}} testigo adulto (de {{minAge}} años o más). No se necesita notario.",
+    "witnesses_other": "Firme ante {{count}} testigos adultos (de {{minAge}} años o más). No se necesita notario.",
+    "notary": "Firme ante un notario público. No se necesitan testigos.",
+    "witnesses-or-notary_one": "Firme ante {{count}} testigo adulto (de {{minAge}} años o más) o ante un notario público. Cualquiera de los dos sirve.",
+    "witnesses-or-notary_other": "Firme ante {{count}} testigos adultos (de {{minAge}} años o más) o ante un notario público. Cualquiera de los dos sirve.",
+    "witnesses-and-notary_one": "Firme ante {{count}} testigo adulto (de {{minAge}} años o más) y un notario público, al mismo tiempo.",
+    "witnesses-and-notary_other": "Firme ante {{count}} testigos adultos (de {{minAge}} años o más) y un notario público, al mismo tiempo.",
+    "signature-only": "Fírmelo y póngale la fecha usted mismo. No se requieren testigos ni notario."
+  },
+  "methodShort": {
+    "witnesses_one": "{{count}} testigo",
+    "witnesses_other": "{{count}} testigos",
+    "notary": "Notario",
+    "witnesses-or-notary_one": "{{count}} testigo o un notario",
+    "witnesses-or-notary_other": "{{count}} testigos o un notario",
+    "witnesses-and-notary_one": "{{count}} testigo y un notario",
+    "witnesses-and-notary_other": "{{count}} testigos y un notario",
+    "signature-only": "Solo su firma"
+  },
+  "step": {
+    "print": "Imprima {{title}}. Todavía no lo firme.",
+    "bring-id": "Lleve una identificación con foto. El notario necesita verla.",
+    "witness-rules": "Elija testigos que cumplan las reglas de {{state}}.",
+    "notary-disqualified": "Su notario tampoco puede ser:",
+    "notary-recommended": "El notario es opcional, pero notarizar puede ayudar a que acepten el documento.",
+    "agent-acceptance": "Pida a su {{agent}} que firme la sección de aceptación. Debe hacerlo antes de poder actuar por usted.",
+    "witnesses-sign": "Sus testigos firman justo después de usted, delante de usted y entre ellos."
+  },
+  "evaluation": {
+    "ok": "Estos testigos cumplen las reglas de {{state}}.",
+    "missing_one": "Necesita {{count}} testigo más.",
+    "missing_other": "Necesita {{count}} testigos más.",
+    "tooYoung": "Debe tener al menos {{minAge}} años.",
+    "cannotBe": "No puede ser testigo porque es:",
+    "needOneWho": "Al menos un testigo no debe ser:",
+    "onlyOne": "Solo un testigo puede ser:",
+    "hintOther": "Su otro testigo no debe ser:"
+  }
+}

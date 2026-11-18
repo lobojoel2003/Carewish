@@ -1,0 +1,48 @@
+# Kentucky — advance directive rules for Carewish.
+# Licensed MIT. Edit this file to correct the rules; run `pnpm --filter @carewish/form-rules test` afterwards.
+# This is legal information, not legal advice. Cite a source for every change.
+$schema: ../schema/state.schema.json
+code: KY
+name: Kentucky
+adultAge: 18
+terminology:
+  agent: health-care-surrogate
+documents:
+  - id: living-will-directive
+    title: Living Will Directive
+    kind: combined
+    citation: Ky. Rev. Stat. Ann. §§ 311.623, 311.625
+    parts:
+      - title: Living Will Directive
+        sections:
+          [principal, life-sustaining, nutrition, cpr, pain-relief, values, additional-wishes]
+      - title: Designation of Health Care Surrogate
+        sections: [agent, alternate-agent, agent-authority]
+      - title: Organ Donation
+        sections: [organ-donation]
+    execution:
+      method: witnesses-or-notary
+      witnesses:
+        count: 2
+        minAge: 18
+        rules:
+          - type: none-may-be
+            attributes:
+              [
+                agent,
+                blood-relative,
+                heir,
+                facility-employee,
+                attending-physician,
+                financially-responsible,
+              ]
+      notary:
+        disqualified: [blood-relative, heir, attending-physician, financially-responsible]
+        note:
+          en: An employee of a health care facility where you are a patient may act as your notary, but not as your witness.
+          es: Un empleado del centro de salud donde usted es paciente puede ser su notario, pero no su testigo.
+sources:
+  - citation: Ky. Rev. Stat. Ann. §§ 311.620–311.643 (Kentucky Living Will Directive Act)
+review:
+  status: needs-review
+  lastChecked: 2026-11-18
