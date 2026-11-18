@@ -1,0 +1,45 @@
+{
+  "name": "carewish",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Plain-language advance directive builder that fills your U.S. state's form, applies its witness and notary rules, and exports a PDF plus a FHIR (HL7 PACIO ADI) bundle.",
+  "license": "AGPL-3.0-only",
+  "author": "Joel Stain Lobo",
+  "homepage": "https://github.com/lobojoel2003/Carewish#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lobojoel2003/Carewish.git"
+  },
+  "bugs": {
+    "url": "https://github.com/lobojoel2003/Carewish/issues"
+  },
+  "packageManager": "pnpm@10.28.0",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "build": "pnpm -r build",
+    "build:rules": "pnpm --filter @carewish/form-rules build",
+    "dev": "pnpm build:rules && pnpm --filter @carewish/web dev",
+    "start": "pnpm --filter @carewish/web start",
+    "lint": "eslint .",
+    "typecheck": "pnpm build:rules && pnpm -r typecheck",
+    "test": "pnpm build:rules && pnpm -r test",
+    "test:coverage": "pnpm build:rules && pnpm -r test:coverage",
+    "test:e2e": "pnpm --filter @carewish/web test:e2e",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "samples": "pnpm --filter @carewish/web samples",
+    "version:bump": "node scripts/bump-version.mjs",
+    "release:notes": "node scripts/release-notes.mjs"
+  },
+  "devDependencies": {
+    "prettier": "^3.6.2",
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.15.0",
+    "typescript-eslint": "^8.46.0",
+    "globals": "^17.14.0",
+    "@next/eslint-plugin-next": "16.4.6",
+    "eslint-plugin-react-hooks": "^7.0.0"
+  }
+}
