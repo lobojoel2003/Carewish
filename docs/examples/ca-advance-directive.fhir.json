@@ -1,0 +1,1243 @@
+{
+  "resourceType": "Bundle",
+  "id": "00000000-0000-4000-8000-000000000022",
+  "meta": {
+    "lastUpdated": "2026-11-18T12:00:00.000Z",
+    "tag": [
+      {
+        "system": "urn:carewish:version",
+        "code": "0.0.0"
+      }
+    ]
+  },
+  "identifier": {
+    "system": "urn:ietf:rfc:3986",
+    "value": "urn:uuid:00000000-0000-4000-8000-000000000022"
+  },
+  "type": "document",
+  "timestamp": "2026-11-18T12:00:00.000Z",
+  "entry": [
+    {
+      "fullUrl": "urn:uuid:00000000-0000-4000-8000-000000000021",
+      "resource": {
+        "resourceType": "Composition",
+        "id": "00000000-0000-4000-8000-000000000021",
+        "meta": {
+          "profile": ["http://hl7.org/fhir/us/pacio-adi/StructureDefinition/ADI-PACPComposition"]
+        },
+        "language": "en-US",
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>California advance directive for Maria Elena Torres</p><p>Advance Health Care Directive — Cal. Prob. Code § 4701</p></div>"
+        },
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/us/pacio-adi/StructureDefinition/adi-versionNumber-extension",
+            "valueInteger": 1
+          },
+          {
+            "url": "http://hl7.org/fhir/us/pacio-adi/StructureDefinition/adi-jurisdiction-extension",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "urn:iso:std:iso:3166:-2",
+                  "code": "US-CA"
+                }
+              ]
+            }
+          }
+        ],
+        "identifier": {
+          "system": "urn:ietf:rfc:3986",
+          "value": "urn:uuid:00000000-0000-4000-8000-000000000021"
+        },
+        "status": "final",
+        "type": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "81334-5",
+              "display": "Patient Personal advance care plan"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://loinc.org",
+                "code": "42348-3",
+                "display": "Advance directives"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "urn:uuid:00000000-0000-4000-8000-000000000001",
+          "display": "Maria Elena Torres"
+        },
+        "date": "2026-11-18T12:00:00.000Z",
+        "author": [
+          {
+            "reference": "urn:uuid:00000000-0000-4000-8000-000000000001",
+            "display": "Maria Elena Torres"
+          }
+        ],
+        "title": "California Advance Directive — Advance Health Care Directive",
+        "custodian": {
+          "reference": "urn:uuid:00000000-0000-4000-8000-000000000002",
+          "display": "Carewish (patient-held document)"
+        },
+        "section": [
+          {
+            "title": "Healthcare Agent",
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "81335-2",
+                  "display": "Patient Healthcare agent"
+                }
+              ]
+            },
+            "text": {
+              "status": "generated",
+              "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>I choose the following person as my agent to make health care decisions for me:</p><p>Daniel Torres · (559) 555-0142 · daniel@example.com</p><p>If my agent is not willing, able, or reasonably available to act, I choose:</p><p>Lucía Torres · (559) 555-0199</p><p>My agent may make all health care decisions for me that I could make myself, guided by the instructions in this document and my other known wishes. This includes choosing, refusing, or stopping any care, treatment, service, or procedure.</p><p>My agent may also decide to withhold or withdraw life-sustaining treatment, including artificial nutrition and hydration, even if doing so may allow me to die.</p><p>My agent&#39;s authority begins when my doctor determines that I am unable to make my own health care decisions.</p></div>"
+            },
+            "entry": [
+              {
+                "reference": "urn:uuid:00000000-0000-4000-8000-000000000005"
+              },
+              {
+                "reference": "urn:uuid:00000000-0000-4000-8000-000000000003",
+                "display": "Daniel Torres"
+              },
+              {
+                "reference": "urn:uuid:00000000-0000-4000-8000-000000000004",
+                "display": "Lucía Torres"
+              }
+            ]
+          },
+          {
+            "title": "Personal Care Experience",
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "81338-6",
+                  "display": "Patient Goals, Preferences, and Priorities for Care Experience"
+                }
+              ]
+            },
+            "text": {
+              "status": "generated",
+              "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>What matters most to me:</p><ul><li>Being able to recognize and talk with my family</li><li>Being at home</li><li>Music &lt;3 &amp; &quot;quiet&quot; mornings</li></ul><p>About my faith, culture, and traditions:</p><p>Please call Father José at St. John parish.</p><p>Other instructions:</p><p>I would like my dog Pepper to visit.</p></div>"
+            },
+            "entry": [
+              {
+                "reference": "urn:uuid:00000000-0000-4000-8000-000000000017"
+              },
+              {
+                "reference": "urn:uuid:00000000-0000-4000-8000-000000000018"
+              },
+              {
+                "reference": "urn:uuid:00000000-0000-4000-8000-000000000019"
+              }
+            ]
+          },
+          {
+            "title": "Preferences Under Certain Health Conditions",
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "81336-0",
+                  "display": "Patient Goals, preferences, and priorities under certain health conditions"
+                }
+              ]
+            },
+            "text": {
+              "status": "generated",
+              "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>If I have an incurable and irreversible condition that will result in my death within a relatively short time:</p><p>I do not want my life to be prolonged by life-sustaining treatment. I want care that keeps me comfortable.</p><p>If I become unconscious and, to a reasonable degree of medical certainty, I will not regain consciousness:</p><p>I do not want my life to be prolonged by life-sustaining treatment. I want care that keeps me comfortable.</p><p>If I have an end-stage or irreversible condition, such as advanced dementia, and can no longer recognize my loved ones or care for myself:</p><p>I want my agent to decide, with my doctors, based on my values and wishes.</p><p>Artificial nutrition and hydration (food and fluids through a tube or IV):</p><p>I want a trial period of artificial nutrition and hydration, to be stopped if it is not helping me recover.</p><p>Cardiopulmonary resuscitation (CPR):</p><p>I do not want CPR if I am in any of the conditions described above.</p><p>Relief from pain:</p><p>I want treatment for pain and discomfort at all times, even if it may hasten my death.</p></div>"
+            },
+            "entry": [
+              {
+                "reference": "urn:uuid:00000000-0000-4000-8000-000000000007"
+              },
+              {
+                "reference": "urn:uuid:00000000-0000-4000-8000-000000000009"
+              },
+              {
+                "reference": "urn:uuid:00000000-0000-4000-8000-000000000011"
+              },
+              {
+                "reference": "urn:uuid:00000000-0000-4000-8000-000000000016"
+              }
+            ]
+          },
+          {
+            "title": "Upon Death",
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "81337-8",
+                  "display": "Patient Goals, Preferences, and Priorities Upon Death"
+                }
+              ]
+            },
+            "text": {
+              "status": "generated",
+              "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Donation of organs, tissues, and body parts at my death:</p><p>I give any needed organs, tissues, or parts.</p></div>"
+            },
+            "entry": [
+              {
+                "reference": "urn:uuid:00000000-0000-4000-8000-000000000020"
+              }
+            ]
+          },
+          {
+            "title": "Witnesses and Notary",
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "81339-4",
+                  "display": "Witness and Notary Document"
+                }
+              ]
+            },
+            "text": {
+              "status": "generated",
+              "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Advance Health Care Directive (Cal. Prob. Code § 4701)</p><p>Print Advance Health Care Directive. Don&#39;t sign it yet.</p><p>Sign in front of 2 adult witnesses (age 18 or older) or a notary public. Either one works.</p><p>Choose witnesses who meet California&#39;s rules.</p><p>None of your witnesses can be:</p><ul><li>Your agent or alternate agent</li><li>A health care provider who is treating you</li><li>An employee of your doctor or health care provider</li><li>An owner or operator of a hospital, nursing home, or care home where you are a patient or resident</li><li>An employee of a hospital, nursing home, or care home where you are a patient or resident</li></ul><p>At least one of your witnesses must not be:</p><ul><li>Related to you by blood, marriage, or adoption</li><li>Someone who would inherit from you, under your will or by law</li></ul><p>Your witnesses sign right after you, in front of you and each other.</p><p>Bring a photo ID. The notary needs to see it.</p><p>If you live in a skilled nursing facility, a patient advocate or ombudsman must also sign as a witness, even if you use a notary.</p></div>"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:00000000-0000-4000-8000-000000000001",
+      "resource": {
+        "resourceType": "Patient",
+        "id": "00000000-0000-4000-8000-000000000001",
+        "meta": {
+          "profile": ["http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient"]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Maria Elena Torres</p><p>Born 1956-03-04</p><p>12 Oak St, Fresno, CA 93701</p></div>"
+        },
+        "identifier": [
+          {
+            "system": "urn:ietf:rfc:3986",
+            "value": "urn:uuid:00000000-0000-4000-8000-000000000001"
+          }
+        ],
+        "active": true,
+        "name": [
+          {
+            "use": "official",
+            "text": "Maria Elena Torres",
+            "family": "Torres",
+            "given": ["Maria", "Elena"]
+          }
+        ],
+        "gender": "unknown",
+        "birthDate": "1956-03-04",
+        "telecom": [
+          {
+            "system": "phone",
+            "value": "(559) 555-0100",
+            "use": "home"
+          }
+        ],
+        "address": [
+          {
+            "use": "home",
+            "type": "physical",
+            "text": "12 Oak St, Fresno, CA 93701",
+            "line": ["12 Oak St"],
+            "city": "Fresno",
+            "state": "CA",
+            "postalCode": "93701",
+            "country": "US"
+          }
+        ],
+        "communication": [
+          {
+            "language": {
+              "coding": [
+                {
+                  "system": "urn:ietf:bcp:47",
+                  "code": "en",
+                  "display": "English"
+                }
+              ]
+            },
+            "preferred": true
+          }
+        ],
+        "generalPractitioner": [
+          {
+            "display": "Dr. Priya Shah, (559) 555-0111"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:00000000-0000-4000-8000-000000000002",
+      "resource": {
+        "resourceType": "Organization",
+        "id": "00000000-0000-4000-8000-000000000002",
+        "meta": {
+          "profile": ["http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization"]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Carewish — document held by the patient</p></div>"
+        },
+        "active": true,
+        "name": "Carewish (patient-held document)"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:00000000-0000-4000-8000-000000000003",
+      "resource": {
+        "resourceType": "RelatedPerson",
+        "id": "00000000-0000-4000-8000-000000000003",
+        "meta": {
+          "profile": ["http://hl7.org/fhir/us/pacio-adi/StructureDefinition/ADI-Participant"]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Primary agent</p><p>Daniel Torres</p><p>(559) 555-0142</p><p>daniel@example.com</p></div>"
+        },
+        "active": true,
+        "patient": {
+          "reference": "urn:uuid:00000000-0000-4000-8000-000000000001",
+          "display": "Maria Elena Torres"
+        },
+        "relationship": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                "code": "CHILD",
+                "display": "child"
+              }
+            ]
+          }
+        ],
+        "name": [
+          {
+            "text": "Daniel Torres",
+            "family": "Torres",
+            "given": ["Daniel"]
+          }
+        ],
+        "telecom": [
+          {
+            "system": "phone",
+            "value": "(559) 555-0142"
+          },
+          {
+            "system": "email",
+            "value": "daniel@example.com"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:00000000-0000-4000-8000-000000000004",
+      "resource": {
+        "resourceType": "RelatedPerson",
+        "id": "00000000-0000-4000-8000-000000000004",
+        "meta": {
+          "profile": ["http://hl7.org/fhir/us/pacio-adi/StructureDefinition/ADI-Participant"]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Alternate agent</p><p>Lucía Torres</p><p>(559) 555-0199</p></div>"
+        },
+        "active": true,
+        "patient": {
+          "reference": "urn:uuid:00000000-0000-4000-8000-000000000001",
+          "display": "Maria Elena Torres"
+        },
+        "relationship": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                "code": "SIB",
+                "display": "sibling"
+              }
+            ]
+          }
+        ],
+        "name": [
+          {
+            "text": "Lucía Torres",
+            "family": "Torres",
+            "given": ["Lucía"]
+          }
+        ],
+        "telecom": [
+          {
+            "system": "phone",
+            "value": "(559) 555-0199"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:00000000-0000-4000-8000-000000000005",
+      "resource": {
+        "resourceType": "Consent",
+        "id": "00000000-0000-4000-8000-000000000005",
+        "meta": {
+          "profile": ["http://hl7.org/fhir/us/pacio-adi/StructureDefinition/ADI-ParticipantConsent"]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>My agent may make all health care decisions for me that I could make myself, guided by the instructions in this document and my other known wishes. This includes choosing, refusing, or stopping any care, treatment, service, or procedure.</p><p>My agent may also decide to withhold or withdraw life-sustaining treatment, including artificial nutrition and hydration, even if doing so may allow me to die.</p><p>My agent&#39;s authority begins when my doctor determines that I am unable to make my own health care decisions.</p></div>"
+        },
+        "status": "active",
+        "scope": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "75786-4",
+              "display": "Powers granted to healthcare agent [Reported]"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/consentcategorycodes",
+                "code": "acd",
+                "display": "Advance Directive"
+              }
+            ]
+          }
+        ],
+        "patient": {
+          "reference": "urn:uuid:00000000-0000-4000-8000-000000000001",
+          "display": "Maria Elena Torres"
+        },
+        "dateTime": "2026-11-18T12:00:00.000Z",
+        "policyRule": {
+          "text": "Cal. Prob. Code § 4701"
+        },
+        "provision": {
+          "type": "permit",
+          "actor": [
+            {
+              "role": {
+                "coding": [
+                  {
+                    "system": "http://loinc.org",
+                    "code": "75783-1",
+                    "display": "Primary healthcare agent [Reported]"
+                  }
+                ]
+              },
+              "reference": {
+                "reference": "urn:uuid:00000000-0000-4000-8000-000000000003",
+                "display": "Daniel Torres"
+              }
+            },
+            {
+              "role": {
+                "coding": [
+                  {
+                    "system": "http://loinc.org",
+                    "code": "75784-9",
+                    "display": "First alternate healthcare agent [Reported]"
+                  }
+                ]
+              },
+              "reference": {
+                "reference": "urn:uuid:00000000-0000-4000-8000-000000000004",
+                "display": "Lucía Torres"
+              }
+            }
+          ],
+          "action": [
+            {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/us/pacio-adi/CodeSystem/ADIHCADecisionsCS",
+                  "code": "life-support",
+                  "display": "Life support"
+                }
+              ]
+            },
+            {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/us/pacio-adi/CodeSystem/ADIHCADecisionsCS",
+                  "code": "tube-feeding",
+                  "display": "Tube feeding"
+                }
+              ]
+            },
+            {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/us/pacio-adi/CodeSystem/ADIHCADecisionsCS",
+                  "code": "iv-fluid-and-support",
+                  "display": "IV fluid and support"
+                }
+              ]
+            },
+            {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/us/pacio-adi/CodeSystem/ADIHCADecisionsCS",
+                  "code": "intubation",
+                  "display": "Intubation"
+                }
+              ]
+            },
+            {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/us/pacio-adi/CodeSystem/ADIHCADecisionsCS",
+                  "code": "antibiotics",
+                  "display": "Antibiotics"
+                }
+              ]
+            },
+            {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/us/pacio-adi/CodeSystem/ADIHCADecisionsCS",
+                  "code": "cpr",
+                  "display": "Cardiopulmonary Resuscitation (CPR)"
+                }
+              ]
+            },
+            {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/us/pacio-adi/CodeSystem/ADIHCADecisionsCS",
+                  "code": "resuscitation-non-cpr",
+                  "display": "Non-CPR Resuscitation"
+                }
+              ]
+            }
+          ],
+          "purpose": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+              "code": "PWATRNY",
+              "display": "power of attorney"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:00000000-0000-4000-8000-000000000006",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "00000000-0000-4000-8000-000000000006",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/us/pacio-adi/StructureDefinition/ADI-PersonalInterventionPreference"
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>If I have an incurable and irreversible condition that will result in my death within a relatively short time:</p><p>I do not want my life to be prolonged by life-sustaining treatment. I want care that keeps me comfortable.</p></div>"
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/us/pacio-adi/CodeSystem/ADIPreferenceCategoryCS",
+                "code": "intervention-preference",
+                "display": "Intervention preference"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "75777-3",
+              "display": "Information to tell doctors if my health deteriorates due to a terminal illness and I am unable to interact meaningfully with family, friends, or surroundings [Reported]"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "urn:uuid:00000000-0000-4000-8000-000000000001",
+          "display": "Maria Elena Torres"
+        },
+        "effectiveDateTime": "2026-11-18T12:00:00.000Z",
+        "performer": [
+          {
+            "reference": "urn:uuid:00000000-0000-4000-8000-000000000001",
+            "display": "Maria Elena Torres"
+          }
+        ],
+        "valueString": "If I have an incurable and irreversible condition that will result in my death within a relatively short time: I do not want my life to be prolonged by life-sustaining treatment. I want care that keeps me comfortable."
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:00000000-0000-4000-8000-000000000007",
+      "resource": {
+        "resourceType": "CarePlan",
+        "id": "00000000-0000-4000-8000-000000000007",
+        "meta": {
+          "profile": ["http://hl7.org/fhir/us/pacio-adi/StructureDefinition/ADI-PreferenceCarePlan"]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>If I have an incurable and irreversible condition that will result in my death within a relatively short time:</p><p>I do not want my life to be prolonged by life-sustaining treatment. I want care that keeps me comfortable.</p></div>"
+        },
+        "status": "active",
+        "intent": "proposal",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "736366004",
+                "display": "Advance care plan"
+              }
+            ]
+          }
+        ],
+        "title": "Preferences if I have a terminal condition",
+        "subject": {
+          "reference": "urn:uuid:00000000-0000-4000-8000-000000000001",
+          "display": "Maria Elena Torres"
+        },
+        "addresses": [
+          {
+            "display": "Terminal condition"
+          }
+        ],
+        "supportingInfo": [
+          {
+            "reference": "urn:uuid:00000000-0000-4000-8000-000000000006"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:00000000-0000-4000-8000-000000000008",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "00000000-0000-4000-8000-000000000008",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/us/pacio-adi/StructureDefinition/ADI-PersonalInterventionPreference"
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>If I become unconscious and, to a reasonable degree of medical certainty, I will not regain consciousness:</p><p>I do not want my life to be prolonged by life-sustaining treatment. I want care that keeps me comfortable.</p></div>"
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/us/pacio-adi/CodeSystem/ADIPreferenceCategoryCS",
+                "code": "intervention-preference",
+                "display": "Intervention preference"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "75778-1",
+              "display": "Information to tell doctors if I have a severe, irreversible brain injury or illness and can't dress, feed, or bathe myself, or communicate my medical wishes, but can be kept alive [Reported]"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "urn:uuid:00000000-0000-4000-8000-000000000001",
+          "display": "Maria Elena Torres"
+        },
+        "effectiveDateTime": "2026-11-18T12:00:00.000Z",
+        "performer": [
+          {
+            "reference": "urn:uuid:00000000-0000-4000-8000-000000000001",
+            "display": "Maria Elena Torres"
+          }
+        ],
+        "valueString": "If I become unconscious and, to a reasonable degree of medical certainty, I will not regain consciousness: I do not want my life to be prolonged by life-sustaining treatment. I want care that keeps me comfortable."
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:00000000-0000-4000-8000-000000000009",
+      "resource": {
+        "resourceType": "CarePlan",
+        "id": "00000000-0000-4000-8000-000000000009",
+        "meta": {
+          "profile": ["http://hl7.org/fhir/us/pacio-adi/StructureDefinition/ADI-PreferenceCarePlan"]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>If I become unconscious and, to a reasonable degree of medical certainty, I will not regain consciousness:</p><p>I do not want my life to be prolonged by life-sustaining treatment. I want care that keeps me comfortable.</p></div>"
+        },
+        "status": "active",
+        "intent": "proposal",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "736366004",
+                "display": "Advance care plan"
+              }
+            ]
+          }
+        ],
+        "title": "Preferences if I am permanently unconscious",
+        "subject": {
+          "reference": "urn:uuid:00000000-0000-4000-8000-000000000001",
+          "display": "Maria Elena Torres"
+        },
+        "addresses": [
+          {
+            "display": "Permanent unconsciousness (persistent vegetative state or irreversible coma)"
+          }
+        ],
+        "supportingInfo": [
+          {
+            "reference": "urn:uuid:00000000-0000-4000-8000-000000000008"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:00000000-0000-4000-8000-000000000010",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "00000000-0000-4000-8000-000000000010",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/us/pacio-adi/StructureDefinition/ADI-PersonalInterventionPreference"
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>If I have an end-stage or irreversible condition, such as advanced dementia, and can no longer recognize my loved ones or care for myself:</p><p>I want my agent to decide, with my doctors, based on my values and wishes.</p></div>"
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/us/pacio-adi/CodeSystem/ADIPreferenceCategoryCS",
+                "code": "intervention-preference",
+                "display": "Intervention preference"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "75778-1",
+              "display": "Information to tell doctors if I have a severe, irreversible brain injury or illness and can't dress, feed, or bathe myself, or communicate my medical wishes, but can be kept alive [Reported]"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "urn:uuid:00000000-0000-4000-8000-000000000001",
+          "display": "Maria Elena Torres"
+        },
+        "effectiveDateTime": "2026-11-18T12:00:00.000Z",
+        "performer": [
+          {
+            "reference": "urn:uuid:00000000-0000-4000-8000-000000000001",
+            "display": "Maria Elena Torres"
+          }
+        ],
+        "valueString": "If I have an end-stage or irreversible condition, such as advanced dementia, and can no longer recognize my loved ones or care for myself: I want my agent to decide, with my doctors, based on my values and wishes."
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:00000000-0000-4000-8000-000000000011",
+      "resource": {
+        "resourceType": "CarePlan",
+        "id": "00000000-0000-4000-8000-000000000011",
+        "meta": {
+          "profile": ["http://hl7.org/fhir/us/pacio-adi/StructureDefinition/ADI-PreferenceCarePlan"]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>If I have an end-stage or irreversible condition, such as advanced dementia, and can no longer recognize my loved ones or care for myself:</p><p>I want my agent to decide, with my doctors, based on my values and wishes.</p></div>"
+        },
+        "status": "active",
+        "intent": "proposal",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "736366004",
+                "display": "Advance care plan"
+              }
+            ]
+          }
+        ],
+        "title": "Preferences if I have an end-stage or irreversible condition",
+        "subject": {
+          "reference": "urn:uuid:00000000-0000-4000-8000-000000000001",
+          "display": "Maria Elena Torres"
+        },
+        "addresses": [
+          {
+            "display": "End-stage or irreversible condition, such as advanced dementia"
+          }
+        ],
+        "supportingInfo": [
+          {
+            "reference": "urn:uuid:00000000-0000-4000-8000-000000000010"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:00000000-0000-4000-8000-000000000012",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "00000000-0000-4000-8000-000000000012",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/us/pacio-adi/StructureDefinition/ADI-PersonalInterventionPreference"
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Artificial nutrition and hydration (food and fluids through a tube or IV):</p><p>I want a trial period of artificial nutrition and hydration, to be stopped if it is not helping me recover.</p></div>"
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/us/pacio-adi/CodeSystem/ADIPreferenceCategoryCS",
+                "code": "intervention-preference",
+                "display": "Intervention preference"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "75788-0",
+              "display": "Advance directive - request for tube feeding"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "urn:uuid:00000000-0000-4000-8000-000000000001",
+          "display": "Maria Elena Torres"
+        },
+        "effectiveDateTime": "2026-11-18T12:00:00.000Z",
+        "performer": [
+          {
+            "reference": "urn:uuid:00000000-0000-4000-8000-000000000001",
+            "display": "Maria Elena Torres"
+          }
+        ],
+        "valueString": "Artificial nutrition and hydration (food and fluids through a tube or IV): I want a trial period of artificial nutrition and hydration, to be stopped if it is not helping me recover."
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:00000000-0000-4000-8000-000000000013",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "00000000-0000-4000-8000-000000000013",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/us/pacio-adi/StructureDefinition/ADI-PersonalInterventionPreference"
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Cardiopulmonary resuscitation (CPR):</p><p>I do not want CPR if I am in any of the conditions described above.</p></div>"
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/us/pacio-adi/CodeSystem/ADIPreferenceCategoryCS",
+                "code": "intervention-preference",
+                "display": "Intervention preference"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "75779-9",
+              "display": "Thoughts on cardiopulmonary resuscitation (CPR) [Reported]"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "urn:uuid:00000000-0000-4000-8000-000000000001",
+          "display": "Maria Elena Torres"
+        },
+        "effectiveDateTime": "2026-11-18T12:00:00.000Z",
+        "performer": [
+          {
+            "reference": "urn:uuid:00000000-0000-4000-8000-000000000001",
+            "display": "Maria Elena Torres"
+          }
+        ],
+        "valueString": "Cardiopulmonary resuscitation (CPR): I do not want CPR if I am in any of the conditions described above."
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:00000000-0000-4000-8000-000000000014",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "00000000-0000-4000-8000-000000000014",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/us/pacio-adi/StructureDefinition/ADI-PersonalInterventionPreference"
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Relief from pain:</p><p>I want treatment for pain and discomfort at all times, even if it may hasten my death.</p></div>"
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/us/pacio-adi/CodeSystem/ADIPreferenceCategoryCS",
+                "code": "intervention-preference",
+                "display": "Intervention preference"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "text": "Preference about pain relief that may hasten death"
+        },
+        "subject": {
+          "reference": "urn:uuid:00000000-0000-4000-8000-000000000001",
+          "display": "Maria Elena Torres"
+        },
+        "effectiveDateTime": "2026-11-18T12:00:00.000Z",
+        "performer": [
+          {
+            "reference": "urn:uuid:00000000-0000-4000-8000-000000000001",
+            "display": "Maria Elena Torres"
+          }
+        ],
+        "valueString": "Relief from pain: I want treatment for pain and discomfort at all times, even if it may hasten my death."
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:00000000-0000-4000-8000-000000000015",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "00000000-0000-4000-8000-000000000015",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/us/pacio-adi/StructureDefinition/ADI-PersonalInterventionPreference"
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>If I can choose, I would like to spend my final days:</p><p>At home.</p></div>"
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/us/pacio-adi/CodeSystem/ADIPreferenceCategoryCS",
+                "code": "intervention-preference",
+                "display": "Intervention preference"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "75780-7",
+              "display": "Preferred location to spend final days if possible to choose [Reported]"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "urn:uuid:00000000-0000-4000-8000-000000000001",
+          "display": "Maria Elena Torres"
+        },
+        "effectiveDateTime": "2026-11-18T12:00:00.000Z",
+        "performer": [
+          {
+            "reference": "urn:uuid:00000000-0000-4000-8000-000000000001",
+            "display": "Maria Elena Torres"
+          }
+        ],
+        "valueString": "If I can choose, I would like to spend my final days: At home."
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:00000000-0000-4000-8000-000000000016",
+      "resource": {
+        "resourceType": "CarePlan",
+        "id": "00000000-0000-4000-8000-000000000016",
+        "meta": {
+          "profile": ["http://hl7.org/fhir/us/pacio-adi/StructureDefinition/ADI-PreferenceCarePlan"]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Artificial nutrition and hydration (food and fluids through a tube or IV):</p><p>I want a trial period of artificial nutrition and hydration, to be stopped if it is not helping me recover.</p><p>Cardiopulmonary resuscitation (CPR):</p><p>I do not want CPR if I am in any of the conditions described above.</p><p>Relief from pain:</p><p>I want treatment for pain and discomfort at all times, even if it may hasten my death.</p><p>If I can choose, I would like to spend my final days:</p><p>At home.</p></div>"
+        },
+        "status": "active",
+        "intent": "proposal",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "736366004",
+                "display": "Advance care plan"
+              }
+            ]
+          }
+        ],
+        "title": "Treatment preferences for serious illness",
+        "subject": {
+          "reference": "urn:uuid:00000000-0000-4000-8000-000000000001",
+          "display": "Maria Elena Torres"
+        },
+        "addresses": [
+          {
+            "display": "Any condition in which I cannot make my own health care decisions"
+          }
+        ],
+        "supportingInfo": [
+          {
+            "reference": "urn:uuid:00000000-0000-4000-8000-000000000012"
+          },
+          {
+            "reference": "urn:uuid:00000000-0000-4000-8000-000000000013"
+          },
+          {
+            "reference": "urn:uuid:00000000-0000-4000-8000-000000000014"
+          },
+          {
+            "reference": "urn:uuid:00000000-0000-4000-8000-000000000015"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:00000000-0000-4000-8000-000000000017",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "00000000-0000-4000-8000-000000000017",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/us/pacio-adi/StructureDefinition/ADI-CareExperiencePreference"
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>What matters most to me:</p><p>Being able to recognize and talk with my family; Being at home; Music &lt;3 &amp; &quot;quiet&quot; mornings</p></div>"
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/us/pacio-adi/CodeSystem/ADIPreferenceCategoryCS",
+                "code": "care-experience-preference",
+                "display": "Care experience preference"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "81380-8",
+              "display": "Goals, preferences, and priorities for care experience [Reported]"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "urn:uuid:00000000-0000-4000-8000-000000000001",
+          "display": "Maria Elena Torres"
+        },
+        "effectiveDateTime": "2026-11-18T12:00:00.000Z",
+        "performer": [
+          {
+            "reference": "urn:uuid:00000000-0000-4000-8000-000000000001",
+            "display": "Maria Elena Torres"
+          }
+        ],
+        "valueString": "What matters most to me: Being able to recognize and talk with my family; Being at home; Music <3 & \"quiet\" mornings"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:00000000-0000-4000-8000-000000000018",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "00000000-0000-4000-8000-000000000018",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/us/pacio-adi/StructureDefinition/ADI-CareExperiencePreference"
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>About my faith, culture, and traditions:</p><p>Please call Father José at St. John parish.</p></div>"
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/us/pacio-adi/CodeSystem/ADIPreferenceCategoryCS",
+                "code": "care-experience-preference",
+                "display": "Care experience preference"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "81364-2",
+              "display": "Religious or cultural beliefs [Reported]"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "urn:uuid:00000000-0000-4000-8000-000000000001",
+          "display": "Maria Elena Torres"
+        },
+        "effectiveDateTime": "2026-11-18T12:00:00.000Z",
+        "performer": [
+          {
+            "reference": "urn:uuid:00000000-0000-4000-8000-000000000001",
+            "display": "Maria Elena Torres"
+          }
+        ],
+        "valueString": "About my faith, culture, and traditions: Please call Father José at St. John parish."
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:00000000-0000-4000-8000-000000000019",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "00000000-0000-4000-8000-000000000019",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/us/pacio-adi/StructureDefinition/ADI-CareExperiencePreference"
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Other instructions:</p><p>I would like my dog Pepper to visit.</p></div>"
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/us/pacio-adi/CodeSystem/ADIPreferenceCategoryCS",
+                "code": "care-experience-preference",
+                "display": "Care experience preference"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "81380-8",
+              "display": "Goals, preferences, and priorities for care experience [Reported]"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "urn:uuid:00000000-0000-4000-8000-000000000001",
+          "display": "Maria Elena Torres"
+        },
+        "effectiveDateTime": "2026-11-18T12:00:00.000Z",
+        "performer": [
+          {
+            "reference": "urn:uuid:00000000-0000-4000-8000-000000000001",
+            "display": "Maria Elena Torres"
+          }
+        ],
+        "valueString": "Other instructions: I would like my dog Pepper to visit."
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:00000000-0000-4000-8000-000000000020",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "00000000-0000-4000-8000-000000000020",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/us/pacio-adi/StructureDefinition/ADI-OrganDonationObservation"
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Donation of organs, tissues, and body parts at my death:</p><p>I give any needed organs, tissues, or parts.</p></div>"
+        },
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "75781-5",
+              "display": "Thoughts on organ and tissue donations [Reported]"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "urn:uuid:00000000-0000-4000-8000-000000000001",
+          "display": "Maria Elena Torres"
+        },
+        "effectiveDateTime": "2026-11-18T12:00:00.000Z",
+        "performer": [
+          {
+            "reference": "urn:uuid:00000000-0000-4000-8000-000000000001",
+            "display": "Maria Elena Torres"
+          }
+        ],
+        "valueString": "Donation of organs, tissues, and body parts at my death: I give any needed organs, tissues, or parts."
+      }
+    }
+  ]
+}
