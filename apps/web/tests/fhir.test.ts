@@ -67,10 +67,13 @@ describe('PACIO ADI document bundle', () => {
       url: 'http://hl7.org/fhir/us/pacio-adi/StructureDefinition/adi-jurisdiction-extension',
       valueCodeableConcept: { coding: [{ system: 'urn:iso:std:iso:3166:-2', code: 'US-CA' }] },
     });
+    expect(composition.text?.div).toContain('lang="en-US" xml:lang="en-US"');
     const codes = composition.section!.map((s) => s.code?.coding?.[0]?.code);
     expect(codes).toEqual(['81335-2', '81338-6', '81336-0', '81337-8', '81339-4']);
     for (const s of composition.section!)
-      expect(s.text?.div).toMatch(/^<div xmlns="http:\/\/www.w3.org\/1999\/xhtml">/);
+      expect(s.text?.div).toMatch(
+        /^<div xmlns="http:\/\/www.w3.org\/1999\/xhtml" lang="en-US" xml:lang="en-US">/,
+      );
   });
 
   it('grants the healthcare agent powers through a PACIO consent', () => {

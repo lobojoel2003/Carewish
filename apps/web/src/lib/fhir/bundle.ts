@@ -102,7 +102,11 @@ function escapeHtml(text: string): string {
 }
 
 /** XHTML narrative from plain lines; lines starting with "• " become a list. */
-export function narrative(lines: string[], status: Narrative['status'] = 'generated'): Narrative {
+export function narrative(
+  lines: string[],
+  status: Narrative['status'] = 'generated',
+  lang?: string,
+): Narrative {
   let html = '';
   let inList = false;
   for (const line of lines.filter((l) => l.trim())) {
@@ -119,7 +123,7 @@ export function narrative(lines: string[], status: Narrative['status'] = 'genera
   if (inList) html += '</ul>';
   return {
     status,
-    div: `<div xmlns="http://www.w3.org/1999/xhtml">${html || '<p>No information.</p>'}</div>`,
+    div: `<div xmlns="http://www.w3.org/1999/xhtml"${lang ? ` lang="${lang}" xml:lang="${lang}"` : ''}>${html || '<p>No information.</p>'}</div>`,
   };
 }
 
@@ -625,15 +629,20 @@ export function buildAdiBundle(answers: Answers, opts: BuildOptions): Bundle {
   });
 
   const compositionId = uuid();
+  const language = 'en-US';
   const composition: Composition = {
     resourceType: 'Composition',
     id: compositionId,
     meta: { profile: [PROFILES.composition] },
-    language: 'en-US',
-    text: narrative([
-      `${plan.state.name} advance directive for ${answers.name.trim()}`,
-      ...plan.documents.map((d) => `${d.title} — ${d.citation}`),
-    ]),
+    language,
+    text: narrative(
+      [
+        `${plan.state.name} advance directive for ${answers.name.trim()}`,
+        ...plan.documents.map((d) => `${d.title} — ${d.citation}`),
+      ],
+      'generated',
+      language,
+    ),
     extension: [
       { url: EXT.version, valueInteger: 1 },
       {
@@ -652,7 +661,11 @@ export function buildAdiBundle(answers: Answers, opts: BuildOptions): Bundle {
     author: [patientRef],
     title: `${plan.state.name} Advance Directive — ${plan.documents.map((d) => d.title).join('; ')}`,
     custodian: custodianRef,
-    section: sections,
+    // the composition declares a language, so its narratives must too
+    section: sections.map((section) => ({
+      ...section,
+      text: section.text && withLang(section.text, language),
+    })),
   };
 
   const bundleId = uuid();
@@ -669,6 +682,16 @@ export function buildAdiBundle(answers: Answers, opts: BuildOptions): Bundle {
     type: 'document',
     timestamp,
     entry: [{ fullUrl: `urn:uuid:${compositionId}`, resource: composition }, ...entries],
+  };
+}
+
+function withLang(text: Narrative, lang: string): Narrative {
+  return {
+    ...text,
+    div: text.div.replace(
+      '<div xmlns="http://www.w3.org/1999/xhtml">',
+      `<div xmlns="http://www.w3.org/1999/xhtml" lang="${lang}" xml:lang="${lang}">`,
+    ),
   };
 }
 

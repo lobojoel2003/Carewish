@@ -279,6 +279,8 @@ The **Download** page exports a FHIR R4 `Bundle` of type `document`, following t
 
 Every narrative is generated and HTML-escaped, references resolve inside the bundle (`urn:uuid:`), and the CI job **FHIR validation** runs the official HL7 validator against sample bundles for six states.
 
+The validation report fails CI on any error. One error is expected and listed separately: STU 1 defines the `HCA-section-entries` invariant as `$this.resolve() is relatedPerson` (lowercase), which can never match a `RelatedPerson`. The IG's current source fixes it to `is RelatedPerson`. Carewish's healthcare-agent section contains the Consent and RelatedPerson entries that invariant is meant to require. The remaining output is warnings, mostly terminology checks that need a terminology server.
+
 ## Privacy and security
 
 - **Nothing leaves the device by default.** Answers are stored in the browser's IndexedDB. There are no analytics, ads or trackers.
