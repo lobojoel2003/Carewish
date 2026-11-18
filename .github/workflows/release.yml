@@ -1,0 +1,226 @@
+name: Release
+
+# Runs after CI passes on main. When package.json carries a version that has
+# no tag yet, it tags the commit, publishes a GitHub Release with build
+# artifacts, and pushes the Docker image to GHCR.
+#
+# To release: `pnpm version:bump 1.2.0`, update CHANGELOG.md, merge to main.
+
+on:
+  workflow_run:
+    workflows: [CI]
+    types: [completed]
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: release
+  cancel-in-progress: false
+
+env:
+  NEXT_TELEMETRY_DISABLED: 1
+  IMAGE: ghcr.io/${{ github.repository_owner }}/carewish
+
+jobs:
+  prepare:
+    name: Decide whether to release
+    if: github.event_name == 'workflow_dispatch' || (github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.event == 'push')
+    runs-on: ubuntu-latest
+    outputs:
+      sha: ${{ steps.meta.outputs.sha }}
+      version: ${{ steps.meta.outputs.version }}
+      tag: ${{ steps.meta.outputs.tag }}
+      release: ${{ steps.meta.outputs.release }}
+      prerelease: ${{ steps.meta.outputs.prerelease }}
+      build: ${{ steps.meta.outputs.build }}
+      short: ${{ steps.meta.outputs.short }}
+      date: ${{ steps.meta.outputs.date }}
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: ${{ github.event.workflow_run.head_sha || github.sha }}
+          fetch-depth: 0
+      - id: meta
+        name: Read version
+        run: |
+          set -euo pipefail
+          SHA=$(git rev-parse HEAD)
+          VERSION=$(node -p "require('./package.json').version")
+          TAG="v${VERSION}"
+          for pkg in packages/form-rules apps/web; do
+            v=$(node -p "require('./${pkg}/package.json').version")
+            [ "$v" = "$VERSION" ] || { echo "::error::${pkg} is at ${v}, root is ${VERSION}. Run pnpm version:bump."; exit 1; }
+          done
+          grep -q "^## \[${VERSION}\]" CHANGELOG.md || { echo "::error::CHANGELOG.md has no section for ${VERSION}"; exit 1; }
+          if git ls-remote --exit-code --tags origin "refs/tags/${TAG}" >/dev/null 2>&1; then
+            RELEASE=false
+            echo "::notice::${TAG} already exists; nothing to release."
+          else
+            RELEASE=true
+          fi
+          case "$VERSION" in *-*) PRE=true ;; *) PRE=false ;; esac
+          {
+            echo "sha=${SHA}"
+            echo "short=${SHA:0:7}"
+            echo "date=$(date -u +%Y-%m-%dT%H:%M:%SZ)"
+            echo "version=${VERSION}"
+            echo "tag=${TAG}"
+            echo "release=${RELEASE}"
+            echo "prerelease=${PRE}"
+            echo "build=${{ github.event.workflow_run.run_number || github.run_number }}"
+          } >> "$GITHUB_OUTPUT"
+
+  github-release:
+    name: GitHub Release ${{ needs.prepare.outputs.tag }}
+    needs: prepare
+    if: needs.prepare.outputs.release == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    permissions:
+      contents: write
+      id-token: write
+      attestations: write
+    env:
+      VERSION: ${{ needs.prepare.outputs.version }}
+      TAG: ${{ needs.prepare.outputs.tag }}
+      BUILD_NUMBER: ${{ needs.prepare.outputs.build }}
+      COMMIT_SHA: ${{ needs.prepare.outputs.sha }}
+      BUILD_DATE: ${{ needs.prepare.outputs.date }}
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: ${{ needs.prepare.outputs.sha }}
+          fetch-depth: 0
+      - uses: pnpm/action-setup@v6
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm build
+      - run: pnpm samples
+      - name: Package artifacts
+        run: |
+          set -euo pipefail
+          mkdir -p release
+          pnpm --filter @carewish/form-rules pack --pack-destination ../../release
+          # Self-contained Next.js server: node carewish/apps/web/server.js
+          STAGE=$(mktemp -d)/carewish
+          cp -R apps/web/.next/standalone "$STAGE"
+          cp -R apps/web/.next/static "$STAGE/apps/web/.next/static"
+          cp -R apps/web/public "$STAGE/apps/web/public"
+          cp LICENSE "$STAGE/LICENSE"
+          tar -czf "release/carewish-web-${VERSION}-standalone.tar.gz" -C "$(dirname "$STAGE")" carewish
+          (cd apps/web/samples && zip -q -r "../../../release/carewish-samples-${VERSION}.zip" .)
+          (cd packages/form-rules && zip -q -r "../../release/carewish-form-rules-${VERSION}-yaml.zip" states schema locales LICENSE README.md)
+          (cd release && sha256sum * > SHA256SUMS.txt)
+          ls -la release
+      - name: Attest build provenance
+        uses: actions/attest-build-provenance@v4
+        with:
+          subject-path: |
+            release/*.tgz
+            release/*.tar.gz
+            release/*.zip
+      - name: Write release notes
+        run: node scripts/release-notes.mjs "$VERSION" > release-notes.md
+      - name: Tag and publish
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if ! git ls-remote --exit-code --tags origin "refs/tags/${TAG}" >/dev/null 2>&1; then
+            git tag -a "$TAG" -m "Carewish ${VERSION} (build ${BUILD_NUMBER})" "$COMMIT_SHA"
+            git push origin "$TAG"
+          fi
+          FLAGS=()
+          if [ "${{ needs.prepare.outputs.prerelease }}" = "true" ]; then FLAGS+=(--prerelease); else FLAGS+=(--latest); fi
+          gh release create "$TAG" release/* \
+            --title "Carewish ${VERSION}" \
+            --notes-file release-notes.md \
+            --verify-tag "${FLAGS[@]}"
+
+  docker:
+    name: Docker image ${{ needs.prepare.outputs.tag }}
+    needs: [prepare, github-release]
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    permissions:
+      contents: read
+      packages: write
+      id-token: write
+      attestations: write
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: ${{ needs.prepare.outputs.sha }}
+      - uses: docker/setup-qemu-action@v4
+      - uses: docker/setup-buildx-action@v4
+      - uses: docker/login-action@v4
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ github.token }}
+      - id: meta
+        uses: docker/metadata-action@v6
+        with:
+          images: ${{ env.IMAGE }}
+          tags: |
+            type=semver,pattern={{version}},value=${{ needs.prepare.outputs.version }}
+            type=semver,pattern={{major}}.{{minor}},value=${{ needs.prepare.outputs.version }}
+            type=semver,pattern={{major}},value=${{ needs.prepare.outputs.version }}
+            type=raw,value=latest,enable=${{ needs.prepare.outputs.prerelease != 'true' }}
+            type=raw,value=sha-${{ needs.prepare.outputs.short }}
+      - id: push
+        uses: docker/build-push-action@v7
+        with:
+          context: .
+          platforms: linux/amd64,linux/arm64
+          push: true
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
+          build-args: |
+            VERSION=${{ needs.prepare.outputs.version }}
+            BUILD_NUMBER=${{ needs.prepare.outputs.build }}
+            COMMIT_SHA=${{ needs.prepare.outputs.sha }}
+            BUILD_DATE=${{ needs.prepare.outputs.date }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+          provenance: mode=max
+          sbom: true
+      - uses: actions/attest-build-provenance@v4
+        with:
+          subject-name: ${{ env.IMAGE }}
+          subject-digest: ${{ steps.push.outputs.digest }}
+          push-to-registry: true
+
+  npm:
+    name: Publish @carewish/form-rules to npm
+    needs: [prepare, github-release]
+    # Opt in by setting the repository variable PUBLISH_NPM=true and the secret NPM_TOKEN.
+    if: vars.PUBLISH_NPM == 'true'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: ${{ needs.prepare.outputs.sha }}
+      - uses: pnpm/action-setup@v6
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: pnpm
+          registry-url: https://registry.npmjs.org
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm --filter @carewish/form-rules build
+      - run: pnpm --filter @carewish/form-rules publish --access public --no-git-checks
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NPM_CONFIG_PROVENANCE: 'true'

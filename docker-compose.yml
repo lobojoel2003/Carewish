@@ -1,0 +1,38 @@
+# Local or self-hosted Carewish with optional encrypted accounts.
+#   docker compose up --build
+# Without the database (and DATABASE_URL), Carewish runs in local-only mode.
+services:
+  web:
+    build:
+      context: .
+      args:
+        BUILD_NUMBER: compose
+    image: ghcr.io/lobojoel2003/carewish:latest
+    ports:
+      - '3000:3000'
+    environment:
+      DATABASE_URL: postgres://carewish:carewish@db:5432/carewish
+      # Generate with: openssl rand -hex 32
+      CAREWISH_SECRET: ${CAREWISH_SECRET:-change-me-to-a-long-random-string-of-32-chars}
+    depends_on:
+      db:
+        condition: service_healthy
+    restart: unless-stopped
+
+  db:
+    image: postgres:17-alpine
+    environment:
+      POSTGRES_USER: carewish
+      POSTGRES_PASSWORD: carewish
+      POSTGRES_DB: carewish
+    volumes:
+      - carewish-db:/var/lib/postgresql/data
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U carewish']
+      interval: 5s
+      timeout: 5s
+      retries: 10
+    restart: unless-stopped
+
+volumes:
+  carewish-db:

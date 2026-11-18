@@ -1,0 +1,89 @@
+name: State rule correction
+description: Something about a state's form, witness rules or notary rules is wrong or missing.
+title: 'rules(XX): '
+labels: [rules]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you! Please don't include anyone's personal or medical information.
+  - type: dropdown
+    id: state
+    attributes:
+      label: State
+      options:
+        [
+          Alabama,
+          Alaska,
+          Arizona,
+          Arkansas,
+          California,
+          Colorado,
+          Connecticut,
+          Delaware,
+          District of Columbia,
+          Florida,
+          Georgia,
+          Hawaii,
+          Idaho,
+          Illinois,
+          Indiana,
+          Iowa,
+          Kansas,
+          Kentucky,
+          Louisiana,
+          Maine,
+          Maryland,
+          Massachusetts,
+          Michigan,
+          Minnesota,
+          Mississippi,
+          Missouri,
+          Montana,
+          Nebraska,
+          Nevada,
+          New Hampshire,
+          New Jersey,
+          New Mexico,
+          New York,
+          North Carolina,
+          North Dakota,
+          Ohio,
+          Oklahoma,
+          Oregon,
+          Pennsylvania,
+          Rhode Island,
+          South Carolina,
+          South Dakota,
+          Tennessee,
+          Texas,
+          Utah,
+          Vermont,
+          Virginia,
+          Washington,
+          West Virginia,
+          Wisconsin,
+          Wyoming,
+        ]
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: What is wrong?
+      description: For example, "Witnesses in Ohio also cannot be…" or "The form's Part 2 is called…"
+    validations:
+      required: true
+  - type: textarea
+    id: source
+    attributes:
+      label: Source
+      description: Statute, regulation, or official state page that supports the correction.
+    validations:
+      required: true
+  - type: checkboxes
+    id: reviewer
+    attributes:
+      label: Reviewer
+      options:
+        - label: I am an attorney or other qualified reviewer for this state.

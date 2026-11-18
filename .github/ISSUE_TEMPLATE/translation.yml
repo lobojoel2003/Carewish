@@ -1,0 +1,17 @@
+name: Translation
+description: Offer a new language or fix a translation.
+labels: [i18n]
+body:
+  - type: input
+    id: language
+    attributes:
+      label: Language
+    validations:
+      required: true
+  - type: textarea
+    id: details
+    attributes:
+      label: Details
+      description: Which text is wrong or missing, or which language you'd like to add.
+    validations:
+      required: true
