@@ -19,7 +19,7 @@
   "dependencies": {
     "@carewish/form-rules": "workspace:*",
     "@pdf-lib/fontkit": "^1.1.1",
-    "i18next": "^27.1.5",
+    "i18next": "^27.2.2",
     "idb": "^8.0.3",
     "next": "16.4.6",
     "pdf-lib": "^1.17.1",
@@ -27,11 +27,11 @@
     "qrcode": "^1.5.4",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
-    "react-i18next": "^18.0.2"
+    "react-i18next": "^18.0.3"
   },
   "devDependencies": {
-    "@electric-sql/pglite": "^0.5.16",
-    "@playwright/test": "^1.63.0",
+    "@electric-sql/pglite": "^0.5.17",
+    "@playwright/test": "^1.65.1",
     "@tailwindcss/postcss": "^4.1.16",
     "@types/fhir": "^0.0.44",
     "@types/node": "^22.18.0",
